@@ -87,6 +87,29 @@ export default defineNuxtConfig({
           crossorigin: "anonymous",
         },
       ],
+      meta: [
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: "https://masar-center.de/" },
+        { property: "og:title", content: "Masar Center" },
+        {
+          property: "og:description",
+          content:
+            "تقديم خدمات استشارية ودعم عملي للراغبين بالسفر الى ألمانيا.",
+        },
+        { property: "og:image", content: "/masar-meta-logo.webp" },
+        { property: "og:image:secure_url", content: "/masar-meta-logo.webp" },
+        { property: "og:image:type", content: "image/webp" },
+        { property: "og:image:width", content: "1042" },
+        { property: "og:image:height", content: "630" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: "Masar Center" },
+        {
+          name: "twitter:description",
+          content:
+            "تقديم خدمات استشارية ودعم عملي للراغبين بالسفر الى ألمانيا.",
+        },
+        { name: "twitter:image", content: "/masar-meta-logo.webp" },
+      ],
     },
 
     pageTransition: { name: "page", mode: "out-in" },

@@ -9,7 +9,7 @@ const title = computed(() => t(route.meta.title))
   <div>
     <Html :lang="head.htmlAttrs.lang" :dir="head.htmlAttrs.dir">
       <Head>
-        <Title>{{ title }}</Title>
+        <Title>Masar - {{ title }}</Title>
         <template v-for="link in head.link" :key="link.key">
           <Link
             :id="link.key"
