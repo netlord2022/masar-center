@@ -9,13 +9,14 @@ export default defineNuxtConfig({
   ssr: true,
   nitro: {
     prerender: {
-      crawlLinks: true,
-      routes: ["/", "/de", "/ar"],
+      //crawlLinks: true,
+      //routes: ["/", "/de", "/ar"],
+      routes: [],
     },
-    preset: "netlify",
+    //preset: "netlify",
   },
   i18n: {
-    baseUrl: "http://localhost:3000",
+    // baseUrl: "http://localhost:3000",
     locales: [
       {
         code: "en",
