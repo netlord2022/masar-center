@@ -96,8 +96,8 @@ export default defineNuxtConfig({
           content:
             "تقديم خدمات استشارية ودعم عملي للراغبين بالسفر الى ألمانيا.",
         },
-        { property: "og:image", content: "/masar-meta-logo.webp" },
-        { property: "og:image:secure_url", content: "/masar-meta-logo.webp" },
+        //{ property: "og:image", content: "/masar-meta-logo.webp" },
+        //{ property: "og:image:secure_url", content: "/masar-meta-logo.webp" },
         { property: "og:image:type", content: "image/webp" },
         { property: "og:image:width", content: "1042" },
         { property: "og:image:height", content: "630" },
@@ -108,7 +108,7 @@ export default defineNuxtConfig({
           content:
             "تقديم خدمات استشارية ودعم عملي للراغبين بالسفر الى ألمانيا.",
         },
-        { name: "twitter:image", content: "/masar-meta-logo.webp" },
+        // { name: "twitter:image", content: "/masar-meta-logo.webp" },
       ],
     },
 
