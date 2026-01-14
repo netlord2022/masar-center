@@ -1,7 +1,7 @@
 [build]
   command = "npm run build"
   publish = ".output/public"
-  functions = "netlify/functions"
+  functions = ".output/server"
 
 [[redirects]]
   from = "/*"
@@ -28,3 +28,8 @@
   for = "/_nuxt/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+  from = "/transform-small/*"
+  to = "/.netlify/images?url=/:splat&w=50&h=50"
+  status = 200

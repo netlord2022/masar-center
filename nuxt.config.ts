@@ -146,6 +146,7 @@ export default defineNuxtConfig({
       xl: 1280,
       "2xl": 1536,
     },
+    provider: "netlify",
     // todo:domains: ['images.example.com']
   },
 })
