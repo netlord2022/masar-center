@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     preset: "netlify",
   },
   i18n: {
-    baseUrl: "/",
+    baseUrl: "https://masar-center.netlify.app/",
     locales: [
       {
         code: "en",
@@ -92,12 +92,12 @@ export default defineNuxtConfig({
         },
         {
           rel: "canonical",
-          href: "https://masar-center.de/",
+          href: "https://masar-center.netlify.app/",
         },
       ],
       meta: [
         { property: "og:type", content: "website" },
-        { property: "og:url", content: "https://masar-center.de/" },
+        { property: "og:url", content: "https://masar-center.netlify.app/" },
         { property: "og:title", content: "Masar Center" },
         {
           property: "og:description",
