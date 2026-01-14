@@ -10,6 +10,13 @@ const title = computed(() => t(route.meta.title))
     <Html :lang="head.htmlAttrs.lang" :dir="head.htmlAttrs.dir">
       <Head>
         <Title>Masar - {{ title }}</Title>
+        <Meta
+          name="description"
+          :content="
+            head.meta.find((m) => m.name === 'description') ||
+            'تقديم خدمات استشارية ودعم عملي للراغبين بالسفر الى ألمانيا'
+          "
+        />
         <template v-for="link in head.link" :key="link.key">
           <Link
             :id="link.key"

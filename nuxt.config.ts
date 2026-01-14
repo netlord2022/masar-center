@@ -90,6 +90,10 @@ export default defineNuxtConfig({
           href: "/fonts/vazirmatn/vazirmatn-extrabold.woff2",
           crossorigin: "anonymous",
         },
+        {
+          rel: "canonical",
+          href: "https://masar-center.de/",
+        },
       ],
       meta: [
         { property: "og:type", content: "website" },
