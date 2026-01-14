@@ -1,0 +1,6 @@
+{
+  "prettier.arrowParens": "always",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "html.format.preserveNewLines": false,
+  "html.customData": ["<img>", "img"]
+}

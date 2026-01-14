@@ -1,0 +1,95 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #0041b6;
+  --color-secondary: #ff551c;
+  --color-dark: #010617;
+  --color-hero: #a3def8;
+  --font-latin: "Montserrat", sans-serif, Helvetica, Arial;
+  --font-arabic: "Vazirmatn", sans-serif, Helvetica, Arial;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/montserrat/montserrat-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/montserrat/montserrat-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/vazirmatn/vazirmatn-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/vazirmatn/vazirmatn-extrabold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+#__nuxt {
+  font-family: "Neue Haas Unica", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-family: "Montserrat", sans-serif, Helvetica, Arial;
+}
+
+html::-webkit-scrollbar {
+  width: 0px;
+}
+
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+  @apply font-latin;
+}
+html[dir="rtl"] {
+  @apply font-arabic;
+}
+
+html::-webkit-scrollbar {
+  width: 0px;
+}
+
+.overflow-y-scroll::-webkit-scrollbar {
+  width: 0px;
+  scrollbar-width: none;
+  display: none;
+  overflow: -moz-scrollbars-none;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+div,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+input:focus,
+textarea:focus {
+  outline: 0;
+  outline: none !important;
+}
