@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = ".output/dist"
+  publish = "dist"
   functions = ".output/server"
 
 [[redirects]]
