@@ -12,14 +12,14 @@ export default defineNuxtConfig({
     //   publicDir: "dist",
     // },
     prerender: {
-      // crawlLinks: true,
-      // routes: ["/", "/de", "/ar"],
-      routes: [],
+      crawlLinks: true,
+      routes: ["/", "/de", "/ar"],
+      //routes: [],
     },
     preset: "netlify",
   },
   i18n: {
-    // baseUrl: "http://localhost:3000",
+    baseUrl: "/",
     locales: [
       {
         code: "en",
