@@ -13,9 +13,10 @@ export default defineNuxtConfig({
     },
     prerender: {
       crawlLinks: true,
-      routes: ["/", "/de", "/ar"],
+      // routes: ["/", "/de", "/ar"],
+      routes: [],
     },
-    //preset: "netlify",
+    preset: "netlify",
   },
   i18n: {
     // baseUrl: "http://localhost:3000",
