@@ -8,11 +8,11 @@ export default defineNuxtConfig({
   // SSG Configuration
   ssr: true,
   nitro: {
-    output: {
-      publicDir: "dist",
-    },
+    // output: {
+    //   publicDir: "dist",
+    // },
     prerender: {
-      crawlLinks: true,
+      // crawlLinks: true,
       // routes: ["/", "/de", "/ar"],
       routes: [],
     },
