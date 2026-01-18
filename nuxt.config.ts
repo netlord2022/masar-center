@@ -144,6 +144,11 @@ export default defineNuxtConfig({
     storage: "cookie",
     classSuffix: "", // so Tailwind uses `.dark`
   },
+  runtimeConfig: {
+    public: {
+      gtagId: process.env.NUXT_PUBLIC_GTAG_ID,
+    },
+  },
   image: {
     format: ["avif", "webp"],
     quality: 60,

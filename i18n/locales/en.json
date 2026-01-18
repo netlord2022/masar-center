@@ -171,5 +171,11 @@
   },
   "impressum": {
     "title": "Impressum"
+  },
+  "cookies": {
+    "title": "We use cookies",
+    "description": "We use cookies to improve your experience. You can accept or reject analytics cookies.",
+    "accept_all": "Accept all",
+    "reject_all": "Reject all"
   }
 }

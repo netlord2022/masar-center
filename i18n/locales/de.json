@@ -32,7 +32,7 @@
     ]
   },
 
-  "copyright": "© 2023 Masar UG. Alle Rechte vorbehalten.",
+  "copyRight": "© 2023 Masar UG. Alle Rechte vorbehalten.",
   "privacy": {
     "shortTitle": "Datenschutz",
     "seo": {
@@ -172,5 +172,11 @@
 
   "impressum": {
     "title": "Impressum"
+  },
+  "cookies": {
+    "title": "Wir verwenden Cookies",
+    "description": "Wir nutzen Cookies, um Ihre Erfahrung zu verbessern. Sie können Analyse-Cookies akzeptieren oder ablehnen.",
+    "accept_all": "Alle akzeptieren",
+    "reject_all": "Alle ablehnen"
   }
 }
