@@ -1,4 +1,6 @@
 {
+  "masar": "Masar",
+  "masarCompany": "Masar UG",
   "hero": "Willkommen zu unserer Website",
   "about": "über uns",
   "contact": "Kontakt",
@@ -28,5 +30,147 @@
         "answer": "Die Dauer hängt vom Visumtyp und dem Land ab, bei dem Sie sich bewerben. Wir geben Ihnen eine genauere Zeitschätzung basierend auf Ihrem individuellen Fall."
       }
     ]
+  },
+
+  "copyright": "© 2023 Masar UG. Alle Rechte vorbehalten.",
+  "privacy": {
+    "shortTitle": "Datenschutz",
+    "seo": {
+      "title": "Datenschutzerklärung",
+      "description": "Datenschutzerklärung von Masar Center gemäß DSGVO."
+    },
+    "title": "Datenschutzerklärung",
+    "subtitle": "Privacy Policy",
+
+    "section1": {
+      "title": "1. Datenschutz auf einen Blick",
+      "generalInfoTitle": "Allgemeine Hinweise",
+      "generalInfoText1": "Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen.",
+      "generalInfoText2": "Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können, wie Name, E-Mail-Adresse, Telefonnummer oder offizielle Dokumente.",
+      "generalInfoText3": "Ausführliche Informationen zum Thema Datenschutz entnehmen Sie den nachfolgenden Abschnitten dieser Datenschutzerklärung.",
+
+      "dataCollectionTitle": "Datenerfassung auf dieser Website",
+      "dataControllerQuestion": "Wer ist verantwortlich für die Datenerfassung?",
+      "dataControllerAnswer": "Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten finden Sie im Abschnitt „Verantwortliche Stelle“.",
+      "dataCollectionQuestion": "Wie erfassen wir Ihre Daten?",
+      "dataCollectionList1": "Durch Ihre aktive Mitteilung, z. B. durch Eingabe in Kontaktformulare oder Serviceanfragen",
+      "dataCollectionList2": "Automatisch beim Besuch der Website durch IT-Systeme (z. B. Browsertyp, Betriebssystem, Uhrzeit des Seitenaufrufs, IP-Adresse)",
+      "dataUsageQuestion": "Wofür nutzen wir Ihre Daten?",
+      "dataUsageList1": "Zur Gewährleistung eines reibungslosen Betriebs der Website",
+      "dataUsageList2": "Zur Bearbeitung von Anfragen und zur Kontaktaufnahme",
+      "dataUsageList3": "Zur Erbringung von Dienstleistungen im Bereich Visa, Arbeit, Unterkunft und Kurse",
+      "dataUsageList4": "Zur Analyse und Verbesserung der Website",
+
+      "rightsTitle": "Ihre Rechte",
+      "rightsIntro": "Sie haben jederzeit das Recht auf:",
+      "rightsList1": "Auskunft über Ihre gespeicherten personenbezogenen Daten",
+      "rightsList2": "Berichtigung oder Löschung dieser Daten",
+      "rightsList3": "Einschränkung der Verarbeitung",
+      "rightsList4": "Widerruf Ihrer Einwilligung",
+      "rightsList5": "Beschwerde bei der zuständigen Aufsichtsbehörde",
+      "rightsOutro": "Bei Fragen zum Datenschutz können Sie sich jederzeit an uns wenden."
+    },
+
+    "section2": {
+      "title": "2. Allgemeine Hinweise und Pflichtinformationen",
+
+      "dataProtectionTitle": "Datenschutz",
+      "dataProtectionText1": "Der Schutz Ihrer personenbezogenen Daten ist uns ein wichtiges Anliegen. Wir behandeln Ihre Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.",
+      "dataProtectionText2": "Wir weisen darauf hin, dass die Datenübertragung im Internet (z. B. per E-Mail) Sicherheitslücken aufweisen kann und ein vollständiger Schutz vor dem Zugriff durch Dritte nicht möglich ist.",
+
+      "controllerTitle": "Verantwortliche Stelle",
+      "controllerName": "Masar UG (haftungsbeschränkt)",
+      "controllerAddress": "46537 Dinslaken, Deutschland",
+      "controllerPhoneLabel": "Telefon:",
+      "controllerPhoneValue": "+491771873142",
+      "controllerEmailLabel": "E-Mail:",
+      "controllerEmailValue": "info-masar-center.de",
+      "controllerExplanation": "Die verantwortliche Stelle ist die natürliche oder juristische Person, die über die Zwecke und Mittel der Verarbeitung personenbezogener Daten entscheidet.",
+
+      "legalBasisTitle": "Rechtsgrundlagen der Datenverarbeitung",
+      "legalBasisIntro": "Die Verarbeitung Ihrer personenbezogenen Daten erfolgt auf Grundlage von Art. 6 DSGVO:",
+      "legalBasisList1": "Art. 6 Abs. 1 lit. a DSGVO – Einwilligung",
+      "legalBasisList2": "Art. 6 Abs. 1 lit. b DSGVO – Vertragserfüllung oder vorvertragliche Maßnahmen",
+      "legalBasisList3": "Art. 6 Abs. 1 lit. c DSGVO – rechtliche Verpflichtung",
+      "legalBasisList4": "Art. 6 Abs. 1 lit. f DSGVO – berechtigtes Interesse",
+
+      "storageDurationTitle": "Speicherdauer",
+      "storageDurationText1": "Wir speichern personenbezogene Daten nur so lange, wie dies zur Erreichung der jeweiligen Zwecke erforderlich ist.",
+      "storageDurationText2": "Die Daten werden gelöscht, sobald der Zweck der Speicherung entfällt oder Sie die Löschung verlangen, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.",
+
+      "withdrawConsentTitle": "Widerruf Ihrer Einwilligung",
+      "withdrawConsentText1": "Sie können eine bereits erteilte Einwilligung zur Verarbeitung Ihrer personenbezogenen Daten jederzeit widerrufen.",
+      "withdrawConsentText2": "Der Widerruf berührt nicht die Rechtmäßigkeit der bis zum Widerruf erfolgten Verarbeitung.",
+      "withdrawConsentText3": "Der Widerruf kann formlos über die oben genannten Kontaktdaten erfolgen.",
+
+      "dataTransferTitle": "Datenübermittlung in Drittstaaten",
+      "dataTransferText1": "Eine Übermittlung personenbezogener Daten in Staaten außerhalb der Europäischen Union (Drittstaaten) kann erfolgen, sofern externe Dienstleister wie Google oder WhatsApp genutzt werden.",
+      "dataTransferText2": "Die Übermittlung erfolgt ausschließlich auf Grundlage der von der EU-Kommission genehmigten Standardvertragsklauseln (SCCs)."
+    },
+
+    "section3": {
+      "title": "3. Datenerfassung auf dieser Website",
+
+      "cookiesTitle": "Cookies",
+      "cookiesText1": "Diese Website verwendet Cookies, um die Funktionalität sicherzustellen und das Nutzererlebnis zu verbessern.",
+      "cookiesList1": "technisch notwendige Cookies",
+      "cookiesList2": "Analyse-Cookies",
+      "cookiesText2": "Analyse-Cookies werden nur nach Ihrer ausdrücklichen Einwilligung verwendet.",
+      "cookiesText3": "Sie können Cookies jederzeit über die Einstellungen Ihres Browsers deaktivieren.",
+
+      "contactFormTitle": "Kontaktformular",
+      "contactFormText": "Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben zur Bearbeitung der Anfrage und für den Fall von Anschlussfragen gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.",
+
+      "emailPhoneTitle": "Kontaktaufnahme per E-Mail oder Telefon",
+      "emailPhoneText": "Bei Kontaktaufnahme per E-Mail oder Telefon werden die von Ihnen übermittelten Daten ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.",
+
+      "whatsappTitle": "WhatsApp",
+      "whatsappText1": "Für die Kommunikation nutzen wir WhatsApp Business, sofern Sie diesen Kommunikationsweg freiwillig wählen.",
+      "whatsappText2": "Dabei können personenbezogene Daten durch Meta Platforms verarbeitet werden.",
+      "whatsappText3": "Die Nutzung von WhatsApp ist freiwillig und kann jederzeit durch alternative Kontaktwege ersetzt werden."
+    },
+
+    "section4": {
+      "title": "4. Soziale Medien",
+      "text": "Diese Website kann Elemente oder Links zu sozialen Netzwerken enthalten. Beim Aktivieren solcher Inhalte können Daten an die jeweiligen Anbieter übertragen werden. Es gelten die Datenschutzerklärungen der jeweiligen Anbieter."
+    },
+
+    "section5": {
+      "title": "5. Analyse-Tools und Werbung",
+
+      "gtmTitle": "Google Tag Manager",
+      "gtmText": "Der Google Tag Manager dient der Verwaltung von Website-Tags und verarbeitet selbst keine personenbezogenen Daten.",
+
+      "gaTitle": "Google Analytics",
+      "gaText1": "Diese Website nutzt Google Analytics zur Analyse des Nutzerverhaltens. Dabei wird:",
+      "gaList1": "die IP-Adresse anonymisiert",
+      "gaList2": "eine Verarbeitung nur nach Einwilligung durchgeführt",
+      "gaList3": "die Nutzung ausschließlich statistisch ausgewertet"
+    },
+
+    "section6": {
+      "title": "6. Datensicherheit",
+      "textIntro": "Wir setzen geeignete technische und organisatorische Sicherheitsmaßnahmen ein, um Ihre personenbezogenen Daten vor:",
+      "list1": "unbefugtem Zugriff",
+      "list2": "Verlust oder Manipulation",
+      "list3": "unrechtmäßiger Nutzung"
+    },
+
+    "section7": {
+      "title": "7. Zuständige Aufsichtsbehörde",
+      "text": "Sie haben das Recht auf Beschwerde bei der zuständigen Datenschutzaufsichtsbehörde:",
+      "authorityName": "Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW)"
+    },
+
+    "section8": {
+      "title": "8. Haftungsausschluss",
+      "textIntro": "Wir bieten ausschließlich Beratungs- und Unterstützungsleistungen in den Bereichen Visa, Arbeit, Unterkunft und Kurse an. Eine Garantie für die Erteilung eines Visums, eine Arbeitsstelle oder einen Aufenthaltstitel wird nicht übernommen.",
+      "list1": "Keine Garantie für die Erteilung eines Visums",
+      "list2": "Keine Garantie für eine Arbeitsstelle oder einen Aufenthaltstitel"
+    }
+  },
+
+  "impressum": {
+    "title": "Impressum"
   }
 }

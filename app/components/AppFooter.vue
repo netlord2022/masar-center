@@ -1,11 +1,21 @@
 <template>
   <footer role="contentinfo">
-    <div class="bg-dark dark:bg-white">
+    <div class="bg-dark dark:bg-white pt-6 pb-20">
       <div
-        class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-sm text-white dark:text-black"
+        class="w-full flex justify-center flex-wrap py-4 text-white dark:text-black font-medium px-4 sm:px-6 lg:px-8 gap-4"
       >
-        &copy; {{ new Date().getFullYear() }} Masar Center. All rights reserved.
-        Images by Freepik.
+        <NuxtLinkLocale to="privacy">{{
+          $t("privacy.shortTitle")
+        }}</NuxtLinkLocale>
+        <NuxtLinkLocale to="impressum" class="">{{
+          $t("impressum.title")
+        }}</NuxtLinkLocale>
+      </div>
+      <div
+        class="max-w-7xl mx-auto py-2 px-4 sm:px-6 lg:px-8 text-center text-sm text-white dark:text-black"
+      >
+        &copy; {{ new Date().getFullYear() }} {{ $t("copyRight") }} - Images by
+        Freepik
       </div>
     </div>
 

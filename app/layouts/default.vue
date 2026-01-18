@@ -2,21 +2,14 @@
 const route = useRoute()
 const { t } = useI18n()
 const head = useLocaleHead()
-const title = computed(() => t(route.meta.title))
+const title = computed(() => t(route?.meta?.title ?? "masar"))
 </script>
 
 <template>
   <div>
     <Html :lang="head.htmlAttrs.lang" :dir="head.htmlAttrs.dir">
       <Head>
-        <Title>Masar - {{ title }}</Title>
-        <Meta
-          name="description"
-          :content="
-            head.meta.find((m) => m.name === 'description') ||
-            'تقديم خدمات استشارية ودعم عملي للراغبين بالسفر الى ألمانيا'
-          "
-        />
+        <Title>{{ title }} | {{ $t("masar") }}</Title>
         <template v-for="link in head.link" :key="link.key">
           <Link
             :id="link.key"
@@ -39,7 +32,7 @@ const title = computed(() => t(route.meta.title))
           viewBox="0 0 1440 181"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="pointer-events-none w-full top-[72px] text-primary dark:text-secondary shrink-0 absolute"
+          class="pointer-events-none w-full top-18 text-primary dark:text-secondary shrink-0 absolute"
         >
           <mask id="path-1-inside-1_414_5526" fill="white">
             <path d="M0 0H1440V181H0V0Z" />

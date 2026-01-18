@@ -1,4 +1,6 @@
 {
+  "masar": "Masar",
+  "masarCompany": "Masar UG",
   "hero": "Welcome to our landing page",
   "about": "About us",
   "contact": "Contact",
@@ -28,5 +30,146 @@
         "answer": "The duration depends on the type of visa and the country you are applying to. We will provide you with a more accurate time estimate based on your individual case."
       }
     ]
+  },
+  "copyRight": "All rights reserved",
+  "privacy": {
+    "shortTitle": "Privacy",
+    "seo": {
+      "title": "Privacy Policy",
+      "description": "Masar Center Privacy Policy in accordance with the GDPR."
+    },
+    "title": "Privacy Policy",
+    "subtitle": "Datenschutzerklärung",
+
+    "section1": {
+      "title": "1. Data Protection at a Glance",
+      "generalInfoTitle": "General Information",
+      "generalInfoText1": "The following information provides a simple overview of what happens to your personal data when you visit this website.",
+      "generalInfoText2": "Personal data refers to any information that can be used to identify you personally, such as name, email address, phone number, or official documents.",
+      "generalInfoText3": "Detailed information on data protection can be found in the sections below.",
+
+      "dataCollectionTitle": "Data Collection on This Website",
+      "dataControllerQuestion": "Who is responsible for data collection?",
+      "dataControllerAnswer": "Data processing on this website is carried out by the website operator. Contact details can be found in the section “Responsible Entity”.",
+      "dataCollectionQuestion": "How do we collect your data?",
+      "dataCollectionList1": "Data you provide directly, for example via contact forms or service requests",
+      "dataCollectionList2": "Technical data collected automatically when you visit the website (e.g. browser type, operating system, time of access, IP address)",
+      "dataUsageQuestion": "Why do we use your data?",
+      "dataUsageList1": "To ensure proper operation of the website",
+      "dataUsageList2": "To process inquiries and communicate with you",
+      "dataUsageList3": "To provide services related to visas, employment, accommodation, and courses",
+      "dataUsageList4": "To analyze and improve website performance",
+
+      "rightsTitle": "Your Rights",
+      "rightsIntro": "You have the right at any time to:",
+      "rightsList1": "Access your stored personal data",
+      "rightsList2": "Request correction or deletion of your data",
+      "rightsList3": "Restrict data processing",
+      "rightsList4": "Withdraw your consent at any time",
+      "rightsList5": "Lodge a complaint with the competent supervisory authority",
+      "rightsOutro": "You may contact us at any time with questions regarding data protection."
+    },
+
+    "section2": {
+      "title": "2. General Information and Mandatory Disclosures",
+
+      "dataProtectionTitle": "Data Protection",
+      "dataProtectionText1": "We take the protection of your personal data very seriously and treat it confidentially in accordance with applicable data protection laws, in particular the General Data Protection Regulation (GDPR).",
+      "dataProtectionText2": "Please note that data transmission over the Internet (e.g. email communication) may have security vulnerabilities and complete protection against third-party access cannot be guaranteed.",
+
+      "controllerTitle": "Responsible Entity",
+      "controllerName": "Masar UG (haftungsbeschränkt)",
+      "controllerAddress": "46537 Dinslaken, Germany",
+      "controllerPhoneLabel": "Phone:",
+      "controllerPhoneValue": "+491771873142",
+      "controllerEmailLabel": "Email:",
+      "controllerEmailValue": "info-masar-center.de",
+      "controllerExplanation": "The responsible entity is the natural or legal person that determines the purposes and means of processing personal data.",
+
+      "legalBasisTitle": "Legal Basis for Data Processing",
+      "legalBasisIntro": "Personal data is processed in accordance with Article 6 GDPR on the following legal bases:",
+      "legalBasisList1": "Art. 6(1)(a) GDPR – Consent",
+      "legalBasisList2": "Art. 6(1)(b) GDPR – Performance of a contract or pre-contractual measures",
+      "legalBasisList3": "Art. 6(1)(c) GDPR – Legal obligation",
+      "legalBasisList4": "Art. 6(1)(f) GDPR – Legitimate interest",
+
+      "storageDurationTitle": "Data Storage Duration",
+      "storageDurationText1": "We store personal data only for as long as necessary to fulfill the purposes for which it was collected.",
+      "storageDurationText2": "Data will be deleted once the purpose no longer applies or upon your request for deletion, unless statutory retention obligations require longer storage.",
+
+      "withdrawConsentTitle": "Withdrawal of Consent",
+      "withdrawConsentText1": "You may withdraw your consent to the processing of your personal data at any time.",
+      "withdrawConsentText2": "The withdrawal does not affect the lawfulness of processing carried out prior to the withdrawal.",
+      "withdrawConsentText3": "Consent may be withdrawn informally by contacting us using the details provided above.",
+
+      "dataTransferTitle": "Transfer of Data to Third Countries",
+      "dataTransferText1": "Personal data may be transferred to countries outside the European Union (third countries) when using external services such as Google or WhatsApp.",
+      "dataTransferText2": "Such transfers are carried out exclusively on the basis of Standard Contractual Clauses (SCCs) approved by the European Commission."
+    },
+
+    "section3": {
+      "title": "3. Data Collection on This Website",
+
+      "cookiesTitle": "Cookies",
+      "cookiesText1": "This website uses cookies to ensure proper functionality and to improve the user experience.",
+      "cookiesList1": "Technically necessary cookies",
+      "cookiesList2": "Analytical cookies",
+      "cookiesText2": "Analytical cookies are only used after your explicit consent.",
+      "cookiesText3": "You can disable cookies at any time via your browser settings.",
+
+      "contactFormTitle": "Contact Form",
+      "contactFormText": "If you submit inquiries via the contact form, the information you provide will be stored for the purpose of processing your request and for follow-up questions. This data will not be shared with third parties without your consent.",
+
+      "emailPhoneTitle": "Contact via Email or Phone",
+      "emailPhoneText": "If you contact us by email or phone, the data you provide will be used solely to process your inquiry.",
+
+      "whatsappTitle": "WhatsApp Communication",
+      "whatsappText1": "We use WhatsApp Business for communication if you voluntarily choose this channel.",
+      "whatsappText2": "Personal data may be processed by Meta Platforms.",
+      "whatsappText3": "Using WhatsApp is optional and you may choose alternative communication methods at any time."
+    },
+
+    "section4": {
+      "title": "4. Social Media",
+      "text": "This website may contain elements or links to social media platforms. When activating such elements, data may be transmitted to the respective providers in accordance with their privacy policies."
+    },
+
+    "section5": {
+      "title": "5. Analytics and Advertising Tools",
+
+      "gtmTitle": "Google Tag Manager",
+      "gtmText": "Google Tag Manager is used to manage website tags and does not store personal data itself.",
+
+      "gaTitle": "Google Analytics",
+      "gaText1": "This website uses Google Analytics to analyze user behavior. In doing so:",
+      "gaList1": "IP addresses are anonymized",
+      "gaList2": "Processing occurs only after user consent",
+      "gaList3": "Data is used exclusively for statistical purposes"
+    },
+
+    "section6": {
+      "title": "6. Data Security",
+      "textIntro": "We implement appropriate technical and organizational measures to protect your personal data against:",
+      "list1": "Unauthorized access",
+      "list2": "Loss or manipulation",
+      "list3": "Unlawful use"
+    },
+
+    "section7": {
+      "title": "7. Supervisory Authority",
+      "text": "You have the right to lodge a complaint with the competent data protection supervisory authority:",
+      "authorityName": "State Commissioner for Data Protection and Freedom of Information North Rhine-Westphalia (LDI NRW)"
+    },
+
+    "section8": {
+      "title": "8. Disclaimer",
+      "textIntro": "We provide advisory and support services only in the areas of visas, employment, accommodation, and courses. We do not guarantee:",
+      "list1": "Visa approval",
+      "list2": "Employment placement",
+      "list3": "Residence permits"
+    }
+  },
+  "impressum": {
+    "title": "Impressum"
   }
 }
