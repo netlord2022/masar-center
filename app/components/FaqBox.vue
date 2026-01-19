@@ -48,7 +48,7 @@ const height = computed(() => {
   return el
 })
 const heightClass = computed(() => {
-  const opened = height.value + 8
+  const opened = height.value + 12
   if (more.value) {
     return `height: ${opened}px;`
   } else {
