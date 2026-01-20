@@ -4,6 +4,11 @@ import tailwindcss from "@tailwindcss/vite"
 export default defineNuxtConfig({
   //compatibilityDate: "2025-07-15",
   devtools: { enabled: process.env.NODE_ENV !== "production" },
+  runtimeConfig: {
+    public: {
+      gaId: "G-HT22Z5VRDF", // Your GA ID
+    },
+  },
 
   // SSG Configuration
   ssr: true,

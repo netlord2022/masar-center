@@ -172,5 +172,12 @@
 
   "impressum": {
     "title": "Impressum"
+  },
+
+  "cookies": {
+    "message": "Wir verwenden Cookies, um die Anzahl der Besucher zu analysieren.",
+    "privacy": "Datenschutzerklärung",
+    "accept": "Akzeptieren",
+    "decline": "Ablehnen"
   }
 }

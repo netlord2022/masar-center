@@ -3,6 +3,7 @@
     <main role="main">
       <NuxtPage class="grow" />
     </main>
+    <CookieBanner />
   </NuxtLayout>
 </template>
 <script setup></script>

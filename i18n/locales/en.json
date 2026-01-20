@@ -171,5 +171,11 @@
   },
   "impressum": {
     "title": "Impressum"
+  },
+  "cookies": {
+    "message": "We use cookies to analyze visitor numbers.",
+    "privacy": "Privacy Policy",
+    "accept": "Accept",
+    "decline": "Decline"
   }
 }
