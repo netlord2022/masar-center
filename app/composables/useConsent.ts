@@ -1,3 +1,4 @@
+// cookie copilot
 export const useConsent = () => {
   const consent = useState("consent", () => ({
     analytics: false,
