@@ -13,22 +13,14 @@ const isDark = computed({
 
 <template>
   <button
-    class="transition-colors duration-150 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800 rounded-lg h-6 w-6 text-center flex items-center justify-center"
+    class="transition-colors duration-150 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800 text-black dark:text-white rounded-lg h-6 w-6 text-center flex items-center justify-center"
+    title="Dark / Light"
     @click="isDark = !isDark"
   >
-    <NuxtImg
-      v-show="isDark !== true"
-      src="/moon-outline.svg"
-      alt="moon Icon"
-      class="h-4 w-4 text-black"
-      width="16"
-      height="16"
-    />
-    <NuxtImg
-      v-show="isDark === true"
-      src="/sunny-outline.svg"
-      alt="sunny Icon"
-      class="h-4 w-4 text-white invert"
+    <span class="sr-only">Choose theme: dark/night</span>
+    <SvgIcon
+      :name="isDark ? 'sunny-outline' : 'moon-outline'"
+      size="w-4 h-4"
       width="16"
       height="16"
     />

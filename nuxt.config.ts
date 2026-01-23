@@ -27,7 +27,7 @@ export default defineNuxtConfig({
         language: "es-US",
         dir: "ltr",
         name: "English",
-        img: "/gb.svg",
+        icon: "gb-flag",
       },
       {
         code: "de",
@@ -35,7 +35,7 @@ export default defineNuxtConfig({
         language: "de-DE",
         dir: "ltr",
         name: "Deutsch",
-        img: "/de.svg",
+        icon: "de-flag",
       },
       {
         code: "ar",
@@ -43,7 +43,7 @@ export default defineNuxtConfig({
         language: "ar-SY",
         dir: "rtl",
         name: "العربية",
-        img: "/sy.svg",
+        icon: "sy-flag",
       },
     ],
     defaultLocale: "en",
@@ -98,12 +98,6 @@ export default defineNuxtConfig({
       meta: [
         { property: "og:type", content: "website" },
         { property: "og:url", content: "https://masar-center.netlify.app/" },
-        { property: "og:title", content: "Masar Center" },
-        {
-          property: "og:description",
-          content:
-            "تقديم خدمات استشارية ودعم عملي للراغبين بالسفر الى ألمانيا.",
-        },
         { property: "og:image", content: "/masar-meta-logo.webp" },
         { property: "og:image:secure_url", content: "/masar-meta-logo.webp" },
         { property: "og:image:type", content: "image/webp" },

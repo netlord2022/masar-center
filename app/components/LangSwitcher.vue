@@ -2,33 +2,23 @@
   <div ref="menu" class="relative md:inline-block text-left hidden">
     <!-- Button -->
     <button
+      ref="ignoreEl"
       dir="ltr"
       class="flex items-center p-1 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none cursor-pointer active:ring-1"
       aria-haspopup="menu"
       :class="{ 'ring-1': open }"
       :aria-expanded="open"
+      title="choose language"
       @click="toggle"
     >
-      <NuxtImg
-        :src="imgSrc"
-        alt="current language"
-        class="h-5 w-5 rounded-sm"
-        width="20"
-        height="20"
+      <span class="sr-only">Choose language</span>
+      <SvgIcon :name="currentIcon" size="w-5 h-5 rounded-sm" />
+
+      <SvgIcon
+        name="chev-down"
+        size="w-4 h-4 ml-2 fill-none stroke-black stroke-2 transition-all duration-300 ease-in-out"
+        :class="open ? '-scale-100' : 'scale-100'"
       />
-      <svg
-        class="ml-2 h-4 w-4"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M19 9l-7 7-7-7"
-        />
-      </svg>
     </button>
 
     <!-- Dropdown -->
@@ -55,10 +45,9 @@
           dir="ltr"
         >
           <div class="flex items-center">
-            <NuxtImg
-              :src="item.img as string"
-              :alt="item.code"
-              class="h-4 w-4 rounded-sm mt-0.5"
+            <SvgIcon
+              :name="item.icon as string"
+              size="h-4 w-4 rounded-sm mt-0.5"
               width="16"
               height="16"
             />
@@ -68,7 +57,11 @@
       </div>
     </transition>
   </div>
-  <div ref="menu" class="relative md:hidden text-left flex">
+  <div
+    ref="menu"
+    class="relative md:hidden text-left flex"
+    @click="onMobileMenuClick"
+  >
     <NuxtLink
       v-for="(item, key) in locales"
       :key="key"
@@ -77,42 +70,42 @@
       :class="{ 'border-b border-primary': item.code === locale }"
     >
       <div class="flex items-center">
-        <NuxtImg
-          :src="item.img as string"
-          :alt="item.code"
-          class="h-5 w-5"
-          width="20"
-          height="20"
-        />
+        <SvgIcon :name="item.icon as string" size="w-5 h-5" />
       </div>
     </NuxtLink>
   </div>
 </template>
 
 <script setup lang="ts">
+const emit = defineEmits(["close"])
 const { locales, locale } = useI18n()
 
 const open = ref(false)
+
+const onMobileMenuClick = () => {
+  emit("close")
+}
 
 const toggle = () => {
   open.value = !open.value
 }
 const flags = computed(() => {
   return [
-    { code: "en", src: "/gb.svg" },
-    { code: "ar", src: "/sy.svg" },
-    { code: "de", src: "/de.svg" },
+    { code: "en", icon: "gb-flag" },
+    { code: "ar", icon: "sy-flag" },
+    { code: "de", icon: "de-flag" },
   ]
 })
 
-const imgSrc = computed(() => {
+const currentIcon = computed(() => {
   const flag = flags.value.find((f) => f.code === locale.value)
-  return flag ? flag.src : ""
+  return flag ? flag.icon : ""
 })
 const menu = useTemplateRef("menu")
+const ignoreEl = useTemplateRef("ignoreEl")
 const close = () => {
   open.value = false
 }
 
-onClickOutside(menu, () => close())
+onClickOutside(menu, () => close(), { ignore: [ignoreEl] })
 </script>

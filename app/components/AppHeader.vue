@@ -99,7 +99,7 @@ onClickOutside(target, () => close(), { ignore: [ignoreEl] })
           >{{ link.name }}</NuxtLinkLocale
         >
         <div class="flex items-center gap-2 my-4 pt-4">
-          <LangSwitcher />
+          <LangSwitcher @close="isOpen = false" />
           <ThemeToggle />
         </div>
       </nav>
@@ -132,7 +132,7 @@ onClickOutside(target, () => close(), { ignore: [ignoreEl] })
   opacity: 0;
 }
 .logo-reveal {
-  animation: reveal 1.3s linear forwards;
+  animation: reveal 1s linear forwards;
   overflow: hidden;
   clip-path: inset(0 100% 0% 100%);
 }
