@@ -216,11 +216,14 @@ html.dark .footer-columns-row::after {
   transform: translateX(60px);
   opacity: 0;
 }
+html[dir="ltr"] .slide-fade-enter-from,
+html[dir="ltr"] .slide-fade-leave-to {
+  transform: translateX(-60px);
+}
 @media screen and (max-width: 640px) {
   .slide-fade-enter-from,
   .slide-fade-leave-to {
     transform: translateY(60px);
-    opacity: 0;
   }
   .footer-columns-row::before,
   .footer-columns-row::after {
