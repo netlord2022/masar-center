@@ -69,17 +69,17 @@ const visas = computed(() =>
               >
                 <NuxtImg
                   :src="visa.img"
-                  alt="Home Hero Image"
+                  :alt="visa.texts.title"
                   class="w-full h-4/7 max-h-4/7 rounded-2xl object-cover flex justify-self-start"
                   loading="lazy"
                   width="712"
                   height="712"
                 />
-                <h4
+                <h3
                   class="text-medium sm:text-lg font-medium w-full my-2 xl:my-3"
                 >
                   {{ visa.texts.title }}
-                </h4>
+                </h3>
                 <div class="text-sm">{{ visa.texts.subtitle }}</div>
                 <span class="absolute -bottom-2 right-0">
                   <SvgIcon name="arrow-right" size="w-5 h-5 "

@@ -1,111 +1,158 @@
+<script setup lang="ts">
+const { y } = useWindowScroll()
+const bottom = ref(false)
+
+watch(
+  y,
+  () => {
+    if (!window) return
+    bottom.value =
+      window.innerHeight + y.value >=
+      document.documentElement.scrollHeight - 200
+  },
+  { immediate: true }
+)
+</script>
 <template>
   <footer role="contentinfo" class="mx-auto px-6 w-full mb-8">
-    <div
-      class="bg-dark dark:bg-white pt-6 pb-8 rounded-t-lg px-8 gap-4 flex items-center"
-    >
-      <a
-        href="https://www.facebook.com/profile.php?id=61585719966946"
-        target="_blank"
-        title="Masar facebook"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 640 640"
-          class="w-6 h-6 fill-white dark:fill-black"
-        >
-          <path
-            d="M576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 440 146.7 540.8 258.2 568.5L258.2 398.2L205.4 398.2L205.4 320L258.2 320L258.2 286.3C258.2 199.2 297.6 158.8 383.2 158.8C399.4 158.8 427.4 162 438.9 165.2L438.9 236C432.9 235.4 422.4 235 409.3 235C367.3 235 351.1 250.9 351.1 292.2L351.1 320L434.7 320L420.3 398.2L351 398.2L351 574.1C477.8 558.8 576 450.9 576 320z"
-          />
-        </svg>
-        <span class="sr-only">Masar facebook</span></a
+    <div class="bg-dark dark:bg-white pt-6 pb-8 rounded-t-lg w-full">
+      <div
+        class="w-full flex justify-between items-center mx-auto max-w-7xl px-6"
       >
-      <a
-        href="https://www.instagram.com/masar.ug.de"
-        target="_blank"
-        title="Masar instagram"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 640 640"
-          class="w-6 h-6 fill-white dark:fill-black"
-        >
-          <path
-            d="M320.3 205C256.8 204.8 205.2 256.2 205 319.7C204.8 383.2 256.2 434.8 319.7 435C383.2 435.2 434.8 383.8 435 320.3C435.2 256.8 383.8 205.2 320.3 205zM319.7 245.4C360.9 245.2 394.4 278.5 394.6 319.7C394.8 360.9 361.5 394.4 320.3 394.6C279.1 394.8 245.6 361.5 245.4 320.3C245.2 279.1 278.5 245.6 319.7 245.4zM413.1 200.3C413.1 185.5 425.1 173.5 439.9 173.5C454.7 173.5 466.7 185.5 466.7 200.3C466.7 215.1 454.7 227.1 439.9 227.1C425.1 227.1 413.1 215.1 413.1 200.3zM542.8 227.5C541.1 191.6 532.9 159.8 506.6 133.6C480.4 107.4 448.6 99.2 412.7 97.4C375.7 95.3 264.8 95.3 227.8 97.4C192 99.1 160.2 107.3 133.9 133.5C107.6 159.7 99.5 191.5 97.7 227.4C95.6 264.4 95.6 375.3 97.7 412.3C99.4 448.2 107.6 480 133.9 506.2C160.2 532.4 191.9 540.6 227.8 542.4C264.8 544.5 375.7 544.5 412.7 542.4C448.6 540.7 480.4 532.5 506.6 506.2C532.8 480 541 448.2 542.8 412.3C544.9 375.3 544.9 264.5 542.8 227.5zM495 452C487.2 471.6 472.1 486.7 452.4 494.6C422.9 506.3 352.9 503.6 320.3 503.6C287.7 503.6 217.6 506.2 188.2 494.6C168.6 486.8 153.5 471.7 145.6 452C133.9 422.5 136.6 352.5 136.6 319.9C136.6 287.3 134 217.2 145.6 187.8C153.4 168.2 168.5 153.1 188.2 145.2C217.7 133.5 287.7 136.2 320.3 136.2C352.9 136.2 423 133.6 452.4 145.2C472 153 487.1 168.1 495 187.8C506.7 217.3 504 287.3 504 319.9C504 352.5 506.7 422.6 495 452z"
-          />
-        </svg>
-        <span class="sr-only">Masar instagram</span>
-      </a>
-    </div>
-
-    <div
-      class="fixed z-20 bottom-8 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-8 rtl:sm:left-auto rtl:sm:right-8 flex flex-col items-center sm:flex-row gap-2 sm:gap-4"
-    >
-      <div class="flex sm:flex-col space-x-2 sm:space-x-0 sm:space-y-2">
-        <div class="flex group">
-          <div dir="rtl" class="link-box-item">
-            <a href="tel:+491771873142" class="flex items-center"
-              ><NuxtImg
-                src="/telephone.svg"
-                alt="telephone-icon"
-                width="24"
-                loading="lazy"
-                height="24"
-              />
-              <div dir="rtl" class="text-sm font-medium px-3">
-                &#8206;+491771873142
-              </div>
-            </a>
-          </div>
+        <div class="gap-3 sm:gap-4 flex items-center">
+          <NuxtLink
+            href="https://www.facebook.com/profile.php?id=61585719966946"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Masar facebook"
+          >
+            <SvgIcon
+              name="facebook"
+              size="w-7 h-7 fill-white dark:fill-black"
+            />
+            <span class="sr-only">Masar facebook</span></NuxtLink
+          >
+          <NuxtLink
+            href="https://www.instagram.com/masar.ug.de"
+            target="_blank"
+            title="Masar instagram"
+            rel="noopener noreferrer"
+          >
+            <SvgIcon
+              name="instagram"
+              size="w-7 h-7 fill-white dark:fill-black"
+            />
+            <span class="sr-only">Masar instagram</span>
+          </NuxtLink>
+          <NuxtLink
+            href="https://x.com/Masar1661048"
+            target="_blank"
+            title="Masar x"
+            rel="noopener noreferrer"
+          >
+            <SvgIcon name="x" size="w-7 h-7 fill-white dark:fill-black" />
+            <span class="sr-only">Masar x</span>
+          </NuxtLink>
         </div>
-        <div class="flex group">
-          <div class="link-box-item">
-            <a
-              href="https://wa.me/491771873142"
-              class="flex items-center"
-              target="_blank"
-              ><NuxtImg
-                src="/whatsapp.svg"
-                alt="whatsapp-icon"
-                width="24"
-                height="24"
-                loading="lazy"
-              /><span class="text-sm font-medium px-3"
-                >&#8206;+491771873142</span
-              ></a
+        <div class="flex text-white dark:text-black gap-3 sm:gap-4" dir="ltr">
+          <NuxtLink
+            href="mailto:info@masar-center.de"
+            class="flex items-center px-1"
+          >
+            <SvgIcon name="email" size="w-6 h-6" /><span class="sr-only"
+              >info@masar-center.de</span
+            ></NuxtLink
+          >
+          <NuxtLink
+            href="https://wa.me/491771873142"
+            class="flex items-center px-1"
+            target="_blank"
+          >
+            <SvgIcon name="whatsapp" size="w-6 h-6" /><span class="sr-only"
+              >&#8206;+491771873142</span
+            ></NuxtLink
+          >
+          <NuxtLink href="tel:+491771873142" class="flex items-center">
+            <SvgIcon name="telephone" size="w-6 h-6" />
+            <div
+              dir="rtl"
+              class="text-sm font-medium px-1 sr-only md:not-sr-only"
             >
-          </div>
-        </div>
-        <div class="flex group">
-          <div class="link-box-item">
-            <a href="mailto:info@masar-center.de" class="flex items-center">
-              <NuxtImg
-                src="/email.svg"
-                alt="email-icon"
-                width="24"
-                height="24"
-                loading="lazy"
-              /><span class="text-sm font-medium px-3 whitespace-nowrap"
-                >info@masar-center.de</span
-              ></a
-            >
-          </div>
+              &#8206;+491771873142
+            </div>
+          </NuxtLink>
         </div>
       </div>
     </div>
+    <transition name="slide-fade">
+      <div
+        v-if="!bottom"
+        class="fixed z-20 bottom-8 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-8 rtl:sm:left-auto rtl:sm:right-8 flex flex-col items-center sm:flex-row gap-2 sm:gap-4"
+      >
+        <div class="flex sm:flex-col space-x-2 sm:space-x-0 sm:space-y-2">
+          <div class="flex group">
+            <div dir="rtl" class="link-box-item">
+              <NuxtLink
+                href="tel:+491771873142"
+                class="flex items-center float-link"
+              >
+                <SvgIcon name="telephone" size="w-6 h-6" />
+                <div dir="rtl" class="text-sm font-medium px-3">
+                  &#8206;+491771873142
+                </div>
+              </NuxtLink>
+            </div>
+          </div>
+          <div class="flex group">
+            <div class="link-box-item">
+              <NuxtLink
+                href="https://wa.me/491771873142"
+                class="flex items-center float-link"
+                target="_blank"
+              >
+                <SvgIcon name="whatsapp" size="w-6 h-6" /><span
+                  class="text-sm font-medium px-3"
+                  >&#8206;+491771873142</span
+                ></NuxtLink
+              >
+            </div>
+          </div>
+          <div class="flex group">
+            <div class="link-box-item">
+              <NuxtLink
+                href="mailto:info@masar-center.de"
+                class="flex items-center float-link"
+              >
+                <SvgIcon name="email" size="w-6 h-6" /><span
+                  class="text-sm font-medium px-3 whitespace-nowrap"
+                  >info@masar-center.de</span
+                ></NuxtLink
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
     <div
       class="w-full bg-black dark:bg-white relative z-1 rounded-b-lg ronded-t-none mb-24 mx-auto"
     >
       <div
-        class="footer-section footer-section-bottom px-10 w-full max-w-[1386px] overflow-hidden relative z-2 mx-auto my-0 dark:text-white"
+        class="footer-section footer-section-bottom md:px-10 w-full max-w-[1386px] overflow-hidden relative z-2 mx-auto my-0 dark:md:text-white text-white md:text-black dark:text-black"
       >
         <div
-          class="footer-columns-row bg-white dark:bg-black flex rounded-t-2xl relative min-h-12 justify-between items-center px-8"
+          class="footer-columns-row bg-black md:bg-white dark:bg-white dark:md:bg-black flex flex-col-reverse md:flex-row rounded-t-2xl relative min-h-12 justify-between items-center md:px-8"
           dir="ltr"
         >
-          <div class="footer-column footer-copyrights-container">
+          <div
+            class="footer-column footer-copyrights-container text-[10px] md:text-xs mt-4 md:mt-0 px-1 sm:px-0"
+          >
             &copy; {{ new Date().getFullYear() }} {{ $t("copyRight") }} - Images
             by Freepik
           </div>
-          <div class="footer-column footer-additional-menu-container">
-            <nav class="gap-4 flex">
+          <div
+            class="footer-column footer-additional-menu-container mt-8 md:mt-0"
+          >
+            <nav class="gap-3 sm:gap-4 flex text-sm sm:text-base font-medium">
               <NuxtLinkLocale to="privacy">{{
                 $t("privacy.shortTitle")
               }}</NuxtLinkLocale>
@@ -117,12 +164,15 @@
         </div>
       </div>
     </div>
+    <div
+      class="bg-dark dark:bg-white -mt-28 -mb-28 pb-2 rounded-t-lg px-8 h-16"
+    />
   </footer>
 </template>
 <style scoped>
 @reference "./../assets/css/main.css";
 .link-box-item {
-  @apply flex items-center cursor-pointer bg-primary text-white p-2 rounded-[3px] max-w-10 overflow-hidden transition-all duration-400;
+  @apply flex items-center cursor-pointer bg-primary dark:bg-secondary text-white p-2 rounded-[3px] max-w-10 overflow-hidden transition-all duration-400;
 }
 .link-box-item:hover {
   @apply max-w-[270px];
@@ -151,5 +201,39 @@
 html.dark .footer-columns-row::before,
 html.dark .footer-columns-row::after {
   box-shadow: 0 20px 0 0 #010617 !important;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease-in-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.5s cubic-bezier(1, 0.5, 0.5, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(60px);
+  opacity: 0;
+}
+@media screen and (max-width: 640px) {
+  .slide-fade-enter-from,
+  .slide-fade-leave-to {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  .footer-columns-row::before,
+  .footer-columns-row::after {
+    display: none;
+  }
+}
+a {
+  @apply transition-all duration-300 ease-in-out;
+}
+a:not(.float-link):hover {
+  @apply scale-105 text-secondary;
+}
+a:not(.float-link):hover svg {
+  @apply fill-secondary;
 }
 </style>
