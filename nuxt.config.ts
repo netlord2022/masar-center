@@ -12,7 +12,7 @@ export default defineNuxtConfig({
     //   publicDir: "dist",
     // },
     prerender: {
-      //crawlLinks: true,
+      crawlLinks: true,
       routes: ["/", "/de", "/ar"],
       //routes: [],
     },
