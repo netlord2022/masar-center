@@ -8,11 +8,9 @@ export default defineNuxtConfig({
   // SSG Configuration
   ssr: true,
   nitro: {
-    // output: {
-    //   publicDir: "dist",
-    // },
     prerender: {
       crawlLinks: true,
+      ignore: ["/.netlify/images"],
       routes: [
         "/",
         "/de",
@@ -27,7 +25,6 @@ export default defineNuxtConfig({
         "/de/impressum",
         "/ar/impressum",
       ],
-      //routes: [],
     },
     preset: "netlify",
   },
