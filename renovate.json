@@ -2,57 +2,45 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
+    ":semanticCommits",
+    ":separatePatchReleases",
     ":rebaseStalePrs",
     "github>nuxt/renovate-config-nuxt"
   ],
   "dependencyDashboard": true,
+  "labels": ["dependencies"],
+
   "packageRules": [
     {
-      "description": "Block ESLint v10+ updates for core packages",
-      "matchPackageNames": ["@eslint/js"],
-      "allowedVersions": "<10.0.0"
-    },
-    {
-      "matchUpdateTypes": ["minor", "patch"],
-      "matchCurrentVersion": "!/^0/",
+      "description": "Auto-merge patch updates",
+      "matchUpdateTypes": ["patch"],
       "automerge": true
     },
     {
-      "description": "Auto-merge non-major updates for Nuxt to keep the DX fresh",
-      "matchPackageNames": ["nuxt"],
-      "matchUpdateTypes": ["minor", "patch"],
+      "description": "Auto-merge minor updates except core framework",
+      "matchUpdateTypes": ["minor"],
+      "excludePackagePatterns": ["^nuxt$", "^vue$", "^vue-router$"],
       "automerge": true
     },
     {
-      "description": "Group all Nuxt core and essential modules together",
-      "matchPackagePatterns": [
-        "^nuxt$",
-        "^@nuxt/",
-        "^@nuxtjs/",
-        "nitropack",
-        "h3",
-        "vinxi"
-      ],
-      "groupName": "nuxt-core"
+      "description": "Group Nuxt ecosystem",
+      "matchPackagePatterns": ["^nuxt$", "^@nuxt", "^@vueuse/nuxt"],
+      "groupName": "nuxt ecosystem"
     },
     {
-      "groupName": "build tools",
-      "matchPackagePatterns": [
-        "^typescript",
-        "^@eslint/js",
-        "^@typescript-eslint",
-        "^vite",
-        "^tailwind"
-      ]
+      "description": "Group Tailwind stack",
+      "matchPackagePatterns": ["^tailwindcss", "^@tailwindcss"],
+      "groupName": "tailwind stack"
     },
     {
-      "description": "Group Vue ecosystem updates",
-      "matchPackagePatterns": ["^vue", "^@vue/", "^vue-router", "^@vueuse/"],
-      "groupName": "vue-ecosystem"
+      "description": "Group linting tools",
+      "matchPackagePatterns": ["^eslint", "^@nuxt/eslint"],
+      "groupName": "linting"
     },
     {
-      "matchPackageNames": ["node", "@types/node"],
-      "groupName": "node"
+      "description": "Separate major updates",
+      "matchUpdateTypes": ["major"],
+      "dependencyDashboardApproval": true
     }
   ],
   "timezone": "UTC"
