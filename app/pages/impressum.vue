@@ -76,13 +76,15 @@ useHead({
 
       <p>
         {{ $t("privacy.section2.controllerPhoneLabel") }}
-        <a href="https://wa.me/491771873142" target="_blank" dir="ltr"
-          >+491771873142</a
+        <NuxtLink href="https://wa.me/491771873142" target="_blank" dir="ltr"
+          >+491771873142</NuxtLink
         >
       </p>
       <p>
         {{ $t("privacy.section2.controllerEmailLabel") }}
-        <a href="mailto:info@masar-center.de">info@masar-center.de</a>
+        <NuxtLink href="mailto:info@masar-center.de"
+          >info@masar-center.de</NuxtLink
+        >
       </p>
 
       <p>{{ $t("privacy.section2.controllerExplanation") }}</p>
