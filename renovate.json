@@ -1,0 +1,49 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", ":rebaseStalePrs"],
+  "dependencyDashboard": true,
+  "packageRules": [
+    {
+      "description": "Block ESLint v10+ updates for core packages",
+      "matchPackageNames": ["@eslint/js"],
+      "allowedVersions": "<10.0.0"
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
+    },
+    {
+      "description": "Group all Nuxt core and essential modules together",
+      "matchPackagePatterns": [
+        "^nuxt$",
+        "^@nuxt/",
+        "^@nuxtjs/",
+        "nitropack",
+        "h3",
+        "vinxi"
+      ],
+      "groupName": "nuxt-core"
+    },
+    {
+      "groupName": "build tools",
+      "matchPackagePatterns": [
+        "^typescript",
+        "^@eslint/js",
+        "^@typescript-eslint",
+        "^vite",
+        "^tailwind"
+      ]
+    },
+    {
+      "description": "Group Vue ecosystem updates",
+      "matchPackagePatterns": ["^vue", "^@vue/", "^vue-router", "^@vueuse/"],
+      "groupName": "vue-ecosystem"
+    },
+    {
+      "matchPackageNames": ["node", "@types/node"],
+      "groupName": "node"
+    }
+  ],
+  "timezone": "UTC"
+}
