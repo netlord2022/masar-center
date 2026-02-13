@@ -170,7 +170,20 @@
     }
   },
   "impressum": {
-    "title": "Impressum"
+    "title": "Impressum",
+    "germany": "Germany",
+    "director": "Represented by the Managing Director:",
+    "commercialRegister": "Commercial Register:",
+    "court": "Register Court:",
+    "idNr": "VAT Identification Number according to § 27a German VAT Act:",
+    "contact": "Contact:",
+    "responsible": "Responsible for content pursuant to § 18 para. 2 MStV:",
+    "seo": {
+      "title": "Legal Notice",
+      "description": "Official legal notice of Masar UG including company details, managing director, commercial register and contact information in accordance with German law."
+    },
+    "disclaimer": "Disclaimer:",
+    "disclaimerText": "Masar UG offers consulting and support services regarding visa and study preparation. We do not represent governmental authorities and do not guarantee the issuance of any visa.\n\nAll applications must be submitted by the client directly to the responsible authorities. Final decisions remain solely with the competent governmental institutions.\n\nThe offered language courses are not officially accredited and do not result in a formally recognized language qualification.\n\nLiability for decisions of authorities or individual outcomes is excluded to the extent permitted by law."
   },
   "servicesAndVisa": {
     "title": "قسم الخدمات – أنواع الفيزا",

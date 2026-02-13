@@ -171,7 +171,20 @@
   },
 
   "impressum": {
-    "title": "Impressum"
+    "title": "Impressum",
+    "germany": "Deutschland",
+    "director": "Vertreten durch den Geschäftsführer:",
+    "commercialRegister": "Handelsregister:",
+    "court": "Registergericht: Amtsgericht:",
+    "idNr": "Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:",
+    "contact": "Kontakt:",
+    "responsible": "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:",
+    "seo": {
+      "title": "Impressum",
+      "description": "Offizielle Anbieterkennzeichnung der XXX GmbH gemäß §5 TMG. Kontaktdaten, Handelsregister, Geschäftsführung und rechtliche Angaben."
+    },
+    "disclaimer": "Haftungsausschluss:",
+    "disclaimerText": "Die Masar UG bietet Beratungs- und Unterstützungsleistungen im Bereich Visa- und Studienvorbereitung an. Wir vertreten keine Behörden und garantieren keinen Visumerfolg.\n\nAlle Anträge werden ausschließlich vom Kunden selbst bei den zuständigen Behörden eingereicht. Entscheidungen liegen ausschließlich bei den zuständigen staatlichen Stellen.\n\nDie angebotenen Sprachkurse sind nicht staatlich anerkannt und führen nicht zu einer offiziell anerkannten Sprachqualifikation.\n\nEine Haftung für Entscheidungen von Behörden oder für individuelle Ergebnisse wird ausgeschlossen, soweit gesetzlich zulässig."
   },
   "servicesAndVisa": {
     "title": "قسم الخدمات – أنواع الفيزا",
