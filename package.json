@@ -23,7 +23,7 @@
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
-    "@nuxt/eslint": "^1.10.0",
+    "@nuxt/eslint": "^1.15.1",
     "@nuxt/hints": "^1.0.0-alpha.1",
     "@types/node": "^25.0.8",
     "eslint": "^9.39.1"
