@@ -14,7 +14,7 @@
   "dependencies": {
     "@nuxt/image": "^2.0.0",
     "@nuxtjs/color-mode": "^4.0.0",
-    "@nuxtjs/i18n": "^10.2.0",
+    "@nuxtjs/i18n": "^10.2.3",
     "@tailwindcss/vite": "^4.1.18",
     "@vueuse/nuxt": "^14.1.0",
     "nuxt": "^4.2.2",
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.10.0",
-    "@nuxt/hints": "^1.0.0-alpha.1",
+    "@nuxt/hints": "^1.0.0-alpha.7",
     "@types/node": "^25.0.8",
     "eslint": "^9.39.1"
   }
