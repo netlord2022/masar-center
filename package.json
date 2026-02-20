@@ -26,6 +26,6 @@
     "@nuxt/eslint": "^1.10.0",
     "@nuxt/hints": "^1.0.0-alpha.1",
     "@types/node": "^25.0.8",
-    "eslint": "^9.39.1"
+    "eslint": "^9.39.3"
   }
 }
