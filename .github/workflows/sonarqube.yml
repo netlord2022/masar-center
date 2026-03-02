@@ -4,7 +4,7 @@ on:
   push:
     branches: ["main"]
   pull_request:
-    branches: ["main"]
+    types: [opened, synchronize, reopened]
   workflow_dispatch:
 
 permissions:
@@ -33,4 +33,4 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: 9cc4c6c9e8e47880b98275d9faa9f9442e61b9b3
+          SONAR_TOKEN: 5bfafbb43a08dbf08354b5458db7569b4985af8e
