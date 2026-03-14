@@ -59,13 +59,13 @@ const visas = computed(() =>
           <FlipCard
             v-for="(visa, i) in visas"
             :key="i"
-            class="h-112 max-h-112 max-w-106 rounded-2xl snap-center shrink-0 w-full md:w-1/2 lg:w-1/3"
+            class="h-120 sm:h-112 sm:max-h-112 max-w-106 rounded-2xl snap-center shrink-0 w-full md:w-1/2 lg:w-1/3"
             classes="rounded-2xl"
           >
             ">
             <template #front>
               <div
-                class="w-full relative h-98/100 max-w-full max-h-98/100 m-auto flex flex-col items-center justify-start rounded-2xl text-right"
+                class="w-full relative h-98/100 max-w-full max-h-98/100 m-auto flex flex-col items-center justify-start rounded-2xl text-right ltr:text-left rtl:text-right"
               >
                 <NuxtImg
                   :src="visa.img"
@@ -76,7 +76,7 @@ const visas = computed(() =>
                   height="712"
                 />
                 <h3
-                  class="text-medium sm:text-lg font-medium w-full my-2 xl:my-3"
+                  class="text-medium sm:text-lg font-bold w-full my-2 xl:my-3"
                 >
                   {{ visa.texts.title }}
                 </h3>
@@ -93,10 +93,14 @@ const visas = computed(() =>
                   class="w-36 max-h-36 dark:text-secondary"
                 />
                 <div class="text-right m-4" dir="auto">
-                  <h4 class="text-medium sm:text-lg font-medium">
+                  <h4
+                    class="text-medium sm:text-lg font-bold ltr:text-left rtl:text-right w-full"
+                  >
                     {{ visa.texts.listTitle }}
                   </h4>
-                  <ul class="list-disc list-outside">
+                  <ul
+                    class="list-disc list-outside ltr:text-left ltr:text-sm rtl:text-right"
+                  >
                     <li>{{ visa.texts.list1 }}</li>
                     <li>{{ visa.texts.list2 }}</li>
                     <li>{{ visa.texts.list3 }}</li>

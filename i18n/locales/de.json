@@ -187,37 +187,44 @@
     "disclaimerText": "Die Masar UG bietet Beratungs- und Unterstützungsleistungen im Bereich Visa- und Studienvorbereitung an. Wir vertreten keine Behörden und garantieren keinen Visumerfolg.\n\nAlle Anträge werden ausschließlich vom Kunden selbst bei den zuständigen Behörden eingereicht. Entscheidungen liegen ausschließlich bei den zuständigen staatlichen Stellen.\n\nDie angebotenen Sprachkurse sind nicht staatlich anerkannt und führen nicht zu einer offiziell anerkannten Sprachqualifikation.\n\nEine Haftung für Entscheidungen von Behörden oder für individuelle Ergebnisse wird ausgeschlossen, soweit gesetzlich zulässig."
   },
   "servicesAndVisa": {
-    "title": "قسم الخدمات – أنواع الفيزا",
-    "subtitle": "نقدّم لك المعرفة، الخبرة، والإرشاد الصحيح…",
+    "title": "Servicebereich – Visatypen",
+    "subtitle": "Wir bieten Ihnen das Wissen, die Erfahrung und die richtige Beratung…",
     "doctorsVisa": {
-      "title": "الفيزا الطبية (للأطباء، الصيادلة، وأطباء الأسنان)",
-      "subtitle": "نقدّم في مسار استشارات وخدمات متخصصة للكوادر الطبية الراغبة بالتقديم على الفيزا الطبية إلى ألمانيا.\nنرافقك خطوة بخطوة لفهم الشروط، تجهيز ملفك بشكل صحيح، وتحضيرك للمقابلة بما يتوافق مع القوانين الألمانية الحالية.",
-      "listTitle": "تشمل خدماتنا:",
-      "list1": "تقييم وضعك المهني والدراسي ومعرفة المسار الأنسب لك",
-      "list2": "المساعدة في تجهيز وتعبئة الأوراق المطلوبة",
-      "list3": "الإرشاد حول معادلة الشهادات والإجراءات المرتبطة بها",
-      "list4": "التحضير للمقابلة القنصلية بأسلوب واقعي",
-      "list5": "توضيح أسباب القبول والرفض الشائعة بناءً على خبرتنا الطويلة"
+      "title": "Die medizinische Visum",
+      "subtitle": "Beratung und Begleitung für medizinische Fachkräfte zum Visum in Deutschland: Wir helfen bei der Antragstellung und Vorbereitung auf das Konsulat nach aktuellem Recht.",
+      "listTitle": "Unsere Dienstleistungen:",
+      "list1": "Bewertung Ihres beruflichen und akademischen Status und Identifizierung des geeigneten Weges für Sie",
+      "list2": "Hilfe bei der Vorbereitung und Ausfüllen der erforderlichen Dokumente",
+      "list3": "Beratung zur Anerkennung von Qualifikationen",
+      "list4": "Vorbereitung auf die konsularische Interview",
+      "list5": "Klarstellung häufiger Gründe für Annahme oder Ablehnung"
     },
     "jobSearcherVisa": {
-      "title": "فيزا البحث عن عمل (Chancenkarte – بطاقة الفرص)",
-      "subtitle": "فيزا البحث عن عمل أو Chancenkarte هي فرصة للأشخاص المؤهلين لدخول ألمانيا والبحث عن وظيفة بشكل قانوني.\nفي مسار نساعدك على فهم هذا النظام الجديد ومعرفة إن كان مناسبًا لوضعك الحالي.",
-      "listTitle": "نقدّم لك:",
-      "list1": "تقييم نقاطك حسب نظام Chancenkarte",
-      "list2": "شرح الشروط والمتطلبات بشكل مبسّط",
-      "list3": "تجهيز ملف التقديم والمستندات المطلوبة",
-      "list4": "التحضير للمقابلة القنصلية",
-      "list5": "إرشاد حول فتح حساب بنكي وحجز سكن مؤقت"
+      "title": "Visum (Chancenkarte)",
+      "subtitle": "Das Visum für Arbeitsuche oder Chancenkarte ist eine Möglichkeit für qualifizierte Personen, um in Deutschland zu arbeiten und eine Stelle zu suchen.\nWir helfen Ihnen, dieses neue System zu verstehen und festzustellen, ob es für Ihre aktuelle Situation geeignet ist.",
+      "listTitle": "Wir bieten Ihnen:",
+      "list1": "Bewertung Ihrer Punkte gemäß dem Chancenkarten-System",
+      "list2": "Einführung in die Bedingungen und Anforderungen in einfacher Sprache",
+      "list3": "Vorbereitung des Antrags und der erforderlichen Dokumente",
+      "list4": "Vorbereitung auf das konsularische Interview",
+      "list5": "Beratung zum Öffnen eines Bankkontos und zur Buchung eines temporären Wohnraums"
     },
     "studyVisa": {
-      "title": "فيزا الدراسة (بكالوريوس – ماجستير)",
-      "subtitle": "نساعد الطلاب الراغبين بالدراسة في ألمانيا على اختيار المسار الأكاديمي الأنسب حسب شهاداتهم وإمكانياتهم.",
-      "listTitle": "تشمل خدماتنا:",
-      "list1": "الإرشاد لاختيار التخصص والجامعة المناسبة",
-      "list2": "المساعدة في الحصول على قبولات جامعية",
-      "list3": "تجهيز ملف الفيزا وتعبئة الأوراق",
-      "list4": "شرح متطلبات الحساب البنكي المغلق",
-      "list5": "لإرشاد للتقديم مع زوجة أو طفل إن وُجد"
+      "title": "Visum für Studium",
+      "subtitle": "Wir unterstützen Studierende, die in Deutschland ein Studium beginnen möchten, bei der Auswahl des geeigneten akademischen Pfads entsprechend ihren Qualifikationen und Möglichkeiten.",
+      "listTitle": "Unsere Dienstleistungen:",
+      "list1": "Beratung zur Auswahl des passenden Studiengangs und der Universität",
+      "list2": "Hilfe bei der Beantragung von Studienplatzbestätigungen",
+      "list3": "Vorbereitung des Visum-Antrags und das Ausfüllen der Dokumente",
+      "list4": "Erläuterung der Anforderungen für das geschlossene Bankkonto",
+      "list5": "Beratung zur Beantragung eines Visums zusammen mit Ehepartner oder Kindern"
     }
+  },
+  "aboutUs": {
+    "title": "Masar... Ihre zuverlässige Brücke in Ihre Zukunft in Deutschland",
+    "vision": "Masar UG (haftungsbeschränkt) wurde inmitten von Nordrhein-Westfalen, Deutschland, gegründet, um als offizielle und vertrauenswürdige Brücke für Studierende, Forscher und Arbeitsuchende aus dem Nahen Osten, insbesondere aus Syrien, Irak und Jordanien, zu fungieren, die ihren akademischen oder beruflichen Weg in Deutschland beginnen möchten.",
+    "whoWeAre": "Wer steckt hinter \"Masar\"?\nWir sind ein Team aus Spezialisten, die in Deutschland ansässig sind und durch ein tiefes Verständnis für das deutsche Bildungs- und Arbeitsmarktumfeld sowie eine umfassende Erkenntnis der Herausforderungen, die junge Menschen in unseren arabischen Ländern bei der Überlegung einer Migration oder eines Studiums gegenüberstehen, vereint. Unter der Leitung der Gründer Morhaf Esmail und Rami Ismaeel wurde \"Masar\" ins Leben gerufen, um unsere praktische Erfahrung und juristische Expertise zu Ihrer Verfügung zu stellen.",
+    "whatMakesUsDifferent": "Was macht uns unterschiedlich?\nWir sind nicht nur ein Dienstleistungsunternehmen; wir sind ein registriertes deutsches Unternehmen (HRB 39995), das sich an die höchsten Standards von Transparenz und Rechtlichkeit hält. Wir glauben daran, dass Wissen der Schlüssel zum Erfolg ist; daher machen wir keine falschen Versprechen, sondern stärken Sie durch:\n\nIntelligente Beratung: Wir zeigen Ihnen auf, wie die Verfahren funktionieren, damit Sie mit Vertrauen bewerben können.\n\nLogistische Unterstützung: Von der Fernöffnung von Bankkonten bis zur Hilfe bei Wohnungsbuchungen und der Vorbereitung von Konsulatdokumenten.\n\nAbsolute Transparenz: Wir sind Ihre Partner in der Vorbereitung und Planung, präsentieren Fakten so wie sie sind ohne Übertreibung, um Ergebnisse zu garantieren, respektieren deutsche Gesetze und schätzen Ihr Vertrauen.",
+    "ourMission": "Unsere Mission\nBei \"Masar\" verstehen wir, dass hinter jeder Visumantragstellung eine große Ambition steht und eine Familie auf den Erfolg ihres Kindes wartet. Daher behandeln wir jedes File mit voller Privatsphäre und hoher Professionellität sowie mit voller Verpflichtung gegenüber den europäischen Datenschutzbestimmungen (GDPR), um Ihnen eine sichere und organisierte Reise von Ihrem Heimatland bis hin zu Ihrem Stabilität in Deutschland zu gewährleisten.\n\nIhre Partner vom Anfang bis zum Ende.\nMasar UG – Ihre sichere Brücke nach Deutschland."
   }
 }

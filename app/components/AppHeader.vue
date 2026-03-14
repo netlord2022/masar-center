@@ -32,7 +32,7 @@ onClickOutside(target, () => close(), { ignore: [ignoreEl] })
 <template>
   <!-- Navbar -->
   <header
-    class="bg-white shadow-md sticky top-0 z-50 dark:bg-dark dark:text-white"
+    class="bg-white shadow-md sticky top-0 z-50 dark:bg-dark dark:text-white dark:shadow-white/10 shadow-black/10"
     role="banner"
   >
     <div

@@ -186,37 +186,44 @@
     "disclaimerText": "Masar UG offers consulting and support services regarding visa and study preparation. We do not represent governmental authorities and do not guarantee the issuance of any visa.\n\nAll applications must be submitted by the client directly to the responsible authorities. Final decisions remain solely with the competent governmental institutions.\n\nThe offered language courses are not officially accredited and do not result in a formally recognized language qualification.\n\nLiability for decisions of authorities or individual outcomes is excluded to the extent permitted by law."
   },
   "servicesAndVisa": {
-    "title": "قسم الخدمات – أنواع الفيزا",
-    "subtitle": "نقدّم لك المعرفة، الخبرة، والإرشاد الصحيح…",
+    "title": "Services Section – Visa Types",
+    "subtitle": "We provide you with knowledge, experience, and correct guidance…",
     "doctorsVisa": {
-      "title": "الفيزا الطبية (للأطباء، الصيادلة، وأطباء الأسنان)",
-      "subtitle": "نقدّم في مسار استشارات وخدمات متخصصة للكوادر الطبية الراغبة بالتقديم على الفيزا الطبية إلى ألمانيا.\nنرافقك خطوة بخطوة لفهم الشروط، تجهيز ملفك بشكل صحيح، وتحضيرك للمقابلة بما يتوافق مع القوانين الألمانية الحالية.",
-      "listTitle": "تشمل خدماتنا:",
-      "list1": "تقييم وضعك المهني والدراسي ومعرفة المسار الأنسب لك",
-      "list2": "المساعدة في تجهيز وتعبئة الأوراق المطلوبة",
-      "list3": "الإرشاد حول معادلة الشهادات والإجراءات المرتبطة بها",
-      "list4": "التحضير للمقابلة القنصلية بأسلوب واقعي",
-      "list5": "توضيح أسباب القبول والرفض الشائعة بناءً على خبرتنا الطويلة"
+      "title": "Medical Visa",
+      "subtitle": "We offer consulting and services for medical professionals wishing to apply for a medical visa to Germany.\nWe accompany you to understand the requirements, prepare your application correctly, and prepare you for the consulate interview.",
+      "listTitle": "Our services include:",
+      "list1": "Evaluation of your professional and academic status and identification of the most suitable path for you",
+      "list2": "Assistance in preparing and filling out the required documents",
+      "list3": "Guidance on credential recognition and related procedures",
+      "list4": "Preparation for the consulate interview in a realistic manner",
+      "list5": "Clarification of common reasons for approval or rejection based on our extensive experience"
     },
     "jobSearcherVisa": {
-      "title": "فيزا البحث عن عمل (Chancenkarte – بطاقة الفرص)",
-      "subtitle": "فيزا البحث عن عمل أو Chancenkarte هي فرصة للأشخاص المؤهلين لدخول ألمانيا والبحث عن وظيفة بشكل قانوني.\nفي مسار نساعدك على فهم هذا النظام الجديد ومعرفة إن كان مناسبًا لوضعك الحالي.",
-      "listTitle": "نقدّم لك:",
-      "list1": "تقييم نقاطك حسب نظام Chancenkarte",
-      "list2": "شرح الشروط والمتطلبات بشكل مبسّط",
-      "list3": "تجهيز ملف التقديم والمستندات المطلوبة",
-      "list4": "التحضير للمقابلة القنصلية",
-      "list5": "إرشاد حول فتح حساب بنكي وحجز سكن مؤقت"
+      "title": "Job Search Visa-Chancenkarte",
+      "subtitle": "The Job Search Visa or Chancenkarte is a chance for qualified individuals to enter Germany and search for a job legally.\nWe help you understand this new system and determine if it is suitable for your current situation.",
+      "listTitle": "We offer you:",
+      "list1": "Evaluation of your points according to the Chancenkarten-System",
+      "list2": "Introduction to the conditions and requirements in simple language",
+      "list3": "Preparation of the application and the required documents",
+      "list4": "Preparation for the consulate interview",
+      "list5": "Guidance on opening a bank account and booking temporary accommodation"
     },
     "studyVisa": {
-      "title": "فيزا الدراسة (بكالوريوس – ماجستير)",
-      "subtitle": "نساعد الطلاب الراغبين بالدراسة في ألمانيا على اختيار المسار الأكاديمي الأنسب حسب شهاداتهم وإمكانياتهم.",
-      "listTitle": "تشمل خدماتنا:",
-      "list1": "الإرشاد لاختيار التخصص والجامعة المناسبة",
-      "list2": "المساعدة في الحصول على قبولات جامعية",
-      "list3": "تجهيز ملف الفيزا وتعبئة الأوراق",
-      "list4": "شرح متطلبات الحساب البنكي المغلق",
-      "list5": "لإرشاد للتقديم مع زوجة أو طفل إن وُجد"
+      "title": "Study Visa (Bachelor – Master)",
+      "subtitle": "We assist students who wish to study in Germany in choosing the most suitable academic path according to their qualifications and opportunities.",
+      "listTitle": "Our services include:",
+      "list1": "Counseling for selecting the appropriate major and university",
+      "list2": "Assistance in obtaining university acceptance letters",
+      "list3": "Preparation of the visa application and document filling",
+      "list4": "Explanation of requirements for the closed bank account",
+      "list5": "Guidance on applying with a spouse or child if applicable"
     }
+  },
+  "aboutUs": {
+    "title": " Masar.. Your Trusted Guide Towards Your Future in Germany",
+    "vision": "Masar UG (haftungsbeschränkt) was established in the heart of North Rhine-Westphalia, Germany, to be the official and trusted gateway for students, researchers, and job seekers from the Middle East, especially from Syria, Iraq, and Jordan, who wish to start their academic or professional journey in Germany.",
+    "whoWeAre": "Who is behind \"Masar\"?\nWe are a team of specialists based in Germany, united by a deep understanding of the German educational and professional landscape and a thorough awareness of the challenges faced by young people in our Arab countries when considering migration or study. Under the leadership of founders Morhaf Esmail and Rami Ismaeel, \"Masar\" was launched to put our field experience and legal expertise at your disposal.",
+    "whatMakesUsDifferent": "What makes us different?\nWe are not just a service office; we are a registered German company (HRB 39995) committed to the highest standards of transparency and legality. We believe that knowledge is the key to success; therefore, we do not make false promises but empower you through:\n\nSmart Guidance: We teach you how procedures work so you can apply with confidence.\n\nLogistical Support: From opening bank accounts remotely to assisting with housing arrangements and preparing consulate documents.\n\nAbsolute Transparency: We are your partners in preparation and planning, presenting facts as they are without exaggeration to ensure results, respecting German laws and valuing your trust.",
+    "ourMission": "Our Mission\nAt \"Masar\", we understand that behind every visa application lies a great ambition and a family waiting for their child's success. Therefore, we treat each file with complete privacy and high professionalism, fully committed to European data protection laws (GDPR), ensuring you have a safe and organized journey from your home country to stability in Germany.\n\nYour partners from start to finish.\nMasar UG – Your Safe Gateway to Germany."
   }
 }
