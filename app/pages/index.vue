@@ -1,12 +1,13 @@
 <script setup>
+const { t } = useI18n()
 definePageMeta({
-  title: "home",
+  title: t("masarCompany"),
 })
 useHead({
   meta: [
-    { property: "og:title", content: "Masar" },
-    { property: "og:description", content: "description todo" },
-    { name: "description", content: "todo description" },
+    { property: "og:title", content: t("masarCompany") },
+    { property: "og:description", content: t("aboutUs.description") },
+    { name: "description", content: t("aboutUs.description") },
   ],
 })
 </script>

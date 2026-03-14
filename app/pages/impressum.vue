@@ -7,7 +7,7 @@ useHead({
   meta: [
     { property: "og:title", content: t("impressum.seo.title") },
     { property: "og:description", content: t("impressum.seo.description") },
-    { property: "description", content: t("impressum.seo.description") },
+    { name: "description", content: t("impressum.seo.description") },
   ],
 })
 </script>

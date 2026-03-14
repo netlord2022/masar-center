@@ -1,12 +1,11 @@
 {
   "masar": "Masar",
   "masarCompany": "Masar UG",
-  "hero": "Welcome to our landing page",
   "about": "About us",
   "contact": "Contact",
   "home": "Home",
   "services": "Services",
-  "metaAbout": "About us - Short description",
+  "metaAbout": "About us",
   "heroTitle": "Your Gateway to Global Opportunities",
   "heroSubtitle": "Expert visa consultancy services to help you navigate the complexities of international travel and secure your dream visa.",
   "faqTitle": "Frequently Asked Questions",
@@ -221,6 +220,7 @@
   },
   "aboutUs": {
     "title": " Masar.. Your Trusted Guide Towards Your Future in Germany",
+    "description": "A registered German company offering consulting services for German visas for students and job seekers, and practical support for those wishing to travel to Germany.",
     "vision": "Masar UG (haftungsbeschränkt) was established in the heart of North Rhine-Westphalia, Germany, to be the official and trusted gateway for students, researchers, and job seekers from the Middle East, especially from Syria, Iraq, and Jordan, who wish to start their academic or professional journey in Germany.",
     "whoWeAre": "Who is behind \"Masar\"?\nWe are a team of specialists based in Germany, united by a deep understanding of the German educational and professional landscape and a thorough awareness of the challenges faced by young people in our Arab countries when considering migration or study. Under the leadership of founders Morhaf Esmail and Rami Ismaeel, \"Masar\" was launched to put our field experience and legal expertise at your disposal.",
     "whatMakesUsDifferent": "What makes us different?\nWe are not just a service office; we are a registered German company (HRB 39995) committed to the highest standards of transparency and legality. We believe that knowledge is the key to success; therefore, we do not make false promises but empower you through:\n\nSmart Guidance: We teach you how procedures work so you can apply with confidence.\n\nLogistical Support: From opening bank accounts remotely to assisting with housing arrangements and preparing consulate documents.\n\nAbsolute Transparency: We are your partners in preparation and planning, presenting facts as they are without exaggeration to ensure results, respecting German laws and valuing your trust.",
