@@ -1,7 +1,7 @@
 <script setup>
 const { t } = useI18n()
 definePageMeta({
-  title: t("masarCompany"),
+  title: "masarCompany",
 })
 useHead({
   meta: [
