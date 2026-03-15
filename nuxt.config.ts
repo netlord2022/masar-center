@@ -2,7 +2,7 @@ import tailwindcss from "@tailwindcss/vite"
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  //compatibilityDate: "2025-07-15",
+  compatibilityDate: "2026-03-14",
   devtools: { enabled: process.env.NODE_ENV !== "production" },
 
   // SSG Configuration
@@ -158,7 +158,7 @@ export default defineNuxtConfig({
       xl: 1280,
       "2xl": 1536,
     },
-    provider: "netlify",
+    // provider: "netlify",
     // todo:domains: ['images.example.com']
   },
 })
