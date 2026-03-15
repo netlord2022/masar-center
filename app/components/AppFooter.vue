@@ -158,7 +158,7 @@ watch(
                 class="cursor-pointer font-medium hover:scale-105 hover:text-secondary transition-all duration-300 ease-in-out"
                 @click="consent = 'unset'"
               >
-                Cookie settings
+                Cookies
               </button>
               <NuxtLinkLocale to="privacy">{{
                 $t("privacy.shortTitle")
