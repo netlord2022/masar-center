@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const consent = useCookie("cookie_consent")
 const { y } = useWindowScroll()
 const bottom = ref(false)
 
@@ -153,6 +154,12 @@ watch(
             class="footer-column footer-additional-menu-container mt-8 md:mt-0"
           >
             <nav class="gap-3 sm:gap-4 flex text-sm sm:text-base font-medium">
+              <button
+                class="cursor-pointer font-medium hover:scale-105 hover:text-secondary transition-all duration-300 ease-in-out"
+                @click="consent = 'unset'"
+              >
+                Cookies
+              </button>
               <NuxtLinkLocale to="privacy">{{
                 $t("privacy.shortTitle")
               }}</NuxtLinkLocale>
@@ -223,7 +230,7 @@ html[dir="ltr"] .slide-fade-leave-to {
 @media screen and (max-width: 640px) {
   .slide-fade-enter-from,
   .slide-fade-leave-to {
-    transform: translateY(60px);
+    transform: translateY(60px) !important;
   }
   .footer-columns-row::before,
   .footer-columns-row::after {
