@@ -14,8 +14,8 @@ useHead({
 
 <template>
   <div class="w-full max-w-full" role="main">
-    <section class="w-full max-w-full" dir="ltr">
-      <div>
+    <div class="w-full max-w-full">
+      <div dir="ltr">
         <div
           class="w-full max-w-7xl flex justify-between mx-auto items-center py-16 px-6 flex-col md:flex-row"
         >
@@ -50,7 +50,8 @@ useHead({
         </div>
       </div>
       <LazySectionServices hydrate-on-visible />
+      <LazySectionTestimonials hydrate-on-visible />
       <LazySectionFaqs hydrate-on-visible />
-    </section>
+    </div>
   </div>
 </template>

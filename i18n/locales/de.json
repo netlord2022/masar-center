@@ -30,7 +30,29 @@
       }
     ]
   },
-
+  "testimonials": {
+    "title": "Testimonials",
+    "items": [
+      {
+        "name": "Yara",
+        "icon": "IconsYara",
+        "role": "Software Engineer",
+        "text": "Ich bin sehr zufrieden mit der Firma Masar. Sie haben den Auftrag schnell erledigt und ihre Preise sind angemessen. Sie erklären alle Details und bereiten mich gut auf das Interview in der Botschaft vor."
+      },
+      {
+        "name": "Salma",
+        "icon": "IconsSalma",
+        "role": "Civil Engineer",
+        "text": "Ich rate allen, die nach Deutschland reisen möchten, sich an sie zu wenden, da sie Experten für Visaanträge, -anforderungen und die Zusammenstellung der notwendigen Dokumente sind."
+      },
+      {
+        "name": "Mohammad",
+        "icon": "IconsMohammad",
+        "role": "Arzt",
+        "text": "Meine Freunde bei der Firma Masar sind unglaublich hilfsbereit, wenn es darum geht, Hindernisse zu überwinden. Selbst nach meiner Ankunft in Deutschland stehe ich noch mit ihnen in Kontakt, um Unterstützung bei der Wohnungssuche und beim Ausfüllen der Formulare zu erhalten."
+      }
+    ]
+  },
   "copyRight": "Masar UG. Alle Rechte vorbehalten.",
   "privacy": {
     "shortTitle": "Datenschutz",

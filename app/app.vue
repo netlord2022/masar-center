@@ -20,6 +20,7 @@ useHead(() => ({
         {
           src: "https://www.googletagmanager.com/gtm.js?id=GTM-PJ2FN7P2",
           async: true,
+          crossorigin: "anonymous",
         },
       ]
     : [],

@@ -42,7 +42,7 @@ const visas = computed(() =>
 )
 </script>
 <template>
-  <div id="services" class="pt-24">
+  <section id="services" class="pt-24">
     <div class="text-primary dark:text-white bg-hero/15 dark:bg-hero/5">
       <div class="max-w-10xl mx-auto py-12 px-6">
         <h2
@@ -114,5 +114,5 @@ const visas = computed(() =>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>

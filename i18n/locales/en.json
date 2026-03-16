@@ -30,6 +30,29 @@
       }
     ]
   },
+  "testimonials": {
+    "title": "Testimonials",
+    "items": [
+      {
+        "name": "Yara",
+        "icon": "IconsYara",
+        "role": "Software Engineer",
+        "text": "I am happy to deal with Masar Company. They were quick to complete the task and their prices are reasonable. They explain the details and prepare well for the interview at the embassy."
+      },
+      {
+        "name": "Salma",
+        "icon": "IconsSalma",
+        "role": "Civil Engineer",
+        "text": "I advise people who intend to travel to Germany to contact them, as they are experts in visa applications, requirements, and preparing the necessary documents."
+      },
+      {
+        "name": "Mohammad",
+        "icon": "IconsMohammad",
+        "role": "Doctor",
+        "text": "My friends at Masar Company are incredibly helpful in overcoming obstacles. Even after arriving in Germany, I'm still in contact with them for assistance in finding accommodation and completing paperwork."
+      }
+    ]
+  },
   "copyRight": "Masar UG. All rights reserved",
   "privacy": {
     "shortTitle": "Privacy",

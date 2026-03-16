@@ -13,7 +13,7 @@ const faqItems = computed(() => {
 </script>
 
 <template>
-  <div class="max-w-xl mx-auto mt-20 mb-40 space-y-6 px-6">
+  <section class="max-w-xl mx-auto mt-20 mb-40 space-y-6 px-6">
     <h2
       class="text-3xl md:text-4xl font-bold text-center mb-8 text-primary dark:text-white"
     >
@@ -25,5 +25,5 @@ const faqItems = computed(() => {
       :title="item.question"
       :text="item.answer"
     />
-  </div>
+  </section>
 </template>
