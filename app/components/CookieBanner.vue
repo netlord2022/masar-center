@@ -14,7 +14,7 @@ const { consent, accept, reject } = useCookieConsent()
 
       <div class="flex gap-2">
         <button
-          class="px-4 py-2 bg-green-500 rounded text-sm cursor-pointer"
+          class="px-4 py-2 bg-green-700 rounded text-sm cursor-pointer"
           @click="accept"
         >
           {{ $t("cookie.acceptAll") }}
