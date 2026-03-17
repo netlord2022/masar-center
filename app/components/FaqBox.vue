@@ -6,10 +6,11 @@
       class="flex justify-between cursor-pointer items-center"
       @click.prevent="more = !more"
     >
-      <div class="w-auto">
-        <h3 class="text-primary dark:text-white font-bold">{{ title }}</h3>
-      </div>
-      <div
+      <span class="w-auto text-primary dark:text-white font-bold">{{
+        title
+      }}</span>
+
+      <span
         class="w-auto z-10 cursor-pointer text-secondary transition-all duration-300 ease-linear"
         :class="more ? 'rotate-135' : '  rotate-0'"
       >
@@ -21,7 +22,7 @@
         >
           <path d="M16 7H9V0H7V7H0V9H7V16H9V9H16V7Z" fill="currentColor" />
         </svg>
-      </div>
+      </span>
     </button>
     <div
       class="w-full transition-all duration-300 overflow-hidden ease-linear"

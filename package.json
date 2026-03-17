@@ -24,8 +24,8 @@
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.15.2",
-    "@nuxt/hints": "^1.0.0-alpha.10",
-    "@types/node": "^25.4.0",
+    "@nuxt/hints": "^1.0.0",
+    "@types/node": "^25.5.0",
     "eslint": "^9.39.4"
   }
 }

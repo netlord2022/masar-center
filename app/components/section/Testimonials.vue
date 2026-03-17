@@ -53,9 +53,9 @@ const persons = computed(() => {
           </p>
 
           <div>
-            <h4 class="font-bold text-gray-900 dark:text-white">
+            <h3 class="font-bold text-gray-900 dark:text-white">
               {{ person.name }}
-            </h4>
+            </h3>
             <p class="text-sm text-gray-500 dark:text-gray-400">
               {{ person.role }}
             </p>
