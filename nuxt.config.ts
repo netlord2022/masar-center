@@ -1,6 +1,8 @@
 import tailwindcss from "@tailwindcss/vite"
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const siteUrl =
+  process.env.NUXT_PUBLIC_SITE_URL || "https://masar-center.netlify.app"
 export default defineNuxtConfig({
   compatibilityDate: "2026-03-14",
   devtools: { enabled: process.env.NODE_ENV !== "production" },
@@ -29,12 +31,12 @@ export default defineNuxtConfig({
     preset: "netlify",
   },
   i18n: {
-    baseUrl: "https://masar-center.netlify.app/",
+    baseUrl: siteUrl,
     locales: [
       {
         code: "en",
         file: "en.json",
-        language: "es-US",
+        language: "en-US",
         dir: "ltr",
         name: "English",
         icon: "gb-flag",
@@ -100,16 +102,15 @@ export default defineNuxtConfig({
           href: "/fonts/vazirmatn/vazirmatn-extrabold.woff2",
           crossorigin: "anonymous",
         },
-        {
-          rel: "canonical",
-          href: "https://masar-center.netlify.app/",
-        },
       ],
       meta: [
         { property: "og:type", content: "website" },
-        { property: "og:url", content: "https://masar-center.netlify.app/" },
-        { property: "og:image", content: "/masar-meta-logo.webp" },
-        { property: "og:image:secure_url", content: "/masar-meta-logo.webp" },
+        { property: "og:url", content: siteUrl },
+        { property: "og:image", content: `${siteUrl}/masar-meta-logo.webp` },
+        {
+          property: "og:image:secure_url",
+          content: `${siteUrl}/masar-meta-logo.webp`,
+        },
         { property: "og:image:type", content: "image/webp" },
         { property: "og:image:width", content: "1042" },
         { property: "og:image:height", content: "630" },
@@ -120,7 +121,7 @@ export default defineNuxtConfig({
           content:
             "تقديم خدمات استشارية ودعم عملي للراغبين بالسفر الى ألمانيا.",
         },
-        { name: "twitter:image", content: "/masar-meta-logo.webp" },
+        { name: "twitter:image", content: `${siteUrl}/masar-meta-logo.webp` },
       ],
     },
 

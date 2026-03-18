@@ -26,6 +26,7 @@ watch(
             target="_blank"
             rel="noopener noreferrer"
             title="Masar facebook"
+            aria-label="Masar Facebook"
           >
             <SvgIcon
               name="facebook"
@@ -38,6 +39,7 @@ watch(
             target="_blank"
             title="Masar instagram"
             rel="noopener noreferrer"
+            aria-label="Masar Instagram"
           >
             <SvgIcon
               name="instagram"
@@ -50,6 +52,7 @@ watch(
             target="_blank"
             title="Masar x"
             rel="noopener noreferrer"
+            aria-label="Masar X"
           >
             <SvgIcon name="x" size="w-7 h-7 fill-white dark:fill-black" />
             <span class="sr-only">Masar x</span>
@@ -59,6 +62,7 @@ watch(
           <NuxtLink
             href="mailto:info@masar-center.de"
             class="flex items-center px-1"
+            aria-label="Masar email info"
           >
             <SvgIcon name="email" size="w-6 h-6" /><span class="sr-only"
               >info@masar-center.de</span
@@ -68,12 +72,17 @@ watch(
             href="https://wa.me/491771873142"
             class="flex items-center px-1"
             target="_blank"
+            aria-label="Masar WhatsApp"
           >
             <SvgIcon name="whatsapp" size="w-6 h-6" /><span class="sr-only"
               >&#8206;+491771873142</span
             ></NuxtLink
           >
-          <NuxtLink href="tel:+491771873142" class="flex items-center">
+          <NuxtLink
+            href="tel:+491771873142"
+            aria-label="Masar Telefon"
+            class="flex items-center"
+          >
             <SvgIcon name="telephone" size="w-6 h-6" />
             <div
               dir="rtl"
@@ -96,6 +105,7 @@ watch(
               <NuxtLink
                 href="tel:+491771873142"
                 class="flex items-center float-link"
+                aria-label="Masar Telefon"
               >
                 <SvgIcon name="telephone" size="w-6 h-6" />
                 <div dir="rtl" class="text-sm font-medium px-3">
@@ -109,6 +119,7 @@ watch(
               <NuxtLink
                 href="https://wa.me/491771873142"
                 class="flex items-center float-link"
+                aria-label="Masar WhatsApp"
                 target="_blank"
               >
                 <SvgIcon name="whatsapp" size="w-6 h-6" /><span
@@ -123,6 +134,7 @@ watch(
               <NuxtLink
                 href="mailto:info@masar-center.de"
                 class="flex items-center float-link"
+                aria-label="Masar email info"
               >
                 <SvgIcon name="email" size="w-6 h-6" /><span
                   class="text-sm font-medium px-3 whitespace-nowrap"
@@ -160,10 +172,10 @@ watch(
               >
                 Cookies
               </button>
-              <NuxtLinkLocale to="privacy">{{
+              <NuxtLinkLocale to="privacy" aria-label="privacy">{{
                 $t("privacy.shortTitle")
               }}</NuxtLinkLocale>
-              <NuxtLinkLocale to="impressum" class="">{{
+              <NuxtLinkLocale to="impressum" aria-label="impressum">{{
                 $t("impressum.title")
               }}</NuxtLinkLocale>
             </nav>

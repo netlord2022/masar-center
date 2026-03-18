@@ -198,6 +198,7 @@
     "commercialRegister": "Commercial Register:",
     "court": "Register Court:",
     "idNr": "VAT Identification Number according to § 27a German VAT Act:",
+    "taxNr": "Tax Number:",
     "contact": "Contact:",
     "responsible": "Responsible for content pursuant to § 18 para. 2 MStV:",
     "seo": {

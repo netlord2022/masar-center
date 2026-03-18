@@ -51,7 +51,12 @@ onClickOutside(target, () => close(), { ignore: [ignoreEl] })
           class="rounded-xs h-[3px] w-[25px] transition duration-300 ease-in-out bg-primary dark:bg-white"
         />
       </button>
-      <NuxtLinkLocale to="/" class="flex items-center">
+      <NuxtLinkLocale
+        to="/"
+        class="flex items-center"
+        aria-label="Masar Center"
+      >
+        <span class="sr-only">Masar Center</span>
         <div
           class="logo-reveal -mr-3 rtl:mr-0 rtl:-ml-3 md:-ml-3 rtl:md:ml-0 rtl:md:-mr-3"
         >
@@ -75,6 +80,7 @@ onClickOutside(target, () => close(), { ignore: [ignoreEl] })
           :key="index"
           :to="link.path"
           :class="linkClass"
+          :aria-label="link.name"
           >{{ link.name }}</NuxtLinkLocale
         >
       </nav>
@@ -95,6 +101,7 @@ onClickOutside(target, () => close(), { ignore: [ignoreEl] })
           :key="index"
           :to="link.path"
           :class="linkClass + ' py-2'"
+          :aria-label="link.name"
           @click="isOpen = false"
           >{{ link.name }}</NuxtLinkLocale
         >

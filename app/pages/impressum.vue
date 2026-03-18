@@ -34,6 +34,9 @@ useHead({
       <h3 class="text-xl">{{ $t("impressum.commercialRegister") }}</h3>
       <p>HHRB 39995</p>
 
+      <h3 class="text-xl">{{ $t("impressum.taxNr") }}</h3>
+      <p>101/5743/2439</p>
+
       <h3 class="text-xl">{{ $t("impressum.court") }}</h3>
       <p>Amtsgericht Duisburg, {{ $t("impressum.germany") }}</p>
 

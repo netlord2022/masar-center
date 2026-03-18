@@ -41,6 +41,7 @@
           v-for="(item, key) in locales"
           :key="key"
           :to="$switchLocalePath(item.code)"
+          :aria-label="item.name"
           class="text-primary block my-1 w-full h-full hover:bg-gray-100 rounded-md px-3 py-2 text-sm font-medium"
           dir="ltr"
         >
@@ -66,9 +67,11 @@
       v-for="(item, key) in locales"
       :key="key"
       :to="$switchLocalePath(item.code)"
+      :aria-label="item.name"
       class="flex my-1 hover:bg-gray-100 mx-2 dark:p-1 dark:rounded dark:mx-1 h-5.5 dark:bg-white/80"
       :class="{ 'border-b border-primary': item.code === locale }"
     >
+      <span class="sr-only">{{ item.name }}</span>
       <div class="flex items-center">
         <SvgIcon :name="item.icon as string" size="w-5 h-5" />
       </div>
