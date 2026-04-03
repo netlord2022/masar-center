@@ -46,7 +46,7 @@ const visas = computed(() =>
     <div class="text-primary dark:text-white bg-hero/15 dark:bg-hero/5">
       <div class="max-w-10xl mx-auto py-12 px-6">
         <h2
-          class="text-3xl md:text-4xl font-bold mb-4 dark:text-white text-center"
+          class="text-3xl md:text-4xl font-bold mb-4 text-primary dark:text-white text-center"
         >
           {{ $t("servicesAndVisa.title") }}
         </h2>

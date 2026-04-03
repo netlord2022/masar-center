@@ -32,7 +32,7 @@
     ]
   },
   "testimonials": {
-    "title": "Testimonials",
+    "title": "ماذا يقول عملاؤنا",
     "items": [
       {
         "name": "يارا",
@@ -233,5 +233,11 @@
     "description": "من اجل تحسين تجربتك وتحليل حركة المرور على الموقع، نستخدم ملفات تعريف الارتباط.",
     "acceptAll": "موافق",
     "rejectAll": "رفض"
+  },
+  "staticSection": {
+    "title": "لغة الأرقام تتحدث",
+    "studiendCount": "طالب أجنبي في ألمانيا",
+    "workPermits": "حامل لتصاريح العمل الجديدة",
+    "forigensInUni": "من الملتحقين بالجامعات هم أجانب"
   }
 }
