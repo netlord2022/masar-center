@@ -255,5 +255,11 @@
     "description": "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und den Website-Traffic zu analysieren. Sie können wählen, welche Kategorien Sie erlauben.",
     "acceptAll": "Akzeptieren",
     "rejectAll": "Ablehnen"
+  },
+  "staticSection": {
+    "title": "Die Sprache der Zahlen spricht",
+    "studiendCount": "ausländische Studenten in Deutschland",
+    "workPermits": "Inhaber neuer Arbeitsgenehmigungen",
+    "forigensInUni": "ausländer haben sich an Unis eingeschrieben"
   }
 }

@@ -255,5 +255,11 @@
     "description": "We use cookies to improve your experience and analyze site traffic. You can choose which categories to allow.",
     "acceptAll": "Accept",
     "rejectAll": "Reject"
+  },
+  "staticSection": {
+    "title": "The language of numbers speaks",
+    "studiendCount": "foreign students in Germany",
+    "workPermits": "Holder of new work permits",
+    "forigensInUni": "foreigners enrolled in universities"
   }
 }

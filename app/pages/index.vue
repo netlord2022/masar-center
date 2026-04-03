@@ -50,6 +50,7 @@ useHead({
         </div>
       </div>
       <LazySectionServices hydrate-on-visible />
+      <LazySectionStatics hydrate-on-visible />
       <LazySectionTestimonials hydrate-on-visible />
       <LazySectionFaqs hydrate-on-visible />
     </div>

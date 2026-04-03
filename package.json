@@ -14,17 +14,17 @@
   "dependencies": {
     "@nuxt/image": "^2.0.0",
     "@nuxtjs/color-mode": "^4.0.0",
-    "@nuxtjs/i18n": "^10.2.3",
-    "@tailwindcss/vite": "^4.2.1",
+    "@nuxtjs/i18n": "^10.2.4",
+    "@tailwindcss/vite": "^4.2.2",
     "@vueuse/nuxt": "^14.2.1",
     "nuxt": "^4.4.2",
-    "tailwindcss": "^4.2.1",
-    "vue": "^3.5.30",
-    "vue-router": "^4.6.4"
+    "tailwindcss": "^4.2.2",
+    "vue": "^3.5.31",
+    "vue-router": "^5.0.4"
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.15.2",
-    "@nuxt/hints": "^1.0.0",
+    "@nuxt/hints": "^1.0.3",
     "@types/node": "^25.5.0",
     "eslint": "^9.39.4"
   }
