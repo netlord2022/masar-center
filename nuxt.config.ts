@@ -19,7 +19,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      ignore: ["/.netlify/images", "/_og"],
+      ignore: ["/.netlify/images"],
       routes: [
         "/",
         "/de",
