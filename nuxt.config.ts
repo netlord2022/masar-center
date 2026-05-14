@@ -1,15 +1,25 @@
 import tailwindcss from "@tailwindcss/vite"
 
+const teamSlugs = ["zeinab-marhij", "sandy-nbeaa"] // your real slugs go here
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const siteUrl =
   process.env.NUXT_PUBLIC_SITE_URL || "https://masar-center.netlify.app"
 export default defineNuxtConfig({
   compatibilityDate: "2026-03-14",
   devtools: { enabled: process.env.NODE_ENV !== "production" },
+  runtimeConfig: {
+    public: {
+      siteUrl,
+    },
+  },
 
   // SSG Configuration
   ssr: true,
   nitro: {
+    routeRules: {
+      "/_og/**": { static: true },
+    },
     prerender: {
       crawlLinks: true,
       ignore: ["/.netlify/images"],
@@ -26,9 +36,27 @@ export default defineNuxtConfig({
         "/ar/privacy",
         "/de/impressum",
         "/ar/impressum",
+        // dynamic team pages — all 3 locales
+        ...teamSlugs.flatMap((slug) => [
+          `/teams/${slug}`,
+          `/de/teams/${slug}`,
+          `/ar/teams/${slug}`,
+        ]),
       ],
     },
     preset: "netlify",
+  },
+  ogImage: {
+    zeroRuntime: true,
+    componentOptions: {
+      path: "og-images", // This changes /_og/... to /og-images/...
+    },
+    binding: "wasm",
+    compatibility: {
+      prerender: {
+        browser: false,
+      },
+    },
   },
   i18n: {
     baseUrl: siteUrl,
@@ -141,6 +169,7 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@nuxtjs/color-mode",
     "@vueuse/nuxt",
+    "nuxt-og-image",
   ],
   colorMode: {
     preference: "system", // 'light' | 'dark' | 'system'
