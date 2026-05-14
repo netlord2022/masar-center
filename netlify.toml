@@ -40,3 +40,11 @@
   to = "/_og/:splat"
   status = 200
   force = true
+
+[functions]
+  included_files = ["**"]
+
+[[edge_functions]]
+  function = "og-image"
+  path = "/_og/*"
+  excludedPath = "/_og/*"
