@@ -48,6 +48,11 @@ export default defineNuxtConfig({
   },
   ogImage: {
     zeroRuntime: true,
+    compatibility: {
+      prerender: {
+        browser: false,
+      },
+    },
   },
   i18n: {
     baseUrl: siteUrl,
