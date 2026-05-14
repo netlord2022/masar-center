@@ -48,6 +48,10 @@ export default defineNuxtConfig({
   },
   ogImage: {
     zeroRuntime: true,
+    componentOptions: {
+      path: "og-images", // This changes /_og/... to /og-images/...
+    },
+    binding: "wasm",
     compatibility: {
       prerender: {
         browser: false,
