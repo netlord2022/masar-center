@@ -44,10 +44,7 @@ export default defineNuxtConfig({
     preset: "netlify",
   },
   ogImage: {
-    security: {
-      secret:
-        "51c7fa2351c7404000fe1e06f68dcc215ada30e4b66ce99025102355e16ef37d",
-    },
+    zeroRuntime: true,
   },
   i18n: {
     baseUrl: siteUrl,
