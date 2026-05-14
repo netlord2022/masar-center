@@ -48,15 +48,6 @@ export default defineNuxtConfig({
   },
   ogImage: {
     zeroRuntime: true,
-    componentOptions: {
-      path: "og-images", // This changes /_og/... to /og-images/...
-    },
-    binding: "wasm",
-    compatibility: {
-      prerender: {
-        browser: false,
-      },
-    },
   },
   i18n: {
     baseUrl: siteUrl,
@@ -102,32 +93,32 @@ export default defineNuxtConfig({
         {
           rel: "apple-touch-icon",
           sizes: "180x180",
-          href: "/favicon-180x180.png",
+          href: `${siteUrl}/favicon-180x180.png`,
         },
         {
           rel: "icon",
           type: "image/png",
           sizes: "32x32",
-          href: "/favicon-32x32.png",
+          href: `${siteUrl}/favicon-32x32.png`,
         },
         {
           rel: "icon",
           type: "image/png",
           sizes: "16x16",
-          href: "/favicon-16x16.png",
+          href: `${siteUrl}/favicon-16x16.png`,
         },
         {
           rel: "preload",
           as: "font",
           type: "font/woff2",
-          href: "/fonts/montserrat/montserrat-bold.woff2",
+          href: `${siteUrl}/fonts/montserrat/montserrat-bold.woff2`,
           crossorigin: "anonymous",
         },
         {
           rel: "preload",
           as: "font",
           type: "font/woff2",
-          href: "/fonts/vazirmatn/vazirmatn-extrabold.woff2",
+          href: `${siteUrl}/fonts/vazirmatn/vazirmatn-extrabold.woff2`,
           crossorigin: "anonymous",
         },
       ],
@@ -189,6 +180,5 @@ export default defineNuxtConfig({
       "2xl": 1536,
     },
     provider: process.env.NODE_ENV === "production" ? "netlify" : "ipx",
-    // todo:domains: ['images.example.com']
   },
 })
