@@ -35,12 +35,6 @@
   to = "/.netlify/images?url=/:splat&w=50&h=50"
   status = 200
 
-[[redirects]]
-  from = "/_og/*"
-  to = "/_og/:splat"
-  status = 200
-  force = true
-
 [functions]
   included_files = ["**"]
 
