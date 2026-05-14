@@ -34,11 +34,11 @@ export default defineNuxtConfig({
         "/de/impressum",
         "/ar/impressum",
         // dynamic team pages — all 3 locales
-        // ...teamSlugs.flatMap((slug) => [
-        //   `/team/${slug}`,
-        //   `/de/team/${slug}`,
-        //   `/ar/team/${slug}`,
-        // ]),
+        ...teamSlugs.flatMap((slug) => [
+          `/teams/${slug}`,
+          `/de/teams/${slug}`,
+          `/ar/teams/${slug}`,
+        ]),
       ],
     },
     preset: "netlify",
