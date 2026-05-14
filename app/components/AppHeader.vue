@@ -16,6 +16,10 @@ const links = computed(() => [
     path: { path: "/", hash: "#services" },
   },
   {
+    name: "Team",
+    path: { path: "/team" },
+  },
+  {
     name: t("about"),
     path: "/about",
   },
