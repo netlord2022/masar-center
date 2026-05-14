@@ -33,7 +33,6 @@ defineOgImage(
   "TeamMember",
   {
     name: member.name,
-    role: localizedRole.value,
     photoUrl: member.photo,
   },
   [{ key: "og" }, { key: "whatsapp", width: 800, height: 800 }]

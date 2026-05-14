@@ -1,7 +1,6 @@
 <script setup lang="ts">
 defineProps<{
   name: string
-  role: string
   photoUrl: string
 }>()
 </script>
