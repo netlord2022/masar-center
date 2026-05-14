@@ -3,8 +3,7 @@ import tailwindcss from "@tailwindcss/vite"
 const teamSlugs = ["zeinab-marhij", "sandy-nbeaa"] // your real slugs go here
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
-const siteUrl =
-  process.env.NUXT_PUBLIC_SITE_URL || "https://masar-center.netlify.app"
+const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || "https://masar-center.de"
 export default defineNuxtConfig({
   compatibilityDate: "2026-03-14",
   devtools: { enabled: process.env.NODE_ENV !== "production" },
@@ -125,6 +124,7 @@ export default defineNuxtConfig({
       meta: [
         { property: "og:type", content: "website" },
         { property: "og:url", content: siteUrl },
+        { property: "og:site_name", content: "Masar Center" },
         { property: "og:image", content: `${siteUrl}/masar-meta-logo.webp` },
         {
           property: "og:image:secure_url",

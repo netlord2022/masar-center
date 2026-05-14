@@ -12,15 +12,12 @@ defineProps<{
   >
     <img
       :src="photoUrl"
-      width="470"
-      height="470"
+      width="550"
+      height="550"
       :alt="name"
-      style="border-radius: 50%; object-fit: cover; border: 4px solid #34d399"
+      style="border-radius: 5%; object-fit: cover; border: 4px solid #34d399"
     />
     <div class="flex flex-col items-center gap-3 text-white text-center">
-      <p class="text-2xl font-bold text-emerald-400 uppercase tracking-widest">
-        Masar Center
-      </p>
       <h1 class="text-5xl font-bold leading-tight">{{ name }}</h1>
     </div>
   </div>

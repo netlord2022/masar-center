@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { t } = useI18n()
 const config = useRuntimeConfig()
 const { locale } = useI18n()
 const route = useRoute()
@@ -17,13 +18,14 @@ const localizedRole = computed(() => member.role[locale.value as Locale])
 const localizedBio = computed(() => member.bio[locale.value as Locale])
 
 useSeoMeta({
-  title: `${member.name} – Masar Center`,
+  title: `${member.name} – ${t("masarCompany")}`,
   description: localizedBio,
-  ogTitle: `${member.name} – Masar Center`,
+  ogTitle: `${member.name} – ${t("masarCompany")}`,
   ogDescription: localizedBio,
   ogUrl: `${config.public.siteUrl}${route.path}`,
+  ogImageSecureUrl: `${config.public.siteUrl}/team/${slug}.webp`,
   twitterCard: "summary_large_image",
-  twitterTitle: `${member.name} – Masar Center`,
+  twitterTitle: `${member.name} – ${t("masarCompany")}`,
   twitterDescription: localizedBio,
 })
 
