@@ -1,7 +1,7 @@
 [build]
   command = "npm run build"
-  publish = ".output/public"
-  functions = ".output/server"
+  publish = "dist"
+  functions = "server"
 
 [[headers]]
   for = "/*.html"
