@@ -17,6 +17,9 @@ export default defineNuxtConfig({
   // SSG Configuration
   ssr: true,
   nitro: {
+    routeRules: {
+      "/_og/**": { static: true },
+    },
     prerender: {
       crawlLinks: true,
       ignore: ["/.netlify/images"],
