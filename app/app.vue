@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout class="flex flex-col min-h-screen">
-    <main role="main">
+    <main role="main" class="h-full grow flex flex-col">
       <NuxtPage class="grow" />
     </main>
     <ClientOnly>

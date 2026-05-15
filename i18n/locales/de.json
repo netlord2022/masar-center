@@ -3,6 +3,7 @@
   "masarCompany": "Masar UG",
   "about": "über uns",
   "contact": "Kontakt",
+  "team": "Unser Team",
   "home": "Startseite",
   "services": "Dienstleistungen",
   "metaAbout": "Über uns",
@@ -29,6 +30,10 @@
         "answer": "Die Dauer hängt vom Visumtyp und dem Land ab, bei dem Sie sich bewerben. Wir geben Ihnen eine genauere Zeitschätzung basierend auf Ihrem individuellen Fall."
       }
     ]
+  },
+  "teams": {
+    "title": "Unser Team",
+    "subtitle": "Lernen Sie das Team von Masar UG kennen. Unsere Experten in Deutschland unterstützen Sie mit Fachwissen bei der Vorbereitung auf Studium, Ausbildung und Karriere."
   },
   "testimonials": {
     "title": "Testimonials",

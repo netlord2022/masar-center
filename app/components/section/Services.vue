@@ -46,7 +46,7 @@ const visas = computed(() =>
     <div class="text-primary dark:text-white bg-hero/15 dark:bg-hero/5">
       <div class="max-w-10xl mx-auto py-12 px-6">
         <h2
-          class="text-3xl md:text-4xl font-bold mb-4 text-primary dark:text-white text-center"
+          class="text-3xl md:text-4xl font-bold mb-4 text-primary dark:text-white text-center rtl:font-arabic"
         >
           {{ $t("servicesAndVisa.title") }}
         </h2>
@@ -76,7 +76,7 @@ const visas = computed(() =>
                   height="712"
                 />
                 <h3
-                  class="text-medium sm:text-lg font-bold w-full my-2 xl:my-3"
+                  class="text-medium sm:text-lg font-bold w-full my-2 xl:my-3 rtl:font-arabic"
                 >
                   {{ visa.texts.title }}
                 </h3>
@@ -94,7 +94,7 @@ const visas = computed(() =>
                 />
                 <div class="text-right m-4" dir="auto">
                   <h4
-                    class="text-medium sm:text-lg font-bold ltr:text-left rtl:text-right w-full"
+                    class="text-medium sm:text-lg font-bold ltr:text-left rtl:text-right w-full rtl:font-arabic"
                   >
                     {{ visa.texts.listTitle }}
                   </h4>

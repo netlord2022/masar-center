@@ -22,10 +22,12 @@ useHead({
       <CircleLoop />
     </div>
 
-    <h1 class="text-4xl md:text-4xl font-bold mb-6 dark:text-white">
+    <h1
+      class="text-4xl md:text-4xl font-bold mb-6 dark:text-white rtl:font-arabic"
+    >
       {{ $t("about") }}
     </h1>
-    <h2 class="text-2xl font-bold mb-6 dark:text-white">
+    <h2 class="text-2xl font-bold mb-6 dark:text-white rtl:font-arabic">
       {{ $t("aboutUs.title") }}
     </h2>
     <p

@@ -1,6 +1,22 @@
 <script setup lang="ts">
-const sameCounter = useState("counter")
+const { t } = useI18n()
+definePageMeta({
+  title: "team",
+})
+useHead({
+  meta: [
+    { property: "og:title", content: t("team") },
+    { property: "og:description", content: t("teams.subtitle") },
+    { name: "description", content: t("teams.subtitle") },
+  ],
+})
 const showCards = ref(false)
+const { teamMembers } = useTeamData()
+
+const ourTeamDescription = computed(() => {
+  // Replaces '. ' or '.' with '.\n' and trims extra spaces
+  return t("teams.subtitle").replaceAll(/\.\s*/g, ".\n")
+})
 
 onMounted(() => {
   requestAnimationFrame(() => {
@@ -10,85 +26,50 @@ onMounted(() => {
 </script>
 <template>
   <section id="team" class="pt-16 md:pt-24 w-full min-h-screen">
-    <h1 class="text-4xl font-bold text-center">Team {{ sameCounter }}</h1>
-
+    <h1 class="text-5xl font-bold text-center dark:text-white rtl:font-arabic">
+      {{ $t("teams.title") }}
+    </h1>
     <div class="max-w-7xl mx-auto mb-20 space-y-6 px-6">
-      <h2 class="text-4xl font-bold text-center">Meet Our Team</h2>
-      <p class="text-center text-gray-600">
-        Our team is made up of passionate individuals dedicated to making a
-        difference.
+      <p
+        class="text-center text-gray-600 dark:text-gray-300 whitespace-pre-line mt-4"
+      >
+        {{ ourTeamDescription }}
       </p>
     </div>
 
     <div
-      class="max-w-7xl mx-auto grid gap-12 px-6 md:grid-cols-2 lg:grid-cols-3"
+      class="max-w-7xl mx-auto grid gap-8 px-6 md:grid-cols-2 lg:grid-cols-3"
+      dir="ltr"
     >
-      <div
-        class="bg-white transition-all delay-200 fadeInUp ease-in-out dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col items-center text-center"
+      <NuxtLinkLocale
+        v-for="(member, index) in teamMembers"
+        :key="index"
+        :to="`/teams/${member.slug}`"
+        class="bg-white dark:bg-gray-800 transition-transform duration-1200 ease-in-out p-8 rounded-2xl shadow border border-gray-100 dark:border-gray-700 flex flex-col items-center text-center hover:bg-blue-50 dark:hover:bg-gray-600"
         :class="[
-          showCards ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
+          showCards ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-50',
         ]"
+        :style="`transitionDelay: ${index * 150}ms; animationFillMode: both;`"
       >
-        <NuxtLinkLocale to="/teams/sandy-nbeaa">
+        <div class="flex flex-col items-center">
           <img
-            src="/hero.webp"
-            alt="person.name"
-            class="w-32 h-32 rounded-full object-cover mb-4"
+            :src="member.photo"
+            :alt="member.name"
+            class="w-40 h-40 rounded-full object-cover mb-4 border-2 border-primary dark:border-secondary"
           />
-          <h3 class="text-xl font-semibold">name 1</h3>
-          <p class="text-sm text-gray-500 mb-4">role 1</p>
-          <p class="text-gray-600 dark:text-gray-400">bio 1</p>
-        </NuxtLinkLocale>
-      </div>
-      <div
-        class="bg-white transition-all delay-400 fadeInUp ease-in-out dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col items-center text-center"
-        :class="[
-          showCards ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
-        ]"
-      >
-        <NuxtLinkLocale to="/teams/zeinab-marhij">
-          <img
-            src="/hero.webp"
-            alt="person.name"
-            class="w-32 h-32 rounded-full object-cover mb-4"
-          />
-          <h3 class="text-xl font-semibold">name 1</h3>
-          <p class="text-sm text-gray-500 mb-4">role 1</p>
-          <p class="text-gray-600 dark:text-gray-400">bio 1</p>
-        </NuxtLinkLocale>
-      </div>
-      <div
-        class="bg-white transition-all delay-600 fadeInUp ease-in-out dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col items-center text-center"
-        :class="[
-          showCards ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
-        ]"
-      >
-        <img
-          src="/hero.webp"
-          alt="person.name"
-          class="w-32 h-32 rounded-full object-cover mb-4"
-        />
-        <h3 class="text-xl font-semibold">name 1</h3>
-        <p class="text-sm text-gray-500 mb-4">role 1</p>
-        <p class="text-gray-600 dark:text-gray-400">bio 1</p>
-      </div>
+          <h3 class="text-xl font-semibold dark:text-white">
+            {{ member.name }}
+          </h3>
+          <p class="text-sm text-gray-500 mb-4 dark:text-gray-300">
+            {{ member.role }}
+          </p>
+        </div>
+      </NuxtLinkLocale>
+    </div>
+    <div v-show="showCards" class="w-full flex justify-center my-16 lg:my-24">
+      <AnimationsTeamAnimation
+        class="flex self-center text-center w-auto content-center"
+      />
     </div>
   </section>
 </template>
-<style scoped>
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 100%, 0);
-  }
-
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-.fadeInUp {
-  transition-duration: 700ms;
-}
-</style>

@@ -16,10 +16,12 @@ useHead({
     class="privacy-page max-w-7xl px-6 mx-auto w-full text-primary dark:text-white mt-24 mb-36"
   >
     <div class="container">
-      <h1 class="text-3xl">{{ $t("privacy.title") }}</h1>
+      <h1 class="text-3xl rtl:font-arabic">{{ $t("privacy.title") }}</h1>
 
       <!-- Section 1 -->
-      <h2 class="text-2xl">{{ $t("privacy.section1.title") }}</h2>
+      <h2 class="text-2xl rtl:font-arabic">
+        {{ $t("privacy.section1.title") }}
+      </h2>
 
       <h3 class="text-xl">{{ $t("privacy.section1.generalInfoTitle") }}</h3>
       <p>{{ $t("privacy.section1.generalInfoText1") }}</p>
@@ -62,7 +64,9 @@ useHead({
       <p>{{ $t("privacy.section1.rightsOutro") }}</p>
 
       <!-- Section 2 -->
-      <h2 class="text-2xl">{{ $t("privacy.section2.title") }}</h2>
+      <h2 class="text-2xl rtl:font-arabic">
+        {{ $t("privacy.section2.title") }}
+      </h2>
 
       <h3 class="text-xl">{{ $t("privacy.section2.dataProtectionTitle") }}</h3>
       <p>{{ $t("privacy.section2.dataProtectionText1") }}</p>
@@ -116,9 +120,13 @@ useHead({
       <p>{{ $t("privacy.section2.dataTransferText2") }}</p>
 
       <!-- Section 3 -->
-      <h2 class="text-2xl">{{ $t("privacy.section3.title") }}</h2>
+      <h2 class="text-2xl rtl:font-arabic">
+        {{ $t("privacy.section3.title") }}
+      </h2>
 
-      <h3 class="text-xl">{{ $t("privacy.section3.cookiesTitle") }}</h3>
+      <h3 class="text-xl rtl:font-arabic">
+        {{ $t("privacy.section3.cookiesTitle") }}
+      </h3>
       <p>{{ $t("privacy.section3.cookiesText1") }}</p>
       <ul>
         <li>{{ $t("privacy.section3.cookiesList1") }}</li>
@@ -127,28 +135,42 @@ useHead({
       <p>{{ $t("privacy.section3.cookiesText2") }}</p>
       <p>{{ $t("privacy.section3.cookiesText3") }}</p>
 
-      <h3 class="text-xl">{{ $t("privacy.section3.contactFormTitle") }}</h3>
+      <h3 class="text-xl rtl:font-arabic">
+        {{ $t("privacy.section3.contactFormTitle") }}
+      </h3>
       <p>{{ $t("privacy.section3.contactFormText") }}</p>
 
-      <h3 class="text-xl">{{ $t("privacy.section3.emailPhoneTitle") }}</h3>
+      <h3 class="text-xl rtl:font-arabic">
+        {{ $t("privacy.section3.emailPhoneTitle") }}
+      </h3>
       <p>{{ $t("privacy.section3.emailPhoneText") }}</p>
 
-      <h3 class="text-xl">{{ $t("privacy.section3.whatsappTitle") }}</h3>
+      <h3 class="text-xl rtl:font-arabic">
+        {{ $t("privacy.section3.whatsappTitle") }}
+      </h3>
       <p>{{ $t("privacy.section3.whatsappText1") }}</p>
       <p>{{ $t("privacy.section3.whatsappText2") }}</p>
       <p>{{ $t("privacy.section3.whatsappText3") }}</p>
 
       <!-- Section 4 -->
-      <h2 class="text-2xl">{{ $t("privacy.section4.title") }}</h2>
+      <h2 class="text-2xl rtl:font-arabic">
+        {{ $t("privacy.section4.title") }}
+      </h2>
       <p>{{ $t("privacy.section4.text") }}</p>
 
       <!-- Section 5 -->
-      <h2 class="text-2xl">{{ $t("privacy.section5.title") }}</h2>
+      <h2 class="text-2xl rtl:font-arabic">
+        {{ $t("privacy.section5.title") }}
+      </h2>
 
-      <h3 class="text-xl">{{ $t("privacy.section5.gtmTitle") }}</h3>
+      <h3 class="text-xl rtl:font-arabic">
+        {{ $t("privacy.section5.gtmTitle") }}
+      </h3>
       <p>{{ $t("privacy.section5.gtmText") }}</p>
 
-      <h3 class="text-xl">{{ $t("privacy.section5.gaTitle") }}</h3>
+      <h3 class="text-xl rtl:font-arabic">
+        {{ $t("privacy.section5.gaTitle") }}
+      </h3>
       <p>{{ $t("privacy.section5.gaText1") }}</p>
       <ul>
         <li>{{ $t("privacy.section5.gaList1") }}</li>
@@ -157,7 +179,9 @@ useHead({
       </ul>
 
       <!-- Section 6 -->
-      <h2 class="text-2xl">{{ $t("privacy.section6.title") }}</h2>
+      <h2 class="text-2xl rtl:font-arabic">
+        {{ $t("privacy.section6.title") }}
+      </h2>
       <p>{{ $t("privacy.section6.textIntro") }}</p>
       <ul>
         <li>{{ $t("privacy.section6.list1") }}</li>
@@ -166,14 +190,18 @@ useHead({
       </ul>
 
       <!-- Section 7 -->
-      <h2 class="text-2xl">{{ $t("privacy.section7.title") }}</h2>
+      <h2 class="text-2xl rtl:font-arabic">
+        {{ $t("privacy.section7.title") }}
+      </h2>
       <p>{{ $t("privacy.section7.text") }}</p>
       <p>
         <strong>{{ $t("privacy.section7.authorityName") }}</strong>
       </p>
 
       <!-- Section 8 -->
-      <h2 class="text-2xl">{{ $t("privacy.section8.title") }}</h2>
+      <h2 class="text-2xl rtl:font-arabic">
+        {{ $t("privacy.section8.title") }}
+      </h2>
       <p>{{ $t("privacy.section8.textIntro") }}</p>
       <ul>
         <li>{{ $t("privacy.section8.list1") }}</li>

@@ -39,7 +39,7 @@ useHead({
             class="text-primary dark:text-white md:pl-6 text-left rtl:text-right mt-6 md:mt-0"
           >
             <h1
-              class="text-2xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 dark:text-white rtl:md:leading-20"
+              class="text-2xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 dark:text-white rtl:md:leading-20 rtl:font-arabic"
             >
               {{ $t("heroTitle") }}
             </h1>

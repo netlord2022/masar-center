@@ -3,6 +3,7 @@
   "masarCompany": "Masar UG",
   "about": "About us",
   "contact": "Contact",
+  "team": "Team",
   "home": "Home",
   "services": "Services",
   "metaAbout": "About us",
@@ -29,6 +30,10 @@
         "answer": "The duration depends on the type of visa and the country you are applying to. We will provide you with a more accurate time estimate based on your individual case."
       }
     ]
+  },
+  "teams": {
+    "title": "Our Team",
+    "subtitle": "Meet the Masar team in Germany. Specialized experts in academic and professional guidance, we accompany you with our field experience to ensure your files are prepared for study and work with the highest standards."
   },
   "testimonials": {
     "title": "Testimonials",

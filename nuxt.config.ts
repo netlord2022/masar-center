@@ -135,11 +135,6 @@ export default defineNuxtConfig({
         { property: "og:image:height", content: "630" },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: "Masar Center" },
-        {
-          name: "twitter:description",
-          content:
-            "تقديم خدمات استشارية ودعم عملي للراغبين بالسفر الى ألمانيا.",
-        },
         { name: "twitter:image", content: `${siteUrl}/masar-meta-logo.webp` },
       ],
     },

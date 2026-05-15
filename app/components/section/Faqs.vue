@@ -15,7 +15,7 @@ const faqItems = computed(() => {
 <template>
   <section class="max-w-xl mx-auto mt-20 mb-40 space-y-6 px-6">
     <h2
-      class="text-3xl md:text-4xl font-bold text-center mb-8 text-primary dark:text-white"
+      class="text-3xl md:text-4xl font-bold text-center mb-8 rtl:font-arabic text-primary dark:text-white"
     >
       {{ $t("faqTitle") }}
     </h2>
