@@ -177,7 +177,6 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "nuxt-og-image",
     "@nuxt/content",
-    "@nuxthq/studio",
     "nuxt-studio",
   ],
   colorMode: {
