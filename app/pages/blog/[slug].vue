@@ -5,7 +5,10 @@ const route = useRoute()
 const { locale } = useI18n()
 
 // path must match exactly what Content stores: /blog/hello-world
-const path = computed(() => `/blog/${route.params.slug}`)
+const path = computed(() => {
+  const prefix = locale.value === "en" ? "" : `/${locale.value}`
+  return `${prefix}/blog/${route.params.slug}`
+})
 
 const { data: post } = await useAsyncData(
   `post-${locale.value}-${route.params.slug}`,

@@ -18,12 +18,12 @@ export default defineContentConfig({
     }),
     blog_de: defineCollection({
       type: "page",
-      source: { include: "de/blog/**", prefix: "/blog" },
+      source: { include: "de/blog/**", prefix: "/de/blog" },
       schema: blogSchema,
     }),
     blog_ar: defineCollection({
       type: "page",
-      source: { include: "ar/blog/**", prefix: "/blog" },
+      source: { include: "ar/blog/**", prefix: "/ar/blog" },
       schema: blogSchema,
     }),
   },
