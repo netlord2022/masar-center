@@ -1,12 +1,14 @@
 ---
-title: "مرحبا يا عالم"
-description: "اول بوست"
-date: "2026-05-16"
-tags: ["nuxt", "vue"]
+title: مرحبا يا عالم
+date: 2026-05-16
+description: اول بوست
+tags:
+  - nuxt
+  - vue
 ---
 
-## مرحبا يا عالم
+##  كيفكن مرحبا يا عالم
 
 # نسخة عربية
 
-![Nuxt Logo](/hero.webp){style="color: green;" .w-40 #custom-id width="200" height="200"}
+![Nuxt Logo](/hero.webp){#custom-id .w-40 height="200" style="color: green;" width="200"}
