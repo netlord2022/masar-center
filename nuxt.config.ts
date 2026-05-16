@@ -84,6 +84,26 @@ export default defineNuxtConfig({
       redirectOn: "root", // recommended
     },
   },
+  content: {
+    database: {
+      type: "libsql",
+      url: "file:.data/content.db",
+    },
+    experimental: { sqliteConnector: "native" },
+    studio: {
+      enabled: true,
+      dev: false,
+    },
+    preview: {
+      dev: true, // enables the floating editor button locally
+    },
+    repository: {
+      provider: "github",
+      owner: "netlord2022",
+      repo: "masar-center",
+      branch: "feature/blog",
+    },
+  },
   app: {
     head: {
       charset: "utf-8",
@@ -156,6 +176,9 @@ export default defineNuxtConfig({
     "@nuxtjs/color-mode",
     "@vueuse/nuxt",
     "nuxt-og-image",
+    "@nuxt/content",
+    "@nuxthq/studio",
+    "nuxt-studio",
   ],
   colorMode: {
     preference: "system", // 'light' | 'dark' | 'system'

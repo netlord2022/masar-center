@@ -12,8 +12,11 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@libsql/client": "^0.17.3",
     "@lottiefiles/dotlottie-vue": "^0.11.13",
+    "@nuxt/content": "^3.13.0",
     "@nuxt/image": "^2.0.0",
+    "@nuxthq/studio": "^2.2.1",
     "@nuxtjs/color-mode": "^4.0.0",
     "@nuxtjs/i18n": "^10.2.4",
     "@tailwindcss/vite": "^4.2.2",
@@ -21,6 +24,7 @@
     "@vueuse/nuxt": "^14.2.1",
     "nuxt": "^4.4.2",
     "nuxt-og-image": "^6.5.0",
+    "nuxt-studio": "^1.7.0",
     "tailwindcss": "^4.2.2",
     "vue": "^3.5.31",
     "vue-router": "^5.0.4"
