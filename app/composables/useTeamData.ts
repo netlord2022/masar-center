@@ -47,7 +47,7 @@ const teamMembers: TeamMember[] = [
     slug: "sandy-nbeaa",
     name: "Sandy Nbeaa",
     role: "Marketing",
-    bio: localedBio("Sandy", "ساندي", false),
+    bio: localedBio("Sandy", "ساندي", true),
     photo: "/team/sandy-nbeaa.webp",
   },
   {
