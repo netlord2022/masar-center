@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { t } = useI18n()
 const route = useRoute()
 
 // always query the single Arabic collection regardless of locale
@@ -10,9 +11,9 @@ if (!post.value) {
   throw createError({ statusCode: 404 })
 }
 useSeoMeta({
-  title: post?.value?.seo?.title || post?.value?.title,
+  title: `${post?.value?.seo?.title || post?.value?.title} – ${t("masarCompany")}`,
   description: post?.value?.seo?.description || post?.value?.description,
-  ogTitle: post?.value?.seo?.title || post?.value?.title,
+  ogTitle: `${post?.value?.seo?.title || post?.value?.title} – ${t("masarCompany")}`,
   ogDescription: post?.value?.seo?.description || post?.value?.description,
   ogImage: post?.value?.photo,
 })
@@ -45,7 +46,7 @@ useSeoMeta({
           height="400"
           format="webp"
           loading="eager"
-          class="w-full rounded-xl mb-8 object-cover"
+          class="w-full rounded-xl mb-8 object-cover max-h-100"
         />
 
         <ContentRenderer :value="post" />

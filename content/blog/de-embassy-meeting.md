@@ -2,7 +2,7 @@
 title: كيف تجتاز مقابلة السفارة الألمانية
 date: 2026-05-17
 description: كيفية اجتياز المقابلة في السفارة الالمانية وأهم الأسئلة التي من الممكن أن تتعرض لها
-photo: /small-flag-germany-blurred-city.jpg
+photo: /blog/small-flag-germany-blurred-city.jpg
 seo:
   title: اجتز مقابلة السفارة الالمانية
   description: كيفية اجتياز المقابلة في السفارة الالمانية وأهم الأسئلة التي من الممكن أن تتعرض لها
