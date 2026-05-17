@@ -103,6 +103,12 @@ export default defineNuxtConfig({
         branch: "feature/blog",
       },
     },
+    repository: {
+      provider: "github",
+      owner: "netlord2022",
+      repo: "masar-center",
+      branch: "feature/blog",
+    },
     preview: {
       dev: true, // enables the floating editor button locally
     },
