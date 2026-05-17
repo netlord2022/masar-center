@@ -45,12 +45,9 @@ defineOgImage(
     <NuxtLinkLocale
       dir="ltr"
       to="team"
-      class="text-left self-start rtl:self-end rtl:text-right flex hover:underline"
+      class="text-left self-start text-primary dark:text-white rtl:self-end rtl:text-right flex hover:underline"
     >
-      <SvgIcon
-        name="arrow-right"
-        size="w-5 h-5 dark:text-white scale-x-[-1] mt-0.5 mx-1"
-      />
+      <SvgIcon name="arrow-right" size="w-5 h-5  scale-x-[-1] mt-0.5 mx-1" />
       back to team</NuxtLinkLocale
     >
     <h1 class="text-4xl font-bold mt-6 text-primary dark:text-white">
@@ -68,6 +65,41 @@ defineOgImage(
       height="320"
       preload
     />
+    <div class="flex gap-4 justify-center">
+      <NuxtLink
+        v-if="member.facebook"
+        :href="member.facebook"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Masar facebook"
+        aria-label="Masar Facebook"
+      >
+        <SvgIcon name="facebook" size="w-7 h-7 dark:fill-white fill-black" />
+        <span class="sr-only">facebook of {{ member.name }}</span></NuxtLink
+      >
+      <NuxtLink
+        v-if="member.instagram"
+        :href="member.instagram"
+        target="_blank"
+        title="Masar instagram"
+        rel="noopener noreferrer"
+        aria-label="Masar Instagram"
+      >
+        <SvgIcon name="instagram" size="w-7 h-7 dark:fill-white fill-black" />
+        <span class="sr-only">instagram of {{ member.name }}</span>
+      </NuxtLink>
+      <NuxtLink
+        v-if="member.mail"
+        :href="`mailto:${member.mail}`"
+        class="flex items-center px-1"
+        aria-label="Masar email info"
+      >
+        <SvgIcon name="email" size="w-6 h-6  dark:fill-white fill-black" /><span
+          class="sr-only"
+          >email of {{ member.name }}</span
+        ></NuxtLink
+      >
+    </div>
 
     <p class="text-xl text-gray-800 dark:text-gray-200">{{ member.role }}</p>
     <p class="text-gray-600 dark:text-gray-300">{{ localizedBio }}</p>

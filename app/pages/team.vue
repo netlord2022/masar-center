@@ -26,7 +26,9 @@ onMounted(() => {
 </script>
 <template>
   <section id="team" class="pt-16 md:pt-24 w-full min-h-screen">
-    <h1 class="text-5xl font-bold text-center dark:text-white rtl:font-arabic">
+    <h1
+      class="text-5xl font-bold text-center text-primary dark:text-white rtl:font-arabic"
+    >
       {{ $t("teams.title") }}
     </h1>
     <div class="max-w-7xl mx-auto mb-20 space-y-6 px-6">
