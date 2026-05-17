@@ -23,7 +23,7 @@ const persons = computed(() => {
   <section id="testimonials" class="w-full bg-gray-50 dark:bg-gray-900 py-6">
     <div class="max-w-7xl mx-auto mt-20 mb-40 space-y-6 px-6">
       <h2
-        class="text-3xl font-bold text-center mb-12 text-primary dark:text-white"
+        class="text-3xl font-bold text-center mb-12 text-primary dark:text-white rtl:font-arabic"
       >
         {{ $t("testimonials.title") }}
       </h2>
@@ -53,7 +53,7 @@ const persons = computed(() => {
           </p>
 
           <div>
-            <h3 class="font-bold text-gray-900 dark:text-white">
+            <h3 class="font-bold text-gray-900 dark:text-white rtl:font-arabic">
               {{ person.name }}
             </h3>
             <p class="text-sm text-gray-500 dark:text-gray-400">

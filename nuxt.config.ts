@@ -1,15 +1,24 @@
 import tailwindcss from "@tailwindcss/vite"
 
+const teamSlugs = ["zeinab-marhij", "sandy-nbeaa"] // your real slugs go here
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
-const siteUrl =
-  process.env.NUXT_PUBLIC_SITE_URL || "https://masar-center.netlify.app"
+const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || "https://masar-center.de"
 export default defineNuxtConfig({
   compatibilityDate: "2026-03-14",
   devtools: { enabled: process.env.NODE_ENV !== "production" },
+  runtimeConfig: {
+    public: {
+      siteUrl,
+    },
+  },
 
   // SSG Configuration
   ssr: true,
   nitro: {
+    routeRules: {
+      "/_og/**": { static: true },
+    },
     prerender: {
       crawlLinks: true,
       ignore: ["/.netlify/images"],
@@ -26,9 +35,18 @@ export default defineNuxtConfig({
         "/ar/privacy",
         "/de/impressum",
         "/ar/impressum",
+        // dynamic team pages — all 3 locales
+        ...teamSlugs.flatMap((slug) => [
+          `/teams/${slug}`,
+          `/de/teams/${slug}`,
+          `/ar/teams/${slug}`,
+        ]),
       ],
     },
     preset: "netlify",
+  },
+  ogImage: {
+    zeroRuntime: true,
   },
   i18n: {
     baseUrl: siteUrl,
@@ -74,38 +92,39 @@ export default defineNuxtConfig({
         {
           rel: "apple-touch-icon",
           sizes: "180x180",
-          href: "/favicon-180x180.png",
+          href: `${siteUrl}/favicon-180x180.png`,
         },
         {
           rel: "icon",
           type: "image/png",
           sizes: "32x32",
-          href: "/favicon-32x32.png",
+          href: `${siteUrl}/favicon-32x32.png`,
         },
         {
           rel: "icon",
           type: "image/png",
           sizes: "16x16",
-          href: "/favicon-16x16.png",
+          href: `${siteUrl}/favicon-16x16.png`,
         },
         {
           rel: "preload",
           as: "font",
           type: "font/woff2",
-          href: "/fonts/montserrat/montserrat-bold.woff2",
+          href: `${siteUrl}/fonts/montserrat/montserrat-bold.woff2`,
           crossorigin: "anonymous",
         },
         {
           rel: "preload",
           as: "font",
           type: "font/woff2",
-          href: "/fonts/vazirmatn/vazirmatn-extrabold.woff2",
+          href: `${siteUrl}/fonts/vazirmatn/vazirmatn-extrabold.woff2`,
           crossorigin: "anonymous",
         },
       ],
       meta: [
         { property: "og:type", content: "website" },
         { property: "og:url", content: siteUrl },
+        { property: "og:site_name", content: "Masar Center" },
         { property: "og:image", content: `${siteUrl}/masar-meta-logo.webp` },
         {
           property: "og:image:secure_url",
@@ -116,11 +135,6 @@ export default defineNuxtConfig({
         { property: "og:image:height", content: "630" },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: "Masar Center" },
-        {
-          name: "twitter:description",
-          content:
-            "تقديم خدمات استشارية ودعم عملي للراغبين بالسفر الى ألمانيا.",
-        },
         { name: "twitter:image", content: `${siteUrl}/masar-meta-logo.webp` },
       ],
     },
@@ -141,6 +155,7 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@nuxtjs/color-mode",
     "@vueuse/nuxt",
+    "nuxt-og-image",
   ],
   colorMode: {
     preference: "system", // 'light' | 'dark' | 'system'
@@ -160,6 +175,5 @@ export default defineNuxtConfig({
       "2xl": 1536,
     },
     provider: process.env.NODE_ENV === "production" ? "netlify" : "ipx",
-    // todo:domains: ['images.example.com']
   },
 })

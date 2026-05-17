@@ -3,7 +3,7 @@
   <section id="statics" class="pt-16 md:pt-24 w-full">
     <div class="max-w-7xl mx-auto mb-20 space-y-6 px-6">
       <h2
-        class="text-center text-3xl md:text-4xl font-bold text-yellow-600 dark:text-yellow-400"
+        class="text-center text-3xl md:text-4xl font-bold text-yellow-600 dark:text-yellow-400 rtl:font-arabic"
       >
         {{ $t("staticSection.title") }}
       </h2>

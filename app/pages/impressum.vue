@@ -16,7 +16,7 @@ useHead({
     class="privacy-page max-w-7xl mx-auto px-6 text-primary dark:text-white mt-24 mb-10"
   >
     <div class="container">
-      <h1 class="text-3xl">{{ $t("impressum.title") }}</h1>
+      <h1 class="text-3xl rtl:font-arabic">{{ $t("impressum.title") }}</h1>
 
       <!-- Section 1 -->
       <h2 class="text-2xl sr-only">Masar UG</h2>

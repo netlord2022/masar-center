@@ -1,17 +1,11 @@
 <script setup lang="ts">
 const consent = useCookie("cookie_consent")
 const { y } = useWindowScroll()
-const bottom = ref(false)
 
-watch(
-  y,
-  () => {
-    if (!window) return
-    bottom.value =
-      window.innerHeight + y.value >=
-      document.documentElement.scrollHeight - 200
-  },
-  { immediate: true }
+const bottom = computed(
+  () =>
+    import.meta.client &&
+    window.innerHeight + y.value >= document.documentElement.scrollHeight - 200
 )
 </script>
 <template>
@@ -94,58 +88,60 @@ watch(
         </div>
       </div>
     </div>
-    <transition name="slide-fade">
-      <div
-        v-if="!bottom"
-        class="fixed z-20 bottom-8 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-8 rtl:sm:left-auto rtl:sm:right-8 flex flex-col items-center sm:flex-row gap-2 sm:gap-4"
-      >
-        <div class="flex sm:flex-col space-x-2 sm:space-x-0 sm:space-y-2">
-          <div class="flex group">
-            <div dir="rtl" class="link-box-item">
-              <NuxtLink
-                href="tel:+491771873142"
-                class="flex items-center float-link"
-                aria-label="Masar Telefon"
-              >
-                <SvgIcon name="telephone" size="w-6 h-6" />
-                <div dir="rtl" class="text-sm font-medium px-3">
-                  &#8206;+491771873142
-                </div>
-              </NuxtLink>
+    <ClientOnly>
+      <transition name="slide-fade">
+        <div
+          v-if="!bottom"
+          class="fixed z-20 bottom-8 left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-8 rtl:sm:left-auto rtl:sm:right-8 flex flex-col items-center sm:flex-row gap-2 sm:gap-4"
+        >
+          <div class="flex sm:flex-col space-x-2 sm:space-x-0 sm:space-y-2">
+            <div class="flex group">
+              <div dir="rtl" class="link-box-item">
+                <NuxtLink
+                  href="tel:+491771873142"
+                  class="flex items-center float-link"
+                  aria-label="Masar Telefon"
+                >
+                  <SvgIcon name="telephone" size="w-6 h-6" />
+                  <div dir="rtl" class="text-sm font-medium px-3">
+                    &#8206;+491771873142
+                  </div>
+                </NuxtLink>
+              </div>
             </div>
-          </div>
-          <div class="flex group">
-            <div class="link-box-item">
-              <NuxtLink
-                href="https://wa.me/491771873142"
-                class="flex items-center float-link"
-                aria-label="Masar WhatsApp"
-                target="_blank"
-              >
-                <SvgIcon name="whatsapp" size="w-6 h-6" /><span
-                  class="text-sm font-medium px-3"
-                  >&#8206;+491771873142</span
-                ></NuxtLink
-              >
+            <div class="flex group">
+              <div class="link-box-item">
+                <NuxtLink
+                  href="https://wa.me/491771873142"
+                  class="flex items-center float-link"
+                  aria-label="Masar WhatsApp"
+                  target="_blank"
+                >
+                  <SvgIcon name="whatsapp" size="w-6 h-6" /><span
+                    class="text-sm font-medium px-3"
+                    >&#8206;+491771873142</span
+                  ></NuxtLink
+                >
+              </div>
             </div>
-          </div>
-          <div class="flex group">
-            <div class="link-box-item">
-              <NuxtLink
-                href="mailto:info@masar-center.de"
-                class="flex items-center float-link"
-                aria-label="Masar email info"
-              >
-                <SvgIcon name="email" size="w-6 h-6" /><span
-                  class="text-sm font-medium px-3 whitespace-nowrap"
-                  >info@masar-center.de</span
-                ></NuxtLink
-              >
+            <div class="flex group">
+              <div class="link-box-item">
+                <NuxtLink
+                  href="mailto:info@masar-center.de"
+                  class="flex items-center float-link"
+                  aria-label="Masar email info"
+                >
+                  <SvgIcon name="email" size="w-6 h-6" /><span
+                    class="text-sm font-medium px-3 whitespace-nowrap"
+                    >info@masar-center.de</span
+                  ></NuxtLink
+                >
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </transition>
+      </transition>
+    </ClientOnly>
     <div
       class="w-full bg-black dark:bg-white relative z-1 rounded-b-lg ronded-t-none mb-24 mx-auto"
     >
@@ -156,12 +152,14 @@ watch(
           class="footer-columns-row bg-black md:bg-white dark:bg-white dark:md:bg-black flex flex-col-reverse md:flex-row rounded-t-2xl relative min-h-12 justify-between items-center md:px-8"
           dir="ltr"
         >
-          <div
-            class="footer-column footer-copyrights-container text-[10px] md:text-xs mt-4 md:mt-0 px-1 sm:px-0"
-          >
-            &copy; {{ new Date().getFullYear() }} {{ $t("copyRight") }} - Images
-            by Freepik
-          </div>
+          <ClientOnly>
+            <div
+              class="footer-column footer-copyrights-container text-[10px] md:text-xs mt-4 md:mt-0 px-1 sm:px-0"
+            >
+              &copy; {{ new Date().getFullYear() }} {{ $t("copyRight") }} -
+              Images by Freepik
+            </div>
+          </ClientOnly>
           <div
             class="footer-column footer-additional-menu-container mt-8 md:mt-0"
           >
