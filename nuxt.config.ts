@@ -6,6 +6,16 @@ const teamSlugs = ["zeinab-marhij", "sandy-nbeaa"] // your real slugs go here
 const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || "https://masar-center.de"
 export default defineNuxtConfig({
   compatibilityDate: "2026-03-14",
+  vite: {
+    optimizeDeps: {
+      include: [
+        "vue",
+        "@vueuse/core",
+        "@vue/devtools-core",
+        "@vue/devtools-kit",
+      ],
+    },
+  },
   devtools: { enabled: process.env.NODE_ENV !== "production" },
   runtimeConfig: {
     public: {
@@ -19,33 +29,37 @@ export default defineNuxtConfig({
     routeRules: {
       "/_og/**": { static: true },
     },
-    prerender: {
-      crawlLinks: true,
-      ignore: ["/.netlify/images"],
-      routes: [
-        "/",
-        "/de",
-        "/ar",
-        "/privacy",
-        "/impressum",
-        "/about",
-        "/de/about",
-        "/ar/about",
-        "/de/privacy",
-        "/ar/privacy",
-        "/de/impressum",
-        "/ar/impressum",
-        // dynamic team pages — all 3 locales
-        ...teamSlugs.flatMap((slug) => [
-          `/teams/${slug}`,
-          `/de/teams/${slug}`,
-          `/ar/teams/${slug}`,
-        ]),
-      ],
-    },
+    prerender:
+      process.env.NODE_ENV === "production"
+        ? {
+            crawlLinks: true,
+            ignore: ["/.netlify/images"],
+            routes: [
+              "/",
+              "/de",
+              "/ar",
+              "/privacy",
+              "/impressum",
+              "/about",
+              "/de/about",
+              "/ar/about",
+              "/de/privacy",
+              "/ar/privacy",
+              "/de/impressum",
+              "/ar/impressum",
+              // dynamic team pages — all 3 locales
+              ...teamSlugs.flatMap((slug) => [
+                `/teams/${slug}`,
+                `/de/teams/${slug}`,
+                `/ar/teams/${slug}`,
+              ]),
+            ],
+          }
+        : {},
     preset: "netlify",
   },
   ogImage: {
+    enabled: process.env.NODE_ENV !== "development",
     zeroRuntime: true,
   },
   i18n: {
@@ -85,37 +99,38 @@ export default defineNuxtConfig({
     },
   },
   content: {
-    database: {
-      type: "libsql",
-      url: "file:.data/content.db",
-    },
-    experimental: { sqliteConnector: "native" },
-    studio: {
-      enabled: true,
-      dev: false,
-      repository: {
-        provider: "github",
-        owner: "netlord2022",
-        repo: "masar-center",
-        branch: "feature/blog",
-      },
-    },
-    preview: {
-      dev: true, // enables the floating editor button locally
-    },
+    // database: {
+    //   type: "libsql",
+    //   url: "file:.data/content.db",
+    // },
+    // experimental: { sqliteConnector: "native" },
+    experimental: { nativeSqlite: true },
+    // studio: {
+    //   enabled: true,
+    //   dev: false,
+    //   repository: {
+    //     provider: "github",
+    //     owner: "netlord2022",
+    //     repo: "masar-center",
+    //     branch: "feature/blog",
+    //   },
+    // },
+    // preview: {
+    //   dev: true, // enables the floating editor button locally
+    // },
   },
   studio: {
-    enabled: true,
-    dev: false,
-    repository: {
-      provider: "github",
-      owner: "netlord2022",
-      repo: "masar-center",
-      branch: "feature/blog",
-    },
-    preview: {
-      dev: true, // enables the floating editor button locally
-    },
+    // enabled: true,
+    // dev: false,
+    // repository: {
+    //   provider: "github",
+    //   owner: "netlord2022",
+    //   repo: "masar-center",
+    //   branch: "feature/blog",
+    // },
+    // preview: {
+    //   dev: true, // enables the floating editor button locally
+    // },
   },
   app: {
     head: {
