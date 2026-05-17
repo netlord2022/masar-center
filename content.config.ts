@@ -4,26 +4,16 @@ import { defineContentConfig, defineCollection, z } from "@nuxt/content"
 const blogSchema = z.object({
   title: z.string(),
   description: z.string(),
-  date: z.string(),
+  date: z.string().default(() => new Date().toISOString().split("T")[0]),
+  photo: z.string().optional(),
   tags: z.array(z.string()).optional(),
-  cover: z.string().optional(),
 })
 
 export default defineContentConfig({
   collections: {
-    blog_en: defineCollection({
+    blog: defineCollection({
       type: "page",
-      source: { include: "en/blog/**", prefix: "/blog" },
-      schema: blogSchema,
-    }),
-    blog_de: defineCollection({
-      type: "page",
-      source: { include: "de/blog/**", prefix: "/de/blog" },
-      schema: blogSchema,
-    }),
-    blog_ar: defineCollection({
-      type: "page",
-      source: { include: "ar/blog/**", prefix: "/ar/blog" },
+      source: { include: "blog/**" },
       schema: blogSchema,
     }),
   },

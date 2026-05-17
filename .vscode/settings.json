@@ -2,5 +2,11 @@
   "prettier.arrowParens": "always",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "html.format.preserveNewLines": false,
-  "html.customData": ["<img>", "img"]
+  "html.customData": ["<img>", "img"],
+  "github.copilot.chat.anthropic.contextEditing.mode": "clear-thinking",
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.renderControlCharacters": true,
+  "diffEditor.renderSideBySide": true,
+  "editor.cursorSurroundingLines": 1,
+  "editor.rtl": true
 }

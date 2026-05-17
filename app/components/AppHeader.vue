@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from "vue"
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const isOpen = ref(false)
 const linkClass = computed(
   () =>
@@ -14,6 +14,10 @@ const links = computed(() => [
   {
     name: t("services"),
     path: { path: "/", hash: "#services" },
+  },
+  {
+    name: t("blog"),
+    path: { path: "/blog", only: "ar" },
   },
   {
     name: t("team"),
@@ -81,6 +85,7 @@ onClickOutside(target, () => close(), { ignore: [ignoreEl] })
       <nav class="space-x-6 hidden md:flex" role="navigation">
         <NuxtLinkLocale
           v-for="(link, index) in links"
+          v-show="!(link.path.only && link.path.only !== locale)"
           :key="index"
           :to="link.path"
           :class="linkClass"
@@ -102,6 +107,7 @@ onClickOutside(target, () => close(), { ignore: [ignoreEl] })
       >
         <NuxtLinkLocale
           v-for="(link, index) in links"
+          v-show="!(link.path.only && link.path.only !== locale)"
           :key="index"
           :to="link.path"
           :class="linkClass + ' py-2'"
