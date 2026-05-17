@@ -107,6 +107,9 @@ export default defineNuxtConfig({
     studio: {
       enabled: true,
       dev: false,
+      i18n: {
+        defaultLocale: "ar",
+      },
     },
     preview: {
       dev: true, // enables the floating editor button locally
@@ -120,6 +123,9 @@ export default defineNuxtConfig({
   },
   studio: {
     enabled: true,
+    i18n: {
+      defaultLocale: "ar",
+    },
   },
   app: {
     head: {
