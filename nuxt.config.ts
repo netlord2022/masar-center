@@ -93,6 +93,15 @@ export default defineNuxtConfig({
     studio: {
       enabled: true,
       dev: false,
+      i18n: {
+        defaultLocale: "ar",
+      },
+      repository: {
+        provider: "github",
+        owner: "netlord2022",
+        repo: "masar-center",
+        branch: "feature/blog",
+      },
     },
     preview: {
       dev: true, // enables the floating editor button locally
