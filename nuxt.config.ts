@@ -99,38 +99,27 @@ export default defineNuxtConfig({
     },
   },
   content: {
-    // database: {
-    //   type: "libsql",
-    //   url: "file:.data/content.db",
-    // },
-    // experimental: { sqliteConnector: "native" },
-    experimental: { nativeSqlite: true },
-    // studio: {
-    //   enabled: true,
-    //   dev: false,
-    //   repository: {
-    //     provider: "github",
-    //     owner: "netlord2022",
-    //     repo: "masar-center",
-    //     branch: "feature/blog",
-    //   },
-    // },
-    // preview: {
-    //   dev: true, // enables the floating editor button locally
-    // },
+    database: {
+      type: "libsql",
+      url: "file:.data/content.db",
+    },
+    experimental: { sqliteConnector: "native" },
+    studio: {
+      enabled: true,
+      dev: false,
+    },
+    preview: {
+      dev: true, // enables the floating editor button locally
+    },
+    repository: {
+      provider: "github",
+      owner: "netlord2022",
+      repo: "masar-center",
+      branch: "feature/blog",
+    },
   },
   studio: {
-    // enabled: true,
-    // dev: false,
-    // repository: {
-    //   provider: "github",
-    //   owner: "netlord2022",
-    //   repo: "masar-center",
-    //   branch: "feature/blog",
-    // },
-    // preview: {
-    //   dev: true, // enables the floating editor button locally
-    // },
+    enabled: true,
   },
   app: {
     head: {
