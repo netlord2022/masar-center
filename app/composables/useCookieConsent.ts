@@ -1,31 +1,21 @@
 export const useCookieConsent = () => {
-  const consent = useCookie("cookie_consent", { default: () => "unset" })
+  const consent = useCookie("cookie_consent", {
+    default: () => "unset" as "unset" | "accepted" | "rejected",
+    maxAge: 60 * 60 * 24 * 365,
+    sameSite: "lax",
+    secure: true,
+    path: "/",
+  })
 
   const accept = () => {
     consent.value = "accepted"
-    updateGTM("granted")
   }
 
   const reject = () => {
     consent.value = "rejected"
-    updateGTM("denied")
-    window.dataLayer = []
-  }
-
-  const updateGTM = (value: "granted" | "denied") => {
-    if (typeof window === "undefined") return
-
-    window.dataLayer = window.dataLayer || []
-
-    window.dataLayer.push({
-      event: "consent_update",
-      analytics_storage: value,
-      ad_storage: value,
-    })
-    window.dataLayer.push({
-      "gtm.start": new Date().getTime(),
-      event: "gtm.js",
-    })
+    if (typeof window !== "undefined") {
+      window.location.reload()
+    }
   }
 
   return { consent, accept, reject }
