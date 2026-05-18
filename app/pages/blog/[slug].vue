@@ -20,7 +20,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="w-full max-w-7xl mx-auto dark:text-white px-6 py-12">
+  <div class="w-full max-w-7xl mx-auto dark:text-white px-6 py-12" dir="rtl">
     <NuxtLinkLocale
       dir="ltr"
       to="/blog"

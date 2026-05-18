@@ -13,6 +13,7 @@ export default defineNuxtConfig({
         "@vueuse/core",
         "@vue/devtools-core",
         "@vue/devtools-kit",
+        "@lottiefiles/dotlottie-vue",
       ],
     },
   },
