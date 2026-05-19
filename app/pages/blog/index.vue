@@ -9,7 +9,11 @@ const page = ref(1)
 const perPage = 9
 const total = ref(0)
 
-const { data: posts, status } = await useAsyncData(
+const {
+  data: posts,
+  status,
+  refresh,
+} = await useAsyncData(
   `blog-${sbLocale.value}-${page.value}-${search.value}`,
   async () => {
     const params: Record<string, unknown> = {
@@ -29,7 +33,7 @@ const { data: posts, status } = await useAsyncData(
     total.value = Number(res.headers?.total ?? 0)
     return res.data.stories
   },
-  { watch: [page, search, sbLocale] }
+  { watch: [page, sbLocale] }
 )
 
 const totalPages = computed(() => Math.ceil(total.value / perPage))
@@ -44,6 +48,7 @@ watch(searchInput, (val) => {
   clearTimeout(debounceTimer)
   debounceTimer = setTimeout(() => {
     search.value = val
+    refresh()
   }, 400)
 })
 </script>
