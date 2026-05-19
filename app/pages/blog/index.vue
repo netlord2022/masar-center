@@ -12,7 +12,7 @@ const total = ref(0)
 const { data: posts, status } = await useAsyncData(
   `blog-${sbLocale.value}-${page.value}-${search.value}`,
   async () => {
-    const params: Record<string, any> = {
+    const params: Record<string, unknown> = {
       starts_with: "blog/",
       language: sbLocale.value,
       sort_by: "content.date:desc",
