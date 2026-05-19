@@ -24,33 +24,37 @@ export default defineNuxtConfig({
     routeRules: {
       "/_og/**": { static: true },
     },
-    prerender: {
-      crawlLinks: true,
-      ignore: ["/.netlify/images"],
-      routes: [
-        "/",
-        "/de",
-        "/ar",
-        "/privacy",
-        "/impressum",
-        "/about",
-        "/de/about",
-        "/ar/about",
-        "/de/privacy",
-        "/ar/privacy",
-        "/de/impressum",
-        "/ar/impressum",
-        // dynamic team pages — all 3 locales
-        ...teamSlugs.flatMap((slug) => [
-          `/teams/${slug}`,
-          `/de/teams/${slug}`,
-          `/ar/teams/${slug}`,
-        ]),
-      ],
-    },
+    prerender:
+      process.env.NODE_ENV === "production"
+        ? {
+            crawlLinks: true,
+            ignore: ["/.netlify/images"],
+            routes: [
+              "/",
+              "/de",
+              "/ar",
+              "/privacy",
+              "/impressum",
+              "/about",
+              "/de/about",
+              "/ar/about",
+              "/de/privacy",
+              "/ar/privacy",
+              "/de/impressum",
+              "/ar/impressum",
+              // dynamic team pages — all 3 locales
+              ...teamSlugs.flatMap((slug) => [
+                `/teams/${slug}`,
+                `/de/teams/${slug}`,
+                `/ar/teams/${slug}`,
+              ]),
+            ],
+          }
+        : {},
     preset: "netlify",
   },
   ogImage: {
+    enabled: process.env.NODE_ENV !== "development",
     zeroRuntime: true,
   },
   i18n: {
@@ -151,6 +155,15 @@ export default defineNuxtConfig({
   css: ["./app/assets/css/main.css"],
   vite: {
     plugins: [tailwindcss()],
+    optimizeDeps: {
+      include: [
+        "vue",
+        "@vueuse/core",
+        "@vue/devtools-core",
+        "@vue/devtools-kit",
+        "@lottiefiles/dotlottie-vue",
+      ],
+    },
   },
 
   modules: [

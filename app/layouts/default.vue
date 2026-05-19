@@ -2,7 +2,7 @@
 const route = useRoute()
 const { t } = useI18n()
 const head = useLocaleHead()
-const title = computed(() => t(route?.meta?.title ?? "Home"))
+const title = computed(() => t(route?.meta?.title ?? "masar"))
 </script>
 
 <template>
