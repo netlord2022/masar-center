@@ -33,9 +33,9 @@ export default defineNuxtConfig({
   // SSG Configuration
   ssr: true,
   nitro: {
-    // routeRules: {
-    //   "/_og/**": { static: true },
-    // },
+    routeRules: {
+      "/_og/**": { static: true },
+    },
     prerender:
       process.env.NODE_ENV === "production"
         ? {
@@ -185,7 +185,7 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@nuxtjs/color-mode",
     "@vueuse/nuxt",
-    //"nuxt-og-image",
+    "nuxt-og-image",
     "@nuxtjs/sitemap",
   ],
   colorMode: {
