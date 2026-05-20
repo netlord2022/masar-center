@@ -21,21 +21,21 @@ useSeoMeta({
   description: localizedBio,
   ogTitle: `${member.name} – ${t("masarCompany")}`,
   ogDescription: localizedBio,
-  ogUrl: `${config.public.siteUrl}${route.path}`,
+  //ogUrl: `${config.public.siteUrl}${route.path}`,
   //ogImageSecureUrl: `${config.public.siteUrl}/team/${slug}.webp`,
   twitterCard: "summary_large_image",
   twitterTitle: `${member.name} – ${t("masarCompany")}`,
   twitterDescription: localizedBio,
 })
 
-defineOgImage(
-  "TeamMember",
-  {
-    name: member.name,
-    photoUrl: member.photo,
-  },
-  [{ key: "og" }, { key: "whatsapp", width: 800, height: 800 }]
-)
+// defineOgImage(
+//   "TeamMember",
+//   {
+//     name: member.name,
+//     photoUrl: member.photo,
+//   },
+//   [{ key: "og" }, { key: "whatsapp", width: 800, height: 800 }]
+// )
 </script>
 
 <template>
