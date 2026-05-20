@@ -9,6 +9,7 @@ defineProps({ blok: Object })
       v-if="blok.cover_image?.filename"
       :src="blok.cover_image.filename"
       :alt="blok.title"
+      provider="storyblok"
       width="800"
       height="400"
       loading="lazy"

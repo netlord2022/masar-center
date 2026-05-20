@@ -14,13 +14,11 @@ const total = ref(0)
 const searchInput = ref("")
 const debouncedSearchInput = refDebounced(searchInput, 700)
 
-// 1. Correctly watch the debounced input to trigger updates
 watch(debouncedSearchInput, (newVal) => {
   search.value = newVal
-  page.value = 1 // Excellent fix to reset pagination
+  page.value = 1
 })
 
-// 2. Fetch data with a stable cache key per language
 const { data: posts, status } = await useAsyncData(
   `blog-posts-${sbLocale.value}`,
   async () => {
@@ -42,14 +40,22 @@ const { data: posts, status } = await useAsyncData(
     return res.data.stories
   },
   {
-    // Nuxt will automatically re-run the async function whenever any of these change
     watch: [page, sbLocale, search],
+
+    // --- THIS FIXES THE PRODUCTION ISSUE ---
+    getCachedData(key, nuxtApp) {
+      // Only serve the cached payload during initial SSR hydration
+      if (nuxtApp.isHydrating) {
+        return nuxtApp.payload.data[key]
+      }
+      // Return undefined for any user action (search/page changes) to force a live fetch
+      return undefined
+    },
   }
 )
 
 const totalPages = computed(() => Math.ceil(total.value / perPage))
 </script>
-
 <template>
   <div class="max-w-7xl mx-auto px-4 py-16 w-full">
     <!-- Header -->
@@ -112,6 +118,7 @@ const totalPages = computed(() => Math.ceil(total.value / perPage))
             v-if="post.content.cover_image?.filename"
             :src="post.content.cover_image.filename"
             :alt="post.content.title"
+            provider="storyblok"
             width="400"
             height="200"
             format="webp"

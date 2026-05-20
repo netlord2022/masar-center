@@ -252,7 +252,10 @@ export default defineNuxtConfig({
   },
   image: {
     format: ["avif", "webp"],
-    domains: ["a.storyblok.com"],
+    //domains: ["a.storyblok.com"],
+    storyblok: {
+      baseURL: "https://a.storyblok.com",
+    },
     quality: 60,
     screens: {
       sm: 640,
