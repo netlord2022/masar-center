@@ -65,10 +65,10 @@ export default defineNuxtConfig({
         : {},
     preset: "netlify",
   },
-  // ogImage: {
-  //   enabled: process.env.NODE_ENV !== "development",
-  //   zeroRuntime: true,
-  // },
+  ogImage: {
+    enabled: process.env.NODE_ENV !== "development",
+    zeroRuntime: true,
+  },
   i18n: {
     baseUrl: siteUrl,
     locales: [
