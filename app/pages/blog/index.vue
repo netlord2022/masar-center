@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { refDebounced } from "@vueuse/core"
+
 const { sbLocale } = useStoryblokLocale()
 const storyblok = useStoryblokApi()
 
@@ -9,12 +11,18 @@ const page = ref(1)
 const perPage = 9
 const total = ref(0)
 
-const {
-  data: posts,
-  status,
-  refresh,
-} = await useAsyncData(
-  `blog-${sbLocale.value}-${page.value}-${search.value}`,
+const searchInput = ref("")
+const debouncedSearchInput = refDebounced(searchInput, 700)
+
+// 1. Correctly watch the debounced input to trigger updates
+watch(debouncedSearchInput, (newVal) => {
+  search.value = newVal
+  page.value = 1 // Excellent fix to reset pagination
+})
+
+// 2. Fetch data with a stable cache key per language
+const { data: posts, status } = await useAsyncData(
+  `blog-posts-${sbLocale.value}`,
   async () => {
     const params: Record<string, unknown> = {
       starts_with: "blog/",
@@ -33,24 +41,13 @@ const {
     total.value = Number(res.headers?.total ?? 0)
     return res.data.stories
   },
-  { watch: [page, sbLocale] }
+  {
+    // Nuxt will automatically re-run the async function whenever any of these change
+    watch: [page, sbLocale, search],
+  }
 )
 
 const totalPages = computed(() => Math.ceil(total.value / perPage))
-
-watch(search, () => {
-  page.value = 1
-})
-
-const searchInput = ref("")
-let debounceTimer: ReturnType<typeof setTimeout>
-watch(searchInput, (val) => {
-  clearTimeout(debounceTimer)
-  debounceTimer = setTimeout(() => {
-    search.value = val
-    refresh()
-  }, 400)
-})
 </script>
 
 <template>
@@ -102,7 +99,7 @@ watch(searchInput, (val) => {
     <!-- Posts grid -->
     <div
       v-else-if="posts?.length"
-      class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+      class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 dar:text-white"
     >
       <NuxtLink
         v-for="post in posts"
@@ -123,13 +120,15 @@ watch(searchInput, (val) => {
           />
         </div>
         <div class="p-5">
-          <p class="text-xs text-gray-400 mb-2">{{ post.content.date }}</p>
+          <p class="text-xs text-gray-400 dark:text-gray-200 mb-2">
+            {{ post.content.date }}
+          </p>
           <h2
             class="font-bold text-lg leading-snug group-hover:text-primary transition-colors line-clamp-2"
           >
             {{ post.content.title }}
           </h2>
-          <p class="text-sm text-gray-500 mt-2 line-clamp-3">
+          <p class="text-sm text-gray-500 dark:text-gray-200 mt-2 line-clamp-3">
             {{ post.content.excerpt }}
           </p>
         </div>
