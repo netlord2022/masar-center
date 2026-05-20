@@ -34,7 +34,7 @@ export default defineNuxtConfig({
   ssr: true,
   nitro: {
     routeRules: {
-      "/_og/**": { static: true },
+      //"/_og/**": { static: true },
     },
     prerender:
       process.env.NODE_ENV === "production"
