@@ -1,6 +1,11 @@
 import tailwindcss from "@tailwindcss/vite"
 
-const teamSlugs = ["zeinab-marhij", "sandy-nbeaa", "rami-ismaeel"] // your real slugs go here
+const teamSlugs = [
+  "zeinab-marhij",
+  "sandy-nbeaa",
+  "rami-ismaeel",
+  "lama-kassem",
+] // your real slugs go here
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || "https://masar-center.de"
