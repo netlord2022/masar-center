@@ -47,7 +47,7 @@ export default defineNuxtConfig({
   },
   ogImage: {
     enabled: process.env.NODE_ENV !== "development",
-    zeroRuntime: true,
+    //zeroRuntime: true,
   },
   i18n: {
     baseUrl: siteUrl,
