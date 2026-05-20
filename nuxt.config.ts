@@ -185,8 +185,8 @@ export default defineNuxtConfig({
     "@nuxtjs/i18n",
     "@nuxtjs/color-mode",
     "@vueuse/nuxt",
-    "nuxt-og-image",
     "@nuxtjs/sitemap",
+    ...(process.env.NETLIFY ? [] : ["@nuxtjs/og-image"]),
   ],
   colorMode: {
     preference: "system", // 'light' | 'dark' | 'system'

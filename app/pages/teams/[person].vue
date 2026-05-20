@@ -21,7 +21,7 @@ useSeoMeta({
   description: localizedBio,
   ogTitle: `${member.name} – ${t("masarCompany")}`,
   ogDescription: localizedBio,
-  // ogUrl: `${config.public.siteUrl}${route.path}`,
+  ogUrl: `${config.public.siteUrl}${route.path}`,
   //ogImageSecureUrl: `${config.public.siteUrl}/team/${slug}.webp`,
   twitterCard: "summary_large_image",
   twitterTitle: `${member.name} – ${t("masarCompany")}`,
