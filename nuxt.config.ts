@@ -33,9 +33,9 @@ export default defineNuxtConfig({
   // SSG Configuration
   ssr: true,
   nitro: {
-    routeRules: {
-      "/_og/**": { static: true },
-    },
+    // routeRules: {
+    //   "/_og/**": { static: true },
+    // },
     prerender: {
       crawlLinks: true,
       ignore: ["/.netlify/images"],
@@ -63,10 +63,10 @@ export default defineNuxtConfig({
 
     preset: "netlify",
   },
-  ogImage: {
-    enabled: process.env.NODE_ENV !== "development",
-    zeroRuntime: true,
-  },
+  // ogImage: {
+  //   enabled: process.env.NODE_ENV !== "development",
+  //   zeroRuntime: true,
+  // },
   i18n: {
     baseUrl: siteUrl,
     locales: [
