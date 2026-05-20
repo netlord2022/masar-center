@@ -18,10 +18,13 @@ const ourTeamDescription = computed(() => {
   return t("teams.subtitle").replaceAll(/\.\s*/g, ".\n")
 })
 
-onMounted(() => {
-  requestAnimationFrame(() => {
-    showCards.value = true
-  })
+onMounted(async () => {
+  await nextTick()
+  await setTimeout(() => {
+    requestAnimationFrame(() => {
+      showCards.value = true
+    })
+  }, 50)
 })
 </script>
 <template>
@@ -49,9 +52,9 @@ onMounted(() => {
         :to="`/teams/${member.slug}`"
         class="bg-white dark:bg-gray-800 transition-transform duration-1200 ease-in-out p-8 rounded-2xl shadow border border-gray-100 dark:border-gray-700 flex flex-col items-center text-center hover:bg-blue-50 dark:hover:bg-gray-600"
         :class="[
-          showCards ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-50',
+          showCards ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-100',
         ]"
-        :style="`transitionDelay: ${index * 150}ms; animationFillMode: both;`"
+        :style="`transitionDelay: ${index * 150}ms; `"
       >
         <div class="flex flex-col items-center">
           <img
