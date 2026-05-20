@@ -34,9 +34,7 @@ export default defineNuxtConfig({
   ssr: true,
   nitro: {
     routeRules: {
-      "/_og/**": { static: true },
-      "/__nuxt_island": { static: true },
-      "/__nuxt_island/**": { static: true },
+      //"/_og/**": { static: true },
     },
     prerender:
       process.env.NODE_ENV === "production"
@@ -44,7 +42,6 @@ export default defineNuxtConfig({
             crawlLinks: true,
             ignore: [
               "/.netlify/images",
-              "/_og/**",
               "/__nuxt_island/**",
               "/__nuxt_island", // include explicit if needed
             ],
@@ -74,7 +71,7 @@ export default defineNuxtConfig({
   },
   ogImage: {
     enabled: process.env.NODE_ENV !== "development",
-    zeroRuntime: true,
+    zeroRuntime: false,
   },
   i18n: {
     baseUrl: siteUrl,
