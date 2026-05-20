@@ -40,7 +40,7 @@ export default defineNuxtConfig({
       process.env.NODE_ENV === "production"
         ? {
             crawlLinks: true,
-            ignore: ["/.netlify/images", "/__nuxt_island/**", "/_og/**"],
+            ignore: ["/.netlify/images"],
             routes: [
               "/",
               "/de",
