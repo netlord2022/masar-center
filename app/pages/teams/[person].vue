@@ -28,14 +28,14 @@ useSeoMeta({
   twitterDescription: localizedBio,
 })
 
-// defineOgImage(
-//   "TeamMember",
-//   {
-//     name: member.name,
-//     photoUrl: member.photo,
-//   },
-//   [{ key: "og" }, { key: "whatsapp", width: 800, height: 800 }]
-// )
+defineOgImage(
+  "TeamMember",
+  {
+    name: member.name,
+    photoUrl: member.photo,
+  },
+  [{ key: "og" }, { key: "whatsapp", width: 800, height: 800 }]
+)
 </script>
 
 <template>
