@@ -1,5 +1,19 @@
 import tailwindcss from "@tailwindcss/vite"
 
+const teamSlugs = [
+  "morhaf-esmail",
+  "zeinab-marhij",
+  "sandy-nbeaa",
+  "rami-ismaeel",
+  "ronaq-ismail",
+  "tala-alsairafi",
+  "suriana-barshin",
+  "afraa-ebraheem",
+  "rama-ismaeel",
+  "batoul-mohammad",
+  "lama-kassem",
+]
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || "https://masar-center.de"
 export default defineNuxtConfig({
@@ -40,6 +54,12 @@ export default defineNuxtConfig({
               "/ar/privacy",
               "/de/impressum",
               "/ar/impressum",
+              // dynamic team pages — all 3 locales
+              ...teamSlugs.flatMap((slug) => [
+                `/teams/${slug}`,
+                `/de/teams/${slug}`,
+                `/ar/teams/${slug}`,
+              ]),
             ],
           }
         : {},
@@ -47,7 +67,7 @@ export default defineNuxtConfig({
   },
   ogImage: {
     enabled: process.env.NODE_ENV !== "development",
-    //zeroRuntime: true,
+    zeroRuntime: true,
   },
   i18n: {
     baseUrl: siteUrl,
