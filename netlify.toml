@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build"
+  command = "rm -rf .nuxt node_modules/.cache/nuxt && npm run build"
   publish = "dist"
   functions = "server"
 
