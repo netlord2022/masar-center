@@ -129,6 +129,15 @@ const teamMembers: TeamMember[] = [
       "https://www.instagram.com/ronaq.masar?igsh=MTZ3Yjlvbzg1N3JmYg==",
     facebook: "https://www.facebook.com/share/17k1k5zZHy/",
   },
+  {
+    slug: "lama-kassem",
+    name: "Lama Kassem",
+    role: "Marketing",
+    bio: localedBio("Lama", "لما", true),
+    photo: "/team/lama-kassem.webp",
+    instagram: "",
+    facebook: "",
+  },
 ]
 
 export function useTeamData() {
