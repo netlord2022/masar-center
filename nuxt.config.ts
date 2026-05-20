@@ -1,12 +1,5 @@
 import tailwindcss from "@tailwindcss/vite"
 
-const teamSlugs = [
-  "zeinab-marhij",
-  "sandy-nbeaa",
-  "rami-ismaeel",
-  "lama-kassem",
-] // your real slugs go here
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || "https://masar-center.de"
 export default defineNuxtConfig({
@@ -47,12 +40,6 @@ export default defineNuxtConfig({
               "/ar/privacy",
               "/de/impressum",
               "/ar/impressum",
-              // dynamic team pages — all 3 locales
-              ...teamSlugs.flatMap((slug) => [
-                `/teams/${slug}`,
-                `/de/teams/${slug}`,
-                `/ar/teams/${slug}`,
-              ]),
             ],
           }
         : {},
