@@ -33,40 +33,42 @@ export default defineNuxtConfig({
   // SSG Configuration
   ssr: true,
   nitro: {
-    // routeRules: {
-    //   "/_og/**": { static: true },
-    // },
-    prerender: {
-      crawlLinks: true,
-      ignore: ["/.netlify/images"],
-      routes: [
-        "/",
-        "/de",
-        "/ar",
-        "/privacy",
-        "/impressum",
-        "/about",
-        "/de/about",
-        "/ar/about",
-        "/de/privacy",
-        "/ar/privacy",
-        "/de/impressum",
-        "/ar/impressum",
-        // dynamic team pages — all 3 locales
-        ...teamSlugs.flatMap((slug) => [
-          `/teams/${slug}`,
-          `/de/teams/${slug}`,
-          `/ar/teams/${slug}`,
-        ]),
-      ],
+    routeRules: {
+      "/_og/**": { static: true },
     },
-
+    prerender:
+      process.env.NODE_ENV === "production"
+        ? {
+            crawlLinks: true,
+            ignore: ["/.netlify/images", "/__nuxt_island/**"],
+            routes: [
+              "/",
+              "/de",
+              "/ar",
+              "/privacy",
+              "/impressum",
+              "/about",
+              "/de/about",
+              "/ar/about",
+              "/de/privacy",
+              "/ar/privacy",
+              "/de/impressum",
+              "/ar/impressum",
+              // dynamic team pages — all 3 locales
+              ...teamSlugs.flatMap((slug) => [
+                `/teams/${slug}`,
+                `/de/teams/${slug}`,
+                `/ar/teams/${slug}`,
+              ]),
+            ],
+          }
+        : {},
     preset: "netlify",
   },
-  // ogImage: {
-  //   enabled: process.env.NODE_ENV !== "development",
-  //   zeroRuntime: true,
-  // },
+  ogImage: {
+    enabled: process.env.NODE_ENV !== "development",
+    zeroRuntime: true,
+  },
   i18n: {
     baseUrl: siteUrl,
     locales: [
