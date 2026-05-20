@@ -4,7 +4,7 @@ defineProps({ blok: Object })
 </script>
 
 <template>
-  <article class="max-w-3xl mx-auto px-4 py-16">
+  <article class="max-w-3xl mx-auto px-4 py-16 dark:text-white">
     <NuxtImg
       v-if="blok.cover_image?.filename"
       :src="blok.cover_image.filename"
@@ -24,6 +24,17 @@ defineProps({ blok: Object })
 
     <div class="prose dark:prose-invert max-w-none">
       <StoryblokRichText v-if="blok.content" :doc="blok.content" />
+    </div>
+    <div v-if="blok.tags">
+      <div class="mt-4">
+        <span
+          v-for="tag in blok.tags"
+          :key="tag"
+          class="inline-block bg-gray-200 dark:bg-gray-700 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 dark:text-gray-200 mr-2"
+        >
+          #{{ tag.tag }}
+        </span>
+      </div>
     </div>
   </article>
 </template>

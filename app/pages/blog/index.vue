@@ -70,9 +70,11 @@ const totalPages = computed(() => Math.ceil(total.value / perPage))
           v-model="searchInput"
           type="search"
           :placeholder="$t('blog.search')"
-          class="w-full px-4 py-2 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-dark text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+          class="w-full px-4 py-2 rounded-xl border border-gray-300 dark:placeholder:text-gray-400 dark:border-gray-600 bg-white dark:bg-dark text-sm focus:outline-none focus:ring-2 focus:ring-primary dark:text-white"
         />
-        <span class="absolute right-3 top-2.5 text-gray-400">
+        <span
+          class="absolute right-3 rtl:left-3 rtl:right-auto top-2.5 text-gray-400"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-4 w-4"
@@ -107,7 +109,7 @@ const totalPages = computed(() => Math.ceil(total.value / perPage))
       v-else-if="posts?.length"
       class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 dar:text-white"
     >
-      <NuxtLink
+      <NuxtLinkLocale
         v-for="post in posts"
         :key="post.uuid"
         :to="`/blog/${post.slug}`"
@@ -131,7 +133,7 @@ const totalPages = computed(() => Math.ceil(total.value / perPage))
             {{ post.content.date }}
           </p>
           <h2
-            class="font-bold text-lg leading-snug group-hover:text-primary transition-colors line-clamp-2"
+            class="font-bold text-lg dark:text-white leading-snug group-hover:text-primary transition-colors line-clamp-2"
           >
             {{ post.content.title }}
           </h2>
@@ -139,7 +141,7 @@ const totalPages = computed(() => Math.ceil(total.value / perPage))
             {{ post.content.excerpt }}
           </p>
         </div>
-      </NuxtLink>
+      </NuxtLinkLocale>
     </div>
 
     <!-- Empty state -->

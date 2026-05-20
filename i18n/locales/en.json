@@ -15,7 +15,8 @@
   "blog": {
     "title": "Blog",
     "search": "Search posts...",
-    "empty": "No posts found."
+    "empty": "No posts found.",
+    "related": "Related Posts"
   },
   "faq": {
     "items": [
