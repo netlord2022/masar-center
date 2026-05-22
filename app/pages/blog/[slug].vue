@@ -67,6 +67,7 @@ const story = computed(() => pageData.value?.story)
 const relatedPosts = computed(() => pageData.value?.relatedPosts)
 
 const seoImg = img(story.value?.content?.cover_image?.filename, {
+  provider: "storyblok",
   width: 300,
   quality: 70,
   format: "webp",
