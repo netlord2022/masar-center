@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const route = useRoute()
+const { t } = useI18n()
 const { sbLocale } = useStoryblokLocale()
 const slug = route.params.slug as string
 const storyblokApi = useStoryblokApi()
@@ -66,7 +67,10 @@ const relatedPosts = computed(() => pageData.value?.relatedPosts)
 
 useSeoMeta({
   title: () =>
-    story.value?.content?.seo_title || story.value?.content?.title || "Blog",
+    (story.value?.content?.seo_title || story.value?.content?.title || "Blog") +
+    " | " +
+    t("masar"),
+  ogImage: () => story.value?.content?.cover_image?.filename,
 
   description: () =>
     story.value?.content?.seo_description ||
@@ -77,39 +81,27 @@ useSeoMeta({
 
 <template>
   <article class="container mx-auto max-w-3xl py-10">
+    <NuxtLinkLocale
+      dir="ltr"
+      to="blog"
+      class="text-left self-start text-primary dark:text-white rtl:self-end rtl:text-right flex hover:underline"
+    >
+      <SvgIcon name="arrow-right" size="w-5 h-5  scale-x-[-1] mt-0.5 mx-1" />
+      back to blog</NuxtLinkLocale
+    >
     <StoryblokComponent v-if="story" :blok="story.content" />
     <!-- Related Posts -->
     <section v-if="relatedPosts?.length" class="max-w-3xl mx-auto px-4 pb-16">
       <h2 class="text-2xl font-bold mb-6 dark:text-white">
         {{ $t("blog.related") }}
       </h2>
-      <div class="grid gap-6 md:grid-cols-3 dark:text-white">
-        <NuxtLinkLocale
+      <div class="grid gap-6 grid-cols-2 md:grid-cols-3 dark:text-white">
+        <StoryblokPostCard
           v-for="post in relatedPosts"
           :key="post.uuid"
-          :to="`/blog/${post.slug}`"
-          class="group rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300"
-        >
-          <div class="h-36 overflow-hidden bg-gray-100 dark:bg-gray-800">
-            <NuxtImg
-              v-if="post.content.cover_image?.filename"
-              provider="storyblok"
-              :src="post.content.cover_image.filename"
-              :alt="post.content.title"
-              width="300"
-              height="150"
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-            />
-          </div>
-          <div class="p-4">
-            <p class="text-xs text-gray-400 mb-1">{{ post.content.date }}</p>
-            <h3
-              class="font-semibold text-sm leading-snug group-hover:text-primary transition-colors line-clamp-2"
-            >
-              {{ post.content.title }}
-            </h3>
-          </div>
-        </NuxtLinkLocale>
+          :post="post"
+          is-related
+        />
       </div>
     </section>
   </article>

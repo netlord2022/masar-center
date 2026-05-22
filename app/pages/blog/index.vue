@@ -41,8 +41,8 @@ const { data: posts, status } = await useAsyncData(
   },
   {
     watch: [page, sbLocale, search],
-
-    // --- THIS FIXES THE PRODUCTION ISSUE ---
+    lazy: true,
+    default: () => [],
     getCachedData(key, nuxtApp) {
       // Only serve the cached payload during initial SSR hydration
       if (nuxtApp.isHydrating) {
@@ -53,99 +53,56 @@ const { data: posts, status } = await useAsyncData(
     },
   }
 )
+const lastPosts = ref([])
 
+watch(posts, (val) => {
+  if (val?.length) lastPosts.value = val
+})
+
+const displayPosts = computed(() =>
+  status.value === "pending" ? lastPosts.value : (posts.value ?? [])
+)
 const totalPages = computed(() => Math.ceil(total.value / perPage))
 </script>
 <template>
   <div class="max-w-7xl mx-auto px-4 py-16 w-full">
     <!-- Header -->
+
     <div
       class="w-full mb-12 flex flex-col md:flex-row md:items-center gap-4 justify-between"
     >
       <h1 class="text-4xl font-bold">{{ $t("blog.title") }}</h1>
 
       <!-- Search -->
-      <div class="relative w-full md:w-72">
-        <input
-          v-model="searchInput"
-          type="search"
-          :placeholder="$t('blog.search')"
-          class="w-full px-4 py-2 rounded-xl border border-gray-300 dark:placeholder:text-gray-400 dark:border-gray-600 bg-white dark:bg-dark text-sm focus:outline-none focus:ring-2 focus:ring-primary dark:text-white"
-        />
-        <span
-          class="absolute right-3 rtl:left-3 rtl:right-auto top-2.5 text-gray-400"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"
-            />
-          </svg>
-        </span>
-      </div>
-    </div>
-    <!-- Loading -->
-    <div
-      v-if="status === 'pending'"
-      class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
-    >
-      <div
-        v-for="i in perPage"
-        :key="i"
-        class="rounded-2xl bg-gray-100 dark:bg-gray-800 animate-pulse h-72"
+      <StoryblokSearchPost
+        v-model="searchInput"
+        class="relative w-full md:w-72"
       />
     </div>
+    <!-- Loading -->
 
-    <!-- Posts grid -->
-    <div
-      v-else-if="posts?.length"
-      class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 dar:text-white"
-    >
-      <NuxtLinkLocale
-        v-for="post in posts"
-        :key="post.uuid"
-        :to="`/blog/${post.slug}`"
-        class="group rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300"
+    <Transition name="fade">
+      <div
+        v-if="status === 'pending'"
+        class="absolute inset-0 z-10 flex items-center justify-center bg-white/60 dark:bg-black/40 backdrop-blur-[1px]"
       >
-        <div class="overflow-hidden h-48 bg-gray-100 dark:bg-gray-800">
-          <NuxtImg
-            v-if="post.content.cover_image?.filename"
-            :src="post.content.cover_image.filename"
-            :alt="post.content.title"
-            provider="storyblok"
-            width="400"
-            height="200"
-            format="webp"
-            loading="lazy"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-          />
-        </div>
-        <div class="p-5">
-          <p class="text-xs text-gray-400 dark:text-gray-200 mb-2">
-            {{ post.content.date }}
-          </p>
-          <h2
-            class="font-bold text-lg dark:text-white leading-snug group-hover:text-primary transition-colors line-clamp-2"
-          >
-            {{ post.content.title }}
-          </h2>
-          <p class="text-sm text-gray-500 dark:text-gray-200 mt-2 line-clamp-3">
-            {{ post.content.excerpt }}
-          </p>
-        </div>
-      </NuxtLinkLocale>
+        <LazyAnimationsLoader class="w-16 md:w-20" />
+      </div>
+    </Transition>
+
+    <div
+      v-if="displayPosts.length"
+      class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 dar:text-white"
+      :class="{ 'opacity-60': status === 'pending' }"
+    >
+      <StoryblokPostCard v-for="post in posts" :key="post.uuid" :post="post" />
     </div>
 
     <!-- Empty state -->
-    <div v-else class="text-center py-24 text-gray-400">
+    <div
+      v-else-if="status !== 'pending'"
+      class="text-center py-24 text-gray-400"
+    >
       <p class="text-xl">{{ $t("blog.empty") }}</p>
     </div>
 
@@ -186,3 +143,17 @@ const totalPages = computed(() => Math.ceil(total.value / perPage))
     </div>
   </div>
 </template>
+<style scoped>
+.search-input::-ms-clear {
+  display: none;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
