@@ -6,6 +6,11 @@
     <ClientOnly>
       <CookieBanner />
     </ClientOnly>
+    <form name="contact" netlify hidden netlify-honeypot="bot-field">
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message" />
+    </form>
   </NuxtLayout>
 </template>
 <script setup>

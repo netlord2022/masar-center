@@ -49,10 +49,12 @@ useHead({
           </div>
         </div>
       </div>
+
       <LazySectionServices hydrate-on-visible />
       <LazySectionStatics hydrate-on-visible />
       <LazySectionTestimonials hydrate-on-visible />
       <LazySectionFaqs hydrate-on-visible />
+      <LazyContactForm hydrate-on-visible />
     </div>
   </div>
 </template>
