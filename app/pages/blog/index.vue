@@ -95,7 +95,12 @@ const totalPages = computed(() => Math.ceil(total.value / perPage))
       class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 dar:text-white"
       :class="{ 'opacity-60': status === 'pending' }"
     >
-      <StoryblokPostCard v-for="post in posts" :key="post.uuid" :post="post" />
+      <StoryblokPostCard
+        v-for="(post, index) in posts"
+        :key="post.uuid"
+        :post="post"
+        :index="index"
+      />
     </div>
 
     <!-- Empty state -->

@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import type { Post } from "../../type/post"
-const { post } = defineProps<{ post: Post; isRelated?: boolean }>()
+const { post } = defineProps<{
+  post: Post
+  index: number
+  isRelated?: boolean
+}>()
 </script>
 <template>
   <NuxtLinkLocale
@@ -19,7 +23,8 @@ const { post } = defineProps<{ post: Post; isRelated?: boolean }>()
         width="400"
         height="200"
         format="webp"
-        loading="lazy"
+        :preload="!isRelated && index < 2"
+        :loading="!isRelated && index < 2 ? 'eager' : 'lazy'"
         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
       />
     </div>

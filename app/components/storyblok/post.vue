@@ -16,7 +16,9 @@ const formatted = useDateFormatter(props?.blok?.date)
       provider="storyblok"
       width="800"
       height="400"
-      loading="lazy"
+      preload
+      loading="eager"
+      fetchpriority="high"
       format="webp"
       class="w-full h-72 md:h-96 object-cover rounded-2xl mb-8"
     />

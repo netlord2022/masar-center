@@ -114,9 +114,10 @@ useSeoMeta({
       </h2>
       <div class="grid gap-6 grid-cols-2 md:grid-cols-3 dark:text-white">
         <StoryblokPostCard
-          v-for="post in relatedPosts"
+          v-for="(post, index) in relatedPosts"
           :key="post.uuid"
           :post="post"
+          :index="index"
           is-related
         />
       </div>
