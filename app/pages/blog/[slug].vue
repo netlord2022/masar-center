@@ -4,6 +4,7 @@ const { t } = useI18n()
 const { sbLocale } = useStoryblokLocale()
 const slug = route.params.slug as string
 const storyblokApi = useStoryblokApi()
+const img = useImage()
 
 // Consolidate into a single network request block
 const { data: pageData } = await useAsyncData(
@@ -65,12 +66,18 @@ if (!pageData.value?.story) {
 const story = computed(() => pageData.value?.story)
 const relatedPosts = computed(() => pageData.value?.relatedPosts)
 
+const seoImg = img(story.value?.content?.cover_image?.filename, {
+  width: 300,
+  quality: 70,
+  format: "webp",
+})
+
 useSeoMeta({
   title: () =>
     (story.value?.content?.seo_title || story.value?.content?.title || "Blog") +
     " | " +
     t("masar"),
-  ogImage: () => story.value?.content?.cover_image?.filename,
+  ogImage: () => seoImg,
 
   description: () =>
     story.value?.content?.seo_description ||
