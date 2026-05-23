@@ -2,7 +2,6 @@
   "masar": "Masar",
   "masarCompany": "Masar UG",
   "about": "über uns",
-  "contact": "Kontakt",
   "team": "Unser Team",
   "home": "Startseite",
   "services": "Dienstleistungen",
@@ -30,6 +29,32 @@
         "answer": "Die Dauer hängt vom Visumtyp und dem Land ab, bei dem Sie sich bewerben. Wir geben Ihnen eine genauere Zeitschätzung basierend auf Ihrem individuellen Fall."
       }
     ]
+  },
+  "contact": {
+    "header": "Kontaktieren Sie uns",
+    "title": "Starten Sie Ihre globale Reise",
+    "description": "Senden Sie uns Ihre Daten und unser Team wird sich so schnell wie möglich bei Ihnen melden.",
+    "name": "Vollständiger Name",
+    "email": "E-Mail-Adresse",
+    "subject": "Betreff",
+    "message": "Nachricht",
+    "send": "Nachricht senden",
+    "loading": "Wird gesendet...",
+    "success": "Nachricht erfolgreich gesendet.",
+    "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+    "placeholders": {
+      "name": "Max Mustermann",
+      "email": "example{'@'}email.com",
+      "subject": "Visa-Beratung",
+      "message": "Schreiben Sie Ihre Nachricht..."
+    },
+    "errors": {
+      "name": "Name ist erforderlich",
+      "email": "E-Mail ist erforderlich",
+      "invalidEmail": "Ungültige E-Mail-Adresse",
+      "subject": "Betreff ist erforderlich",
+      "message": "Nachricht ist erforderlich"
+    }
   },
   "teams": {
     "title": "Unser Team",

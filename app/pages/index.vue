@@ -54,7 +54,7 @@ useHead({
       <LazySectionStatics hydrate-on-visible />
       <LazySectionTestimonials hydrate-on-visible />
       <LazySectionFaqs hydrate-on-visible />
-      <LazyContactForm hydrate-on-visible />
+      <LazySectionContact hydrate-on-visible />
     </div>
   </div>
 </template>

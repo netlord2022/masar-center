@@ -2,7 +2,6 @@
   "masar": "Masar",
   "masarCompany": "Masar UG",
   "about": "About us",
-  "contact": "Contact",
   "team": "Team",
   "home": "Home",
   "services": "Services",
@@ -30,6 +29,32 @@
         "answer": "The duration depends on the type of visa and the country you are applying to. We will provide you with a more accurate time estimate based on your individual case."
       }
     ]
+  },
+  "contact": {
+    "header": "Contact Us",
+    "title": "Start Your Global Journey",
+    "description": "Send us your details and our team will contact you as soon as possible.",
+    "name": "Full Name",
+    "email": "Email Address",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send Message",
+    "loading": "Sending...",
+    "success": "Message sent successfully.",
+    "error": "Something went wrong. Please try again.",
+    "placeholders": {
+      "name": "John Doe",
+      "email": "example{'@'}email.com",
+      "subject": "Visa Consultation",
+      "message": "Write your message..."
+    },
+    "errors": {
+      "name": "Name is required",
+      "email": "Email is required",
+      "invalidEmail": "Invalid email address",
+      "subject": "Subject is required",
+      "message": "Message is required"
+    }
   },
   "teams": {
     "title": "Our Team",

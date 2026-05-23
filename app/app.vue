@@ -9,6 +9,7 @@
     <form name="contact" netlify hidden netlify-honeypot="bot-field">
       <input type="text" name="name" />
       <input type="email" name="email" />
+      <input type="subject" name="subject" />
       <textarea name="message" />
     </form>
   </NuxtLayout>
