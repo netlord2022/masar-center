@@ -15,6 +15,7 @@ const { data: pageData } = await useAsyncData(
       .get(`cdn/stories/blog/${slug}`, {
         version: "published",
         language: sbLocale.value,
+        resolve_links: "url",
       })
       .catch(() => null) // Catch errors smoothly to allow manual 404 handling below
 
@@ -50,7 +51,8 @@ const { data: pageData } = await useAsyncData(
       story,
       relatedPosts: relatedStories,
     }
-  }
+  },
+  { watch: [sbLocale] }
 )
 
 // Handle 404 early before processing computed hooks or SEO metadata
@@ -113,7 +115,7 @@ useSeoMeta({
         {{ $t("blog.related") }}
       </h2>
       <div class="grid gap-6 grid-cols-2 md:grid-cols-3 dark:text-white">
-        <StoryblokPostCard
+        <LazyStoryblokPostCard
           v-for="(post, index) in relatedPosts"
           :key="post.uuid"
           :post="post"

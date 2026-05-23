@@ -29,6 +29,7 @@ const { data: posts, status } = await useAsyncData(
       per_page: perPage,
       page: page.value,
       version: "published",
+      resolve_links: "url",
     }
 
     if (search.value.trim()) {
@@ -41,6 +42,7 @@ const { data: posts, status } = await useAsyncData(
   },
   {
     watch: [page, sbLocale, search],
+    server: true,
     lazy: true,
     default: () => [],
     getCachedData(key, nuxtApp) {

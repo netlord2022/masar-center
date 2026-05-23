@@ -24,6 +24,14 @@ export default defineNuxtConfig({
   nitro: {
     routeRules: {
       "/_og/**": { static: true },
+      "/blog": { isr: 3600 },
+      "/de/blog": { isr: 3600 },
+      "/ar/blog": { isr: 3600 },
+      // Use ISR for individual blog posts so they generate instantly on demand
+      // without bloating your initial production build times
+      "/blog/**": { isr: 3600 },
+      "/de/blog/**": { isr: 3600 },
+      "/ar/blog/**": { isr: 3600 },
     },
     prerender:
       process.env.NODE_ENV === "production"
@@ -34,9 +42,8 @@ export default defineNuxtConfig({
               "/",
               "/de",
               "/ar",
-              "/blog",
-              "/de/blog",
-              "/ar/blog",
+              "/team",
+              "/ar/team",
               "/privacy",
               "/impressum",
               "/about",
@@ -175,8 +182,9 @@ export default defineNuxtConfig({
       include: [
         "vue",
         "@vueuse/core",
-        "@vue/devtools-core",
-        "@vue/devtools-kit",
+        ...(process.env.NODE_ENV !== "production"
+          ? ["@vue/devtools-core", "@vue/devtools-kit"]
+          : []),
         "@lottiefiles/dotlottie-vue",
       ],
     },
@@ -216,9 +224,14 @@ export default defineNuxtConfig({
     accessToken: process.env.STORYBLOK_DELIVERY_API_TOKEN,
     apiOptions: {
       region: process.env.STORYBLOK_REGION || "eu",
+      cache: {
+        clear: "auto", // clears cache on each request in draft, manual in published
+        type: "memory",
+      },
+      maxRetries: 3,
     },
-    bridge: true,
-    devtools: true,
+    bridge: process.env.NODE_ENV !== "production",
+    devtools: process.env.NODE_ENV !== "production",
   },
   devServer: {
     https: true,

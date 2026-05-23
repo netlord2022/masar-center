@@ -30,7 +30,7 @@ const modelValue = defineModel<string | null>({ required: false })
           d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"
         />
       </svg>
-      <button v-else class="w-4 h-4 cursor-pointer" @click="searchInput = ''">
+      <button v-else class="w-4 h-4 cursor-pointer" @click="modelValue = ''">
         <svg
           class="h-4 w-4"
           viewBox="0 0 24 24"

@@ -13,7 +13,7 @@ const { post } = defineProps<{
   >
     <div
       class="overflow-hidden bg-gray-100 dark:bg-gray-800"
-      :class="isRelated ? 'h-36: md:h-30' : 'h-48'"
+      :class="isRelated ? 'h-36 md:h-32' : 'h-48'"
     >
       <NuxtImg
         v-if="post.content.cover_image?.filename"
