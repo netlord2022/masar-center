@@ -18,7 +18,7 @@
     "@nuxtjs/i18n": "^10.3.0",
     "@nuxtjs/sitemap": "^8.0.15",
     "@tailwindcss/vite": "^4.3.0",
-    "@takumi-rs/core": "^1.2.1",
+    "@takumi-rs/core": "^1.5.1",
     "@vueuse/nuxt": "^14.3.0",
     "nuxt": "^4.4.6",
     "nuxt-og-image": "^6.5.0",
