@@ -8,7 +8,7 @@ definePageMeta({ title: "blog.title" })
 
 const search = ref("")
 const page = ref(1)
-const perPage = 9
+const perPage = 10
 const total = ref(0)
 
 const searchInput = ref("")
@@ -28,7 +28,7 @@ const { data: posts, status } = await useAsyncData(
       sort_by: "content.date:desc",
       per_page: perPage,
       page: page.value,
-      version: "published",
+      version: process.env.NODE_ENV === "production" ? "published" : "draft",
       resolve_links: "url",
     }
 
@@ -65,21 +65,49 @@ const displayPosts = computed(() =>
   status.value === "pending" ? lastPosts.value : (posts.value ?? [])
 )
 const totalPages = computed(() => Math.ceil(total.value / perPage))
+const featured = computed(() => posts.value?.[0] ?? null)
+const nonFeatured = computed(() =>
+  searchInput.value?.length ? posts.value : posts.value?.slice(1)
+)
 </script>
 <template>
-  <div class="max-w-7xl mx-auto px-4 py-16 w-full">
+  <div class="max-w-7xl mx-auto px-4 pt-8 pb-20 w-full">
     <!-- Header -->
 
     <div
       class="w-full mb-12 flex flex-col md:flex-row md:items-center gap-4 justify-between"
     >
-      <h1 class="text-4xl font-bold">{{ $t("blog.title") }}</h1>
+      <section class="w-full max-w-7xl mx-auto px-6 pb-10 text-center">
+        <div
+          class="inline-flex items-center gap-2 bg-primary/8 dark:bg-primary/15 border border-primary/20 text-primary dark:text-blue-400 text-xs font-bold px-4 py-1.5 rounded-full mb-5 tracking-widest uppercase animate-fade-up"
+        >
+          <span class="w-2 h-2 bg-secondary rounded-full animate-pulse" />
+          {{ $t("blog.masarBlog") }}
+        </div>
 
-      <!-- Search -->
-      <StoryblokSearchPost
-        v-model="searchInput"
-        class="relative w-full md:w-72"
-      />
+        <i18n-t
+          keypath="blog.headline"
+          tag="h1"
+          class="text-4xl md:text-5xl font-black text-primary dark:text-white leading-tight mb-4 animate-fade-up animation-delay-100"
+        >
+          <template #journey>
+            <span class="text-secondary">
+              {{ $t("blog.journey_word") }}
+            </span>
+          </template>
+        </i18n-t>
+        <p
+          class="text-gray-500 dark:text-gray-400 text-base max-w-xl mx-auto mb-8 leading-relaxed animate-fade-up animation-delay-200"
+        >
+          {{ $t("blog.description") }}
+        </p>
+
+        <!-- Search -->
+        <StoryblokSearchPost
+          v-model="searchInput"
+          class="relative w-full md:w-72"
+        />
+      </section>
     </div>
     <!-- Loading -->
 
@@ -94,15 +122,24 @@ const totalPages = computed(() => Math.ceil(total.value / perPage))
 
     <div
       v-if="displayPosts.length"
-      class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 dar:text-white"
       :class="{ 'opacity-60': status === 'pending' }"
     >
-      <StoryblokPostCard
-        v-for="(post, index) in posts"
-        :key="post.uuid"
-        :post="post"
-        :index="index"
-      />
+      <StoryblokState :length="displayPosts?.length" />
+
+      <StoryblokFeatured v-if="featured && !search" :post="featured" />
+      <p
+        class="text-xs font-bold tracking-widest uppercase text-secondary mt-8 mb-4 flex items-center gap-1"
+      >
+        {{ $t("blog.readMore") }}
+      </p>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 dar:text-white">
+        <StoryblokPostCard
+          v-for="(post, index) in nonFeatured"
+          :key="post.uuid"
+          :post="post"
+          :index="index"
+        />
+      </div>
     </div>
 
     <!-- Empty state -->
@@ -113,7 +150,7 @@ const totalPages = computed(() => Math.ceil(total.value / perPage))
       <p class="text-xl">{{ $t("blog.empty") }}</p>
     </div>
 
-    <!-- Pagination -->
+    <!-- Pagination  -->
     <div
       v-if="totalPages > 1"
       class="flex justify-center items-center gap-2 mt-16"
@@ -123,7 +160,20 @@ const totalPages = computed(() => Math.ceil(total.value / perPage))
         class="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 disabled:opacity-40 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
         @click="page--"
       >
-        ←
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="ionicon text-primary dark:text-secondary w-4 h-6"
+          viewBox="0 0 512 512"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="48"
+            d="M244 400L100 256l144-144M120 256h292"
+          />
+        </svg>
       </button>
 
       <button
@@ -145,7 +195,20 @@ const totalPages = computed(() => Math.ceil(total.value / perPage))
         class="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 disabled:opacity-40 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
         @click="page++"
       >
-        →
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="ionicon text-primary dark:text-secondary w-4 h-6"
+          viewBox="0 0 512 512"
+        >
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="48"
+            d="M268 112l144 144-144 144M392 256H100"
+          />
+        </svg>
       </button>
     </div>
   </div>

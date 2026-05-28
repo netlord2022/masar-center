@@ -2,7 +2,9 @@
 const modelValue = defineModel<string | null>({ required: false })
 </script>
 <template>
-  <div class="relative">
+  <div
+    class="relative flex items-center gap-3 max-w-md mx-auto bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-full px-5 py-3 focus-within:border-primary transition-colors duration-200 animate-fade-up animation-delay-300"
+  >
     <label for="search" class="sr-only">Search</label>
     <input
       id="search"
@@ -10,10 +12,10 @@ const modelValue = defineModel<string | null>({ required: false })
       type="text"
       name="search"
       :placeholder="$t('blog.search')"
-      class="search-input w-full px-4 py-2 rounded-xl border border-gray-300 dark:placeholder:text-gray-400 dark:border-gray-600 bg-white dark:bg-dark text-sm focus:outline-none focus:ring-2 focus:ring-primary dark:text-white"
+      class="flex-1 bg-transparent text-sm text-gray-800 dark:text-white placeholder-gray-400 outline-none"
     />
     <span
-      class="absolute right-3 rtl:left-3 rtl:right-auto top-2.5 text-gray-400"
+      class="absolute right-3 rtl:left-3 rtl:right-auto top-3 text-gray-400"
     >
       <svg
         v-if="!modelValue"

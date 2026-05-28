@@ -8,7 +8,7 @@ const formatted = useDateFormatter(props?.blok?.date)
 
 <template>
   <article class="max-w-3xl mx-auto px-4 py-16 dark:text-white">
-    <h1 class="text-4xl font-bold mb-4">{{ blok.title }}</h1>
+    <h1 class="text-4xl font-bold rtl:font-arabic mb-4">{{ blok.title }}</h1>
     <NuxtImg
       v-if="blok.cover_image?.filename"
       :src="blok.cover_image.filename"
@@ -22,9 +22,15 @@ const formatted = useDateFormatter(props?.blok?.date)
       format="webp"
       class="w-full h-72 md:h-96 object-cover rounded-2xl mb-8"
     />
-    <p class="text-sm text-gray-400 mb-2">{{ formatted }}</p>
+    <p class="text-sm text-gray-400 mb-2">
+      <span>{{ formatted }}</span>
+      <template v-if="blok.author">
+        <span class="mx-2">|</span>
+        <span>{{ blok.author }}</span>
+      </template>
+    </p>
 
-    <p class="text-xl text-gray-500 mb-10 leading-relaxed">
+    <p class="text-lg text-gray-700 mb-10">
       {{ blok.excerpt }}
     </p>
 
@@ -44,3 +50,27 @@ const formatted = useDateFormatter(props?.blok?.date)
     </div>
   </article>
 </template>
+<style scoped>
+@reference "./../../assets/css/main.css";
+.prose :deep() {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply py-2 rtl:font-arabic font-bold;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  h4 {
+    @apply text-lg;
+  }
+}
+</style>

@@ -39,7 +39,8 @@ const { data: pageData } = await useAsyncData(
           language: sbLocale.value,
           "filter_query[tags][0, 1, 2, 3]": tagsString,
           per_page: 3,
-          version: "published",
+          version:
+            process.env.NODE_ENV === "production" ? "published" : "draft",
           excluding_slugs: `blog/${slug}`, // Exclude current post
         })
         .catch(() => ({ data: { stories: [] } })) // Fallback if related fetch fails
@@ -90,6 +91,10 @@ useSeoMeta({
     " | " +
     t("masar"),
   ogImage: () => seoImg,
+  ogTitle: () =>
+    (story.value?.content?.seo_title || story.value?.content?.title || "Blog") +
+    " | " +
+    t("masar"),
 
   description: () =>
     story.value?.content?.seo_description ||
@@ -106,12 +111,17 @@ useSeoMeta({
       class="text-left self-start text-primary dark:text-white rtl:self-end rtl:text-right flex hover:underline"
     >
       <SvgIcon name="arrow-right" size="w-5 h-5  scale-x-[-1] mt-0.5 mx-1" />
-      back to blog</NuxtLinkLocale
+      {{ $t("blog.backToBlog") }}</NuxtLinkLocale
     >
     <StoryblokComponent v-if="story" :blok="story.content" />
     <!-- Related Posts -->
-    <section v-if="relatedPosts?.length" class="max-w-3xl mx-auto px-4 pb-16">
-      <h2 class="text-2xl font-bold mb-6 dark:text-white">
+    <section
+      v-if="relatedPosts?.length"
+      class="max-w-3xl mx-auto px-4 pb-16 mt-8"
+    >
+      <h2
+        class="text-2xl font-bold mb-6 dark:text-white text-primary rtl:font-arabic"
+      >
         {{ $t("blog.related") }}
       </h2>
       <div class="grid gap-6 grid-cols-2 md:grid-cols-3 dark:text-white">

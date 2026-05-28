@@ -14,9 +14,23 @@
   "faqSubtitle": "Here are some frequently asked questions that may help you learn more about us and our services.",
   "blog": {
     "title": "Blog",
+    "headline": "Articles that ease your {journey} to Germany",
+    "journey_word": "journey",
     "search": "Search posts...",
     "empty": "No posts found.",
-    "related": "Related Posts"
+    "related": "Related Posts",
+    "post": "Post",
+    "posts": "Posts",
+    "category": "Category",
+    "categories": "Categories",
+    "reader": "Readers",
+    "masarTeam": "Masar Team",
+    "readArticle": "Read Article",
+    "readMore": "Read More",
+    "new": "New",
+    "backToBlog": "Back to Blog",
+    "masarBlog": "Masar Blog",
+    "description": "Your guide to visa consultancy, study, and stay — with experts from around the world"
   },
   "faq": {
     "items": [
