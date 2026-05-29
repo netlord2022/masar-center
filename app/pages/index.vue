@@ -43,6 +43,7 @@ useHead({
             >
               {{ $t("heroTitle") }}
             </h1>
+            <h2 class="sr-only">Masar center | Masar UG | مركز مسار</h2>
             <p class="text-md md:text-xl lg:text-2xl mb-8 dark:text-white">
               {{ $t("heroSubtitle") }}
             </p>

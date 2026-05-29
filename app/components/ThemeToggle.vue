@@ -9,6 +9,19 @@ const isDark = computed({
     colorMode.preference = colorMode.value === "dark" ? "light" : "dark"
   },
 })
+// Sync theme-color with the resolved color mode
+const THEME_LIGHT = "#1a6b4a" // your brand green
+const THEME_DARK = "#0d4d35" // darker shade for dark mode
+
+useHead({
+  meta: computed(() => [
+    {
+      name: "theme-color",
+      media: `(prefers-color-scheme: ${isDark.value ? "dark" : "light"})`,
+      content: isDark.value ? THEME_DARK : THEME_LIGHT,
+    },
+  ]),
+})
 </script>
 
 <template>
