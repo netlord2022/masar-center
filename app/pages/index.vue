@@ -6,6 +6,7 @@ definePageMeta({
 useHead({
   meta: [
     { property: "og:title", content: t("masarCompany") },
+    { property: "twitter:title", content: t("masarCompany") },
     { property: "og:description", content: t("aboutUs.description") },
     { name: "description", content: t("aboutUs.description") },
   ],

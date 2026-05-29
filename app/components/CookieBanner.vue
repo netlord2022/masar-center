@@ -1,11 +1,27 @@
 <script setup lang="ts">
-const { consent, accept, reject } = useCookieConsent()
+const { preferences, accept, reject } = useCookieConsent()
+const { initialize, gtag } = useGtag()
+
+function handleAccept() {
+  accept()
+  initialize()
+  gtag("consent", "update", {
+    ad_user_data: "granted",
+    ad_personalization: "granted",
+    ad_storage: "granted",
+    analytics_storage: "granted",
+  })
+}
+
+function handleReject() {
+  reject() // saves { accepted: false } + reloads
+}
 </script>
 
 <template>
   <Transition name="slide-up">
     <div
-      v-if="consent === 'unset'"
+      v-if="preferences === null"
       class="fixed bottom-0 inset-x-0 bg-gray-900 text-white p-4 z-30 border-t border-white/20"
     >
       <div
@@ -18,14 +34,14 @@ const { consent, accept, reject } = useCookieConsent()
         <div class="flex gap-2">
           <button
             class="px-4 py-2 bg-green-700 rounded text-sm cursor-pointer"
-            @click="accept"
+            @click="handleAccept"
           >
             {{ $t("cookie.acceptAll") }}
           </button>
 
           <button
             class="px-4 py-2 bg-gray-700 rounded text-sm cursor-pointer"
-            @click="reject"
+            @click="handleReject"
           >
             {{ $t("cookie.rejectAll") }}
           </button>

@@ -9,21 +9,20 @@
   </NuxtLayout>
 </template>
 <script setup>
-const { consent } = useCookieConsent()
-useHead(
-  computed(() => ({
-    script:
-      consent.value === "accepted"
-        ? [
-            {
-              src: "https://www.googletagmanager.com/gtm.js?id=GTM-PJ2FN7P2",
-              async: true,
-              crossorigin: "anonymous",
-            },
-          ]
-        : [],
-  }))
-)
+const { preferences } = useCookieConsent()
+const { initialize, gtag } = useGtag()
+
+onMounted(() => {
+  if (preferences.value?.accepted) {
+    initialize()
+    gtag("consent", "update", {
+      ad_user_data: "granted",
+      ad_personalization: "granted",
+      ad_storage: "granted",
+      analytics_storage: "granted",
+    })
+  }
+})
 </script>
 <style>
 .page-enter-active,

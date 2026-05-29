@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const consent = useCookie("cookie_consent")
+const { reset } = useCookieConsent()
 const { y } = useWindowScroll()
 
 const bottom = computed(
@@ -166,7 +166,7 @@ const bottom = computed(
             <nav class="gap-3 sm:gap-4 flex text-sm sm:text-base font-medium">
               <button
                 class="cursor-pointer font-medium hover:scale-105 hover:text-secondary transition-all duration-300 ease-in-out"
-                @click="consent = 'unset'"
+                @click="reset"
               >
                 Cookies
               </button>
