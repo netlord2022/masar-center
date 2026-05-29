@@ -105,6 +105,12 @@ export default defineNuxtConfig({
         {
           rel: "icon",
           type: "image/png",
+          sizes: "48x48",
+          href: `/favicon-48x48.png`,
+        },
+        {
+          rel: "icon",
+          type: "image/png",
           sizes: "16x16",
           href: `/favicon-16x16.png`,
         },
@@ -130,7 +136,7 @@ export default defineNuxtConfig({
         { property: "og:image", content: `/masar-meta-logo.webp` },
         {
           property: "og:image:secure_url",
-          content: `/masar-meta-logo.webp`,
+          content: `${siteUrl}/masar-meta-logo.webp`,
         },
         { property: "og:image:type", content: "image/webp" },
         {
@@ -142,6 +148,20 @@ export default defineNuxtConfig({
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: "Masar Center" },
         { name: "twitter:image", content: `/masar-meta-logo.webp` },
+        {
+          name: "twitter:description",
+          content: "Masar Center - German visa consulting by Masar UG",
+        },
+        {
+          name: "theme-color",
+          content: "#1a6b4a",
+          media: "(prefers-color-scheme: light)",
+        },
+        {
+          name: "theme-color",
+          content: "#0d4d35",
+          media: "(prefers-color-scheme: dark)",
+        },
         { name: "color-scheme", content: "light dark" },
       ],
     },
