@@ -25,6 +25,7 @@ const title = computed(() => t(route?.meta?.title ?? "masar"))
             :content="meta.content"
           />
         </template>
+        <Meta property="og:site_name" :content="$t('masarCompany')" />
       </Head>
       <Body class="bg-white dark:bg-dark">
         <AppHeader />

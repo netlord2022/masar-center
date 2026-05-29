@@ -193,6 +193,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "nuxt-og-image",
     "@nuxtjs/sitemap",
+    "nuxt-gtag",
   ],
   colorMode: {
     preference: "system", // 'light' | 'dark' | 'system'
@@ -200,6 +201,26 @@ export default defineNuxtConfig({
     storageKey: "theme",
     storage: "cookie",
     classSuffix: "", // so Tailwind uses `.dark`
+  },
+  gtag: {
+    enabled: true, // process.env.NODE_ENV === "production", // silent no-op in dev
+    initMode: "manual", // never loads until user clicks Accept
+    id: "GTM-PJ2FN7P2", // your GTM container — fires Heap + all nested tags
+
+    // Consent Mode v2 defaults: everything denied until user decides
+    initCommands: [
+      [
+        "consent",
+        "default",
+        {
+          ad_user_data: "denied",
+          ad_personalization: "denied",
+          ad_storage: "denied",
+          analytics_storage: "denied",
+          wait_for_update: 500,
+        },
+      ],
+    ],
   },
   image: {
     format: ["avif", "webp"],
