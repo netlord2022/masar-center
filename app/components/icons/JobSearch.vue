@@ -6,6 +6,7 @@
     viewBox="0 0 743.70364 416.5"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     role="img"
+    alt="Job Search"
     artist="Katerina Limpitsouni"
     source="https://undraw.co/"
   >

@@ -6,6 +6,7 @@
     viewBox="0 0 800 712.457"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     role="img"
+    alt="Mohammad"
     artist="Katerina Limpitsouni"
     source="https://undraw.co/"
   >

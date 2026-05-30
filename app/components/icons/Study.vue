@@ -6,6 +6,7 @@
     viewBox="0 0 466.1 757.339"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     role="img"
+    alt="Study"
     artist="Katerina Limpitsouni"
     source="https://undraw.co/"
   >

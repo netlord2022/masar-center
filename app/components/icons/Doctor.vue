@@ -6,6 +6,7 @@
     viewBox="0 0 692.68042 596.95062"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     role="img"
+    alt="Doctor"
     artist="Katerina Limpitsouni"
     source="https://undraw.co/"
   >
