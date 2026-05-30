@@ -114,6 +114,12 @@ export default defineNuxtConfig({
           sizes: "16x16",
           href: `/favicon-16x16.png`,
         },
+        {
+          rel: "preload",
+          as: "image",
+          type: "image/webp",
+          href: `${siteUrl}/hero.webp`,
+        },
       ],
       meta: [
         { property: "og:type", content: "website" },
