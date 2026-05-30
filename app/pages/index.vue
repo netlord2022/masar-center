@@ -30,7 +30,7 @@ useHead({
             height="1200"
             placeholder
             preload
-            sizes="sm:100vw md:50vw lg:712px"
+            sizes="sm:100vw md:50vw lg:1200px"
           />
           <div
             class="text-primary dark:text-white md:pl-6 text-left rtl:text-right mt-6 md:mt-0"
