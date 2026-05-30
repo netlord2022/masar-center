@@ -114,20 +114,6 @@ export default defineNuxtConfig({
           sizes: "16x16",
           href: `/favicon-16x16.png`,
         },
-        {
-          rel: "preload",
-          as: "font",
-          type: "font/woff2",
-          href: `/fonts/montserrat/montserrat-bold.woff2`,
-          crossorigin: "anonymous",
-        },
-        {
-          rel: "preload",
-          as: "font",
-          type: "font/woff2",
-          href: `/fonts/vazirmatn/vazirmatn-extrabold.woff2`,
-          crossorigin: "anonymous",
-        },
       ],
       meta: [
         { property: "og:type", content: "website" },
@@ -194,7 +180,24 @@ export default defineNuxtConfig({
     "nuxt-og-image",
     "@nuxtjs/sitemap",
     "nuxt-gtag",
+    "@nuxt/fonts",
   ],
+  fonts: {
+    defaults: {
+      weights: [400, 700, 800],
+      styles: ["normal"],
+      subsets: [
+        "cyrillic-ext",
+        "cyrillic",
+        "greek-ext",
+        "greek",
+        "vietnamese",
+        "latin-ext",
+        "latin",
+        "arabic",
+      ],
+    },
+  },
   colorMode: {
     preference: "system", // 'light' | 'dark' | 'system'
     fallback: "light",

@@ -62,7 +62,7 @@ onMounted(async () => {
             :alt="member.name"
             class="w-40 h-40 rounded-full object-cover mb-4 border-2 border-primary dark:border-secondary"
           />
-          <h3 class="text-xl font-semibold dark:text-white">
+          <h3 class="text-xl font-semibold text-primary dark:text-white">
             {{ member.name }}
           </h3>
           <p class="text-sm text-gray-500 mb-4 dark:text-gray-300">
