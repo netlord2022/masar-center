@@ -28,7 +28,7 @@ useHead({
             fetchpriority="high"
             width="1200"
             height="1200"
-            :placeholder="20"
+            placeholder
             preload
             sizes="sm:100vw md:50vw lg:712px"
           />
