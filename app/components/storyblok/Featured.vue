@@ -68,7 +68,7 @@ defineProps<{
         </div>
 
         <h2
-          class="text-xl font-bold text-gray-900 dark:text-white leading-snug mb-3 group-hover:text-primary transition-colors"
+          class="text-xl font-bold text-gray-900 dark:text-white leading-snug mb-3 line-clamp-2 group-hover:text-primary transition-colors"
         >
           {{ post.content.title }}
         </h2>

@@ -72,5 +72,14 @@ const formatted = useDateFormatter(props?.blok?.date)
   h4 {
     @apply text-lg;
   }
+  a {
+    @apply text-primary dark:text-blue-700 hover:underline;
+  }
+  ul {
+    @apply list-disc mb-4 px-2;
+  }
+  li {
+    @apply mb-2;
+  }
 }
 </style>
