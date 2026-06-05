@@ -3,6 +3,7 @@ const route = useRoute()
 const { t } = useI18n()
 const head = useLocaleHead()
 const title = computed(() => t(route?.meta?.title ?? "masar"))
+const keywords = computed(() => t("keyWords"))
 </script>
 
 <template>
@@ -26,6 +27,7 @@ const title = computed(() => t(route?.meta?.title ?? "masar"))
           />
         </template>
         <Meta property="og:site_name" :content="$t('masarCompany')" />
+        <Meta name="keywords" :content="keywords" />
       </Head>
       <Body class="bg-white dark:bg-dark">
         <AppHeader />

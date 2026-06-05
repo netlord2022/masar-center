@@ -10,6 +10,28 @@ useHead({
     { property: "og:description", content: t("aboutUs.description") },
     { name: "description", content: t("aboutUs.description") },
   ],
+  script: [
+    {
+      type: "application/ld+json",
+      innerHTML: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: "Masar Center",
+        alternateName: "Masar UG",
+        url: "https://masar-center.de",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://masar-center.de/masar-meta-logo.webp",
+        },
+        description:
+          "A registered German company offering consulting services for German visas for students and job seekers.",
+        sameAs: [
+          "https://www.instagram.com/masar.ug.de",
+          "https://www.facebook.com/profile.php?id=61585719966946",
+        ],
+      }),
+    },
+  ],
 })
 </script>
 
