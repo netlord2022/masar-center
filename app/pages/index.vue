@@ -36,7 +36,7 @@ useHead({
 </script>
 
 <template>
-  <div class="w-full max-w-full" role="main">
+  <div class="w-full max-w-full">
     <div class="w-full max-w-full">
       <div dir="ltr">
         <div

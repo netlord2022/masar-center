@@ -7,6 +7,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     role="img"
     alt="Mohammad"
+    title="Mohammad"
     artist="Katerina Limpitsouni"
     source="https://undraw.co/"
   >

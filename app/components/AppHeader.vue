@@ -78,7 +78,11 @@ onClickOutside(target, () => close(), { ignore: [ignoreEl] })
         </div>
       </NuxtLinkLocale>
       <!-- Desktop Nav -->
-      <nav class="space-x-6 hidden md:flex" role="navigation">
+      <nav
+        class="space-x-6 hidden md:flex"
+        role="navigation"
+        aria-label="navigation"
+      >
         <NuxtLinkLocale
           v-for="(link, index) in links"
           :key="index"
