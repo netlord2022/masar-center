@@ -8,6 +8,7 @@
     class="relative block flex-none"
     :width="width"
     :height="height"
+    :alt="name"
     v-html="svgContent"
   ></svg>
 </template>

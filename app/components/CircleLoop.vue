@@ -16,6 +16,7 @@
             height="32"
             viewBox="25.094999313354492 26.966995239257812 149.8090057373047 146.06700134277344"
             class="relative z-10 mx-auto h-3/4 w-3/4 my-auto flex self-center"
+            alt="circle"
           >
             <path
               d="M38.74 91.034h136.164l-55.432-64.067v36.777H38.74c-7.536 0-13.645 6.109-13.645 13.645 0 7.535 6.109 13.645 13.645 13.645z"
@@ -27,7 +28,7 @@
             />
           </svg>
           <div class="absolute bottom-0 left-0 w-full h-full">
-            <svg viewBox="0 0 512 512">
+            <svg viewBox="0 0 512 512" alt="arrow-right">
               <circle
                 class="path-16 stroke-primary dark:stroke-white"
                 cx="256"
@@ -60,7 +61,7 @@
           <div
             class="ball-0-disk ball-fx fx absolute bottom-0 left-0 w-full h-full"
           >
-            <svg viewBox="0 0 512 512">
+            <svg viewBox="0 0 512 512" alt="arrow-left">
               <path
                 class="path-14 fill-secondary"
                 d="M262.941,504c0,3.9-3.1,7-7,7s-7-3.1-7-7s3.1-7,7-7S262.941,500.1,262.941,504z"

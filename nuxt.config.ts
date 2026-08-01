@@ -187,6 +187,7 @@ export default defineNuxtConfig({
     "@nuxtjs/sitemap",
     "nuxt-gtag",
     "@nuxt/fonts",
+    "@nuxt/a11y",
   ],
   fonts: {
     defaults: {
