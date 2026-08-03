@@ -1,4 +1,5 @@
 import tailwindcss from "@tailwindcss/vite"
+import mkcert from "vite-plugin-mkcert"
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || "https://masar-center.de"
@@ -9,6 +10,8 @@ export default defineNuxtConfig({
     public: {
       siteUrl,
     },
+    storyblokApiBaseUrl: process.env.STORYBLOK_API_BASE_URL,
+    storyblokDeliveryApiToken: process.env.STORYBLOK_DELIVERY_API_TOKEN,
   },
 
   site: {
@@ -31,6 +34,9 @@ export default defineNuxtConfig({
               "/",
               "/de",
               "/ar",
+              "/blog",
+              "/de/blog",
+              "/ar/blog",
               "/privacy",
               "/impressum",
               "/about",
@@ -164,7 +170,7 @@ export default defineNuxtConfig({
   // CSS and assets
   css: ["~/assets/css/main.css"],
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss(), mkcert()],
     optimizeDeps: {
       include: [
         "vue",
@@ -185,6 +191,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "nuxt-og-image",
     "@nuxtjs/sitemap",
+    "@storyblok/nuxt",
     "nuxt-gtag",
     "@nuxt/fonts",
     "@nuxt/a11y",
@@ -204,6 +211,17 @@ export default defineNuxtConfig({
         "arabic",
       ],
     },
+  },
+  storyblok: {
+    accessToken: process.env.STORYBLOK_DELIVERY_API_TOKEN,
+    apiOptions: {
+      region: process.env.STORYBLOK_REGION || "eu",
+    },
+    bridge: true,
+    devtools: true,
+  },
+  devServer: {
+    https: true,
   },
   colorMode: {
     preference: "system", // 'light' | 'dark' | 'system'
