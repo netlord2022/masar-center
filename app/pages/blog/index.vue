@@ -128,6 +128,7 @@ const nonFeatured = computed(() =>
 
       <StoryblokFeatured v-if="featured && !search" :post="featured" />
       <p
+        v-if="nonFeatured.length > 1"
         class="text-xs font-bold tracking-widest uppercase text-secondary mt-8 mb-4 flex items-center gap-1"
       >
         {{ $t("blog.readMore") }}
@@ -153,11 +154,12 @@ const nonFeatured = computed(() =>
     <!-- Pagination  -->
     <div
       v-if="totalPages > 1"
+      dir="ltr"
       class="flex justify-center items-center gap-2 mt-16"
     >
       <button
         :disabled="page === 1"
-        class="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 disabled:opacity-40 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        class="cursor-pointer disabled:cursor-not-allowed px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 disabled:opacity-40 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
         @click="page--"
       >
         <svg
@@ -183,7 +185,7 @@ const nonFeatured = computed(() =>
           'px-4 py-2 rounded-lg border transition-colors',
           p === page
             ? 'bg-primary text-white border-primary'
-            : 'border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800',
+            : 'cursor-pointer border-gray-300 text-gray-800 dark:text-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800',
         ]"
         @click="page = p"
       >
@@ -192,7 +194,7 @@ const nonFeatured = computed(() =>
 
       <button
         :disabled="page === totalPages"
-        class="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 disabled:opacity-40 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        class="cursor-pointer disabled:cursor-not-allowed px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 disabled:opacity-40 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
         @click="page++"
       >
         <svg

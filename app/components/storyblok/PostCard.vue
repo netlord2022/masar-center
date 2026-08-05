@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Post } from "../../type/post"
+import { useDateFormatter } from "@/composables/useDateFormatter"
 const { post } = defineProps<{
   post: Post
   index: number
@@ -33,7 +34,7 @@ const { post } = defineProps<{
         v-if="!isRelated"
         class="text-xs text-gray-400 dark:text-gray-200 mb-2"
       >
-        {{ post.content.date }}
+        {{ useDateFormatter(post.content.date) }}
       </p>
       <h2
         class="font-bold text-black dark:text-white leading-snug group-hover:text-primary transition-colors line-clamp-2"

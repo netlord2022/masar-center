@@ -8,7 +8,11 @@ const formatted = useDateFormatter(props?.blok?.date)
 
 <template>
   <article class="max-w-3xl mx-auto px-4 py-16 dark:text-white">
-    <h1 class="text-4xl font-bold rtl:font-arabic mb-4">{{ blok.title }}</h1>
+    <h1
+      class="text-4xl font-bold rtl:font-arabic mb-4 text-black dark:text-white"
+    >
+      {{ blok.title }}
+    </h1>
     <NuxtImg
       v-if="blok.cover_image?.filename"
       :src="blok.cover_image.filename"
