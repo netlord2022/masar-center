@@ -30,11 +30,11 @@ const formatted = useDateFormatter(props?.blok?.date)
       </template>
     </p>
 
-    <p class="text-lg text-gray-700 mb-10">
+    <p class="text-lg text-gray-700 mb-10 dark:text-gray-400">
       {{ blok.excerpt }}
     </p>
 
-    <div class="prose dark:prose-invert max-w-none">
+    <div class="prose dark:prose-invert max-w-none text-black dark:text-white">
       <StoryblokRichText v-if="blok.content" :doc="blok.content" />
     </div>
     <div v-if="blok.tags">
@@ -73,7 +73,7 @@ const formatted = useDateFormatter(props?.blok?.date)
     @apply text-lg;
   }
   a {
-    @apply text-primary dark:text-blue-700 hover:underline;
+    @apply text-primary dark:text-blue-500 hover:underline;
   }
   ul {
     @apply list-disc mb-4 px-2;

@@ -36,8 +36,8 @@ const { post } = defineProps<{
         {{ post.content.date }}
       </p>
       <h2
-        class="font-bold dark:text-white leading-snug group-hover:text-primary transition-colors line-clamp-2"
-        :class="isRelated ? 'text-base md:text-lg' : 'text-lg'"
+        class="font-bold text-black dark:text-white leading-snug group-hover:text-primary transition-colors line-clamp-2"
+        :class="isRelated ? 'text-base' : 'text-lg'"
       >
         {{ post.content.title }}
       </h2>
