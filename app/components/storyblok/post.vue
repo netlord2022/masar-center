@@ -7,7 +7,7 @@ const formatted = useDateFormatter(props?.blok?.date)
 </script>
 
 <template>
-  <article class="max-w-3xl mx-auto px-4 py-16 dark:text-white">
+  <article v-if="blok" class="max-w-3xl mx-auto px-4 py-16 dark:text-white">
     <h1
       class="text-4xl font-bold rtl:font-arabic mb-4 text-black dark:text-white"
     >

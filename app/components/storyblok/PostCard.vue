@@ -3,7 +3,7 @@ import type { Post } from "../../type/post"
 import { useDateFormatter } from "@/composables/useDateFormatter"
 const { post } = defineProps<{
   post: Post
-  index: number
+  index: number | string
   isRelated?: boolean
 }>()
 </script>
@@ -24,8 +24,8 @@ const { post } = defineProps<{
         width="400"
         height="200"
         format="webp"
-        :preload="!isRelated && index < 2"
-        :loading="!isRelated && index < 2 ? 'eager' : 'lazy'"
+        :preload="!isRelated && Number(index) < 2"
+        :loading="!isRelated && Number(index) < 2 ? 'eager' : 'lazy'"
         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
       />
     </div>
@@ -43,10 +43,8 @@ const { post } = defineProps<{
         {{ post.content.title }}
       </h2>
       <p
-        class="text-gray-500 dark:text-gray-200 mt-2"
-        :class="
-          isRelated ? 'line-clamp-2 text-xs md:text-sm' : 'line-clamp-3 text-sm'
-        "
+        class="text-gray-500 dark:text-gray-300 mt-2"
+        :class="isRelated ? 'line-clamp-2 text-xs' : 'line-clamp-3 text-sm'"
       >
         {{ post.content.excerpt }}
       </p>

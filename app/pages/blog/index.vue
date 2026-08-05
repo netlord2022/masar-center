@@ -9,7 +9,6 @@ definePageMeta({ title: "blog.title" })
 const search = ref("")
 const page = ref(1)
 const perPage = 10
-const total = ref(0)
 
 const searchInput = ref("")
 const debouncedSearchInput = refDebounced(searchInput, 700)
@@ -19,7 +18,7 @@ watch(debouncedSearchInput, (newVal) => {
   page.value = 1
 })
 
-const { data: posts, status } = await useAsyncData(
+const { data, status } = await useAsyncData(
   `blog-posts-${sbLocale.value}`,
   async () => {
     const params: Record<string, unknown> = {
@@ -37,32 +36,36 @@ const { data: posts, status } = await useAsyncData(
     }
 
     const res = await storyblok.get("cdn/stories", params)
-    total.value = Number(res.headers?.total ?? 0)
-    return res.data.stories
+
+    return {
+      stories: res.data.stories,
+      total: Number(res.headers?.total ?? 0),
+    }
   },
   {
     watch: [page, sbLocale, search],
     server: true,
     lazy: true,
-    default: () => [],
+    default: () => ({ stories: [], total: 0 }),
     getCachedData(key, nuxtApp) {
-      // Only serve the cached payload during initial SSR hydration
       if (nuxtApp.isHydrating) {
         return nuxtApp.payload.data[key]
       }
-      // Return undefined for any user action (search/page changes) to force a live fetch
       return undefined
     },
   }
 )
-const lastPosts = ref([])
 
+const posts = computed(() => data.value?.stories ?? [])
+const total = computed(() => data.value?.total ?? 0)
+
+const lastPosts = ref<typeof posts.value>([])
 watch(posts, (val) => {
   if (val?.length) lastPosts.value = val
 })
 
 const displayPosts = computed(() =>
-  status.value === "pending" ? lastPosts.value : (posts.value ?? [])
+  status.value === "pending" ? lastPosts.value : posts.value
 )
 const totalPages = computed(() => Math.ceil(total.value / perPage))
 const featured = computed(() => posts.value?.[0] ?? null)
