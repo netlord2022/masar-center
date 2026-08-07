@@ -27,7 +27,7 @@ const { data, status } = await useAsyncData(
       sort_by: "content.date:desc",
       per_page: perPage,
       page: page.value,
-      version: process.env.NODE_ENV === "production" ? "published" : "draft",
+      version: process.env.STORYBLOK_BRIDGE === "true" ? "draft" : "published",
       resolve_links: "url",
     }
 
@@ -127,7 +127,7 @@ const nonFeatured = computed(() =>
       v-if="displayPosts.length"
       :class="{ 'opacity-60': status === 'pending' }"
     >
-      <StoryblokState :length="displayPosts?.length" />
+      <StoryblokState :length="total" />
 
       <StoryblokFeatured v-if="featured && !search" :post="featured" />
       <p

@@ -19,6 +19,11 @@
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+/* Forces @nuxt/fonts to realize Vazirmatn + 700 is required */
+.force-vazirmatn-bold {
+  font-family: "vazirmatn", sans-serif;
+  font-weight: 700;
+}
 
 html::-webkit-scrollbar {
   width: 0px;

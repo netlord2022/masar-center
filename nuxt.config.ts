@@ -219,6 +219,10 @@ export default defineNuxtConfig({
         "arabic",
       ],
     },
+    families: [
+      { name: "Montserrat", provider: "google", weights: [400, 700, 800] },
+      { name: "Vazirmatn", provider: "google", weights: [400, 700, 800] },
+    ],
   },
   storyblok: {
     accessToken: process.env.STORYBLOK_DELIVERY_API_TOKEN,
@@ -230,8 +234,8 @@ export default defineNuxtConfig({
       },
       maxRetries: 3,
     },
-    bridge: process.env.NODE_ENV !== "production",
-    devtools: process.env.NODE_ENV !== "production",
+    bridge: process.env.STORYBLOK_BRIDGE === "true",
+    devtools: process.env.STORYBLOK_BRIDGE === "true",
   },
   devServer: {
     https: true,

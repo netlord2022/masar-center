@@ -13,7 +13,8 @@ const { data: pageData } = await useAsyncData(
     // 1. Fetch the main post first
     const postRes = await storyblokApi
       .get(`cdn/stories/blog/${slug}`, {
-        version: "published",
+        version:
+          process.env.STORYBLOK_BRIDGE === "true" ? "draft" : "published",
         language: sbLocale.value,
         resolve_links: "url",
       })
@@ -40,7 +41,7 @@ const { data: pageData } = await useAsyncData(
           "filter_query[tags][0, 1, 2, 3]": tagsString,
           per_page: 3,
           version:
-            process.env.NODE_ENV === "production" ? "published" : "draft",
+            process.env.STORYBLOK_BRIDGE === "true" ? "draft" : "published",
           excluding_slugs: `blog/${slug}`, // Exclude current post
         })
         .catch(() => ({ data: { stories: [] } })) // Fallback if related fetch fails
