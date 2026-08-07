@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const config = useRuntimeConfig()
 const route = useRoute()
 const { t } = useI18n()
 const { sbLocale } = useStoryblokLocale()
@@ -13,8 +14,7 @@ const { data: pageData } = await useAsyncData(
     // 1. Fetch the main post first
     const postRes = await storyblokApi
       .get(`cdn/stories/blog/${slug}`, {
-        version:
-          process.env.STORYBLOK_BRIDGE === "true" ? "draft" : "published",
+        version: config.public.storyblokBridge ? "draft" : "published",
         language: sbLocale.value,
         resolve_links: "url",
       })
@@ -40,8 +40,7 @@ const { data: pageData } = await useAsyncData(
           language: sbLocale.value,
           "filter_query[tags][0, 1, 2, 3]": tagsString,
           per_page: 3,
-          version:
-            process.env.STORYBLOK_BRIDGE === "true" ? "draft" : "published",
+          version: config.public.storyblokBridge ? "draft" : "published",
           excluding_slugs: `blog/${slug}`, // Exclude current post
         })
         .catch(() => ({ data: { stories: [] } })) // Fallback if related fetch fails

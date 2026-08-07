@@ -9,6 +9,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl,
+      storyblokBridge: process.env.STORYBLOK_BRIDGE === "true",
     },
     storyblokApiBaseUrl: process.env.STORYBLOK_API_BASE_URL,
     storyblokDeliveryApiToken: process.env.STORYBLOK_DELIVERY_API_TOKEN,

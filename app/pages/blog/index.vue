@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { refDebounced } from "@vueuse/core"
 
+const config = useRuntimeConfig()
 const { sbLocale } = useStoryblokLocale()
 const storyblok = useStoryblokApi()
 
@@ -27,7 +28,7 @@ const { data, status } = await useAsyncData(
       sort_by: "content.date:desc",
       per_page: perPage,
       page: page.value,
-      version: process.env.STORYBLOK_BRIDGE === "true" ? "draft" : "published",
+      version: config.public.storyblokBridge ? "draft" : "published",
       resolve_links: "url",
     }
 
