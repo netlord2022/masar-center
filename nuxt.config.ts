@@ -19,18 +19,6 @@ export default defineNuxtConfig({
     url: siteUrl,
     name: "Masar Center",
   },
-  // TEMP DEBUG — remove after confirming
-  hooks: {
-    "build:before": () => {
-      console.log(
-        ">>> STORYBLOK_BRIDGE at build:",
-        JSON.stringify(process.env.STORYBLOK_BRIDGE)
-      )
-      console.log(">>> CONTEXT:", process.env.CONTEXT)
-      console.log(">>> BRANCH:", process.env.BRANCH)
-    },
-  },
-
   // SSG Configuration
   ssr: true,
   nitro: {

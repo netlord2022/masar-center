@@ -4,6 +4,8 @@
     <button
       ref="ignoreEl"
       dir="ltr"
+      type="button"
+      aria-label="Choose language"
       class="flex items-center p-1 rounded-md shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none cursor-pointer active:ring-1"
       aria-haspopup="menu"
       :class="{ 'ring-1': open }"

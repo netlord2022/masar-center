@@ -165,6 +165,8 @@ const bottom = computed(
           >
             <nav class="gap-3 sm:gap-4 flex text-sm sm:text-base font-medium">
               <button
+                type="button"
+                aria-label="Cookies settings"
                 class="cursor-pointer font-medium hover:scale-105 hover:text-secondary transition-all duration-300 ease-in-out"
                 @click="reset"
               >

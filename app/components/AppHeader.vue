@@ -50,6 +50,7 @@ onClickOutside(target, () => close(), { ignore: [ignoreEl] })
         ref="ignoreEl"
         class="flex md:hidden mr-10 focus:outline-none rtl:ml-10 rtl:mr-0 menu-toggle flex-col gap-1"
         aria-label="Open menu"
+        type="button"
         :class="{ active: isOpen }"
         @click.prevent.stop="isOpen = !isOpen"
       >

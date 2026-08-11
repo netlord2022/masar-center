@@ -163,6 +163,8 @@ const nonFeatured = computed(() =>
     >
       <button
         :disabled="page === 1"
+        type="button"
+        aria-label="Go to previous page"
         class="cursor-pointer disabled:cursor-not-allowed px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 disabled:opacity-40 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
         @click="page--"
       >
@@ -185,6 +187,8 @@ const nonFeatured = computed(() =>
       <button
         v-for="p in totalPages"
         :key="p"
+        :aria-label="`Go to page ${p}`"
+        type="button"
         :class="[
           'px-4 py-2 rounded-lg border transition-colors',
           p === page
@@ -198,6 +202,8 @@ const nonFeatured = computed(() =>
 
       <button
         :disabled="page === totalPages"
+        type="button"
+        aria-label="Go to next page"
         class="cursor-pointer disabled:cursor-not-allowed px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 disabled:opacity-40 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
         @click="page++"
       >

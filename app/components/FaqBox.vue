@@ -4,6 +4,8 @@
   >
     <button
       class="flex justify-between cursor-pointer items-center"
+      type="button"
+      aria-label="Toggle answer"
       @click.prevent="more = !more"
     >
       <span class="w-auto text-primary dark:text-white font-bold">{{

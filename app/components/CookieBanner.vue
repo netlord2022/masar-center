@@ -33,6 +33,8 @@ function handleReject() {
 
         <div class="flex gap-2">
           <button
+            type="button"
+            aria-label="Accept cookies"
             class="px-4 py-2 bg-green-700 rounded text-sm cursor-pointer"
             @click="handleAccept"
           >
@@ -40,6 +42,8 @@ function handleReject() {
           </button>
 
           <button
+            type="button"
+            aria-label="Reject cookies"
             class="px-4 py-2 bg-gray-700 rounded text-sm cursor-pointer"
             @click="handleReject"
           >
