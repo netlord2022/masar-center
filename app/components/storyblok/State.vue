@@ -9,8 +9,8 @@ defineProps<{ length?: number }>()
       <div
         v-for="stat in [
           { num: length ?? 0, label: $t('blog.posts') },
-          { num: 7, label: $t('blog.reader'), unit: 'k' },
-          { num: 9, label: $t('blog.categories') },
+          { num: 3, label: $t('blog.reader'), unit: 'k' },
+          { num: 7, label: $t('blog.categories') },
         ]"
         :key="stat.label"
         class="bg-gray-50 dark:bg-white/5 rounded-xl p-4 text-center border border-gray-100 dark:border-white/20"
