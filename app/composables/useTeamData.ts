@@ -83,6 +83,14 @@ const teamMembers: TeamMember[] = [
     instagram: "https://www.instagram.com/batoulmasarco?igsh=dWN0OWc3NWhuMDhv",
   },
   {
+    slug: "balqees-abo-fakher",
+    name: "Balqees Abo Fakher",
+    role: "Content Writer",
+    bio: localedBio("Balqees", "بلقيس", true),
+    photo: "/team/balqees-abo-fakher.webp",
+    mail: "blqeesaf@gmail.com",
+  },
+  {
     slug: "rama-ismaeel",
     name: "Rama Ismaeel",
     role: "Branch Manager",
