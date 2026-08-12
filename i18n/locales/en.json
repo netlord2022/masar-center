@@ -12,6 +12,26 @@
   "heroSubtitle": "Expert visa consultancy services to help you navigate the complexities of international travel and secure your dream visa.",
   "faqTitle": "Frequently Asked Questions",
   "faqSubtitle": "Here are some frequently asked questions that may help you learn more about us and our services.",
+  "blog": {
+    "title": "Blog",
+    "headline": "Articles that ease your {journey} to Europe",
+    "journey_word": "journey",
+    "search": "Search posts...",
+    "empty": "No posts found.",
+    "related": "Related Posts",
+    "post": "Post",
+    "posts": "Posts",
+    "category": "Category",
+    "categories": "Categories",
+    "reader": "Readers",
+    "masarTeam": "Masar Team",
+    "readArticle": "Read Article",
+    "readMore": "Read More",
+    "new": "New",
+    "backToBlog": "Back to Blog",
+    "masarBlog": "Masar Blog",
+    "description": "Your guide to visa consultancy, study, and stay — with experts from around the world"
+  },
   "faq": {
     "items": [
       {

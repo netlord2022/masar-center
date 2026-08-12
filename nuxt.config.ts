@@ -1,4 +1,5 @@
 import tailwindcss from "@tailwindcss/vite"
+import mkcert from "vite-plugin-mkcert"
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || "https://masar-center.de"
@@ -8,19 +9,29 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl,
+      storyblokBridge: process.env.STORYBLOK_BRIDGE === "true",
     },
+    storyblokApiBaseUrl: process.env.STORYBLOK_API_BASE_URL,
+    storyblokDeliveryApiToken: process.env.STORYBLOK_DELIVERY_API_TOKEN,
   },
 
   site: {
     url: siteUrl,
     name: "Masar Center",
   },
-
   // SSG Configuration
   ssr: true,
   nitro: {
     routeRules: {
       "/_og/**": { static: true },
+      "/blog": { isr: 3600 },
+      "/de/blog": { isr: 3600 },
+      "/ar/blog": { isr: 3600 },
+      // Use ISR for individual blog posts so they generate instantly on demand
+      // without bloating your initial production build times
+      "/blog/**": { isr: 3600 },
+      "/de/blog/**": { isr: 3600 },
+      "/ar/blog/**": { isr: 3600 },
     },
     prerender:
       process.env.NODE_ENV === "production"
@@ -31,6 +42,8 @@ export default defineNuxtConfig({
               "/",
               "/de",
               "/ar",
+              "/team",
+              "/ar/team",
               "/privacy",
               "/impressum",
               "/about",
@@ -164,13 +177,14 @@ export default defineNuxtConfig({
   // CSS and assets
   css: ["~/assets/css/main.css"],
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss(), mkcert()],
     optimizeDeps: {
       include: [
         "vue",
         "@vueuse/core",
-        "@vue/devtools-core",
-        "@vue/devtools-kit",
+        ...(process.env.NODE_ENV !== "production"
+          ? ["@vue/devtools-core", "@vue/devtools-kit"]
+          : []),
         "@lottiefiles/dotlottie-vue",
       ],
     },
@@ -185,6 +199,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "nuxt-og-image",
     "@nuxtjs/sitemap",
+    "@storyblok/nuxt",
     "nuxt-gtag",
     "@nuxt/fonts",
     "@nuxt/a11y",
@@ -204,6 +219,26 @@ export default defineNuxtConfig({
         "arabic",
       ],
     },
+    families: [
+      { name: "Montserrat", provider: "google", weights: [400, 700, 800] },
+      { name: "Vazirmatn", provider: "google", weights: [400, 700, 800] },
+    ],
+  },
+  storyblok: {
+    accessToken: process.env.STORYBLOK_DELIVERY_API_TOKEN,
+    apiOptions: {
+      region: process.env.STORYBLOK_REGION || "eu",
+      cache: {
+        clear: "auto", // clears cache on each request in draft, manual in published
+        type: "memory",
+      },
+      maxRetries: 3,
+    },
+    bridge: process.env.STORYBLOK_BRIDGE === "true",
+    devtools: process.env.STORYBLOK_BRIDGE === "true",
+  },
+  devServer: {
+    https: true,
   },
   colorMode: {
     preference: "system", // 'light' | 'dark' | 'system'
@@ -234,6 +269,10 @@ export default defineNuxtConfig({
   },
   image: {
     format: ["avif", "webp"],
+    //domains: ["a.storyblok.com"],
+    storyblok: {
+      baseURL: "https://a.storyblok.com",
+    },
     quality: 60,
     screens: {
       sm: 640,

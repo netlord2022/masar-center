@@ -1,7 +1,7 @@
 <template>
-  <NuxtLayout class="flex flex-col min-h-screen">
-    <main role="main" class="h-full grow flex flex-col">
-      <NuxtPage class="grow" />
+  <NuxtLayout class="w-full flex flex-col min-h-screen">
+    <main role="main" class="w-full h-full grow flex flex-col">
+      <NuxtPage class="w-full h-full grow" />
     </main>
     <ClientOnly>
       <CookieBanner />

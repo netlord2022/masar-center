@@ -12,6 +12,26 @@
   "keyWords": "Visaberatung, Studium in Deutschland, Arbeit in Deutschland, deutsche Visa, Job-Suche-Visum, medizinisches Visum, Studentenvisum, Masar Center",
   "faqTitle": "Häufig gestellte Fragen",
   "faqSubtitle": "Hier sind einige häufig gestellte Fragen, die Ihnen helfen können, mehr über uns und unsere Dienstleistungen zu erfahren.",
+  "blog": {
+    "title": "Blog",
+    "search": "Beiträge suchen...",
+    "headline": "Artikel, die Ihre {journey} nach Europa erleichtern",
+    "journey_word": "Reise",
+    "related": "Ähnliche Beiträge",
+    "empty": "Keine Beiträge gefunden.",
+    "post": "Beitrag",
+    "posts": "Beiträge",
+    "category": "Kategorie",
+    "categories": "Kategorien",
+    "reader": "Lesezeichen",
+    "masarTeam": "Masar Team",
+    "readArticle": "Artikel lesen",
+    "readMore": "Mehr lesen",
+    "new": "Neu",
+    "backToBlog": "Zur Blogseite",
+    "masarBlog": "Masar Blog",
+    "description": "Dein Weg zum globalen Erfolg: Experten für Visaberatung, die Ihnen helfen, die Komplexität internationaler Reisen zu navigieren und Ihr Traumvisum zu sichern."
+  },
   "faq": {
     "items": [
       {

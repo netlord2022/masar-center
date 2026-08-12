@@ -13,6 +13,8 @@ const isDark = computed({
 
 <template>
   <button
+    type="button"
+    aria-label="Choose theme: dark/night"
     class="transition-colors duration-150 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-800 text-black dark:text-white rounded-lg h-6 w-6 text-center flex items-center justify-center"
     title="Dark / Light"
     @click="isDark = !isDark"
