@@ -287,5 +287,17 @@
     "studiendCount": "foreign students in Germany",
     "workPermits": "Holder of new work permits",
     "forigensInUni": "foreigners enrolled in universities"
+  },
+  "portal": {
+    "badge": "New Platform",
+    "title": "Masar Portal",
+    "description": "Your personal document-management and onboarding hub. Sign up, choose your visa category, get a tailored checklist, upload your files — and our team reviews everything for you.",
+    "features": {
+      "categories": "Four visa paths: Student, Job Seeker, Medical, and Ausbildung",
+      "checklist": "Personalized document checklist generated for your case",
+      "upload": "Upload, track, and get real-time feedback from our experts"
+    },
+    "cta": "Open Masar Portal",
+    "headerCta": "Apply Now"
   }
 }

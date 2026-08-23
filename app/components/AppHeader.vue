@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { ref, computed } from "vue"
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const isOpen = ref(false)
+const portalUrl = computed(() =>
+  locale.value === "ar"
+    ? "https://portal.masar-center.de/ar"
+    : "https://portal.masar-center.de/"
+)
 const linkClass = computed(
   () =>
     "text-neutral hover:text-brand-light text-primary dark:text-white hover:scale-101  transition duration-150 ease-in-out"
@@ -98,6 +103,15 @@ onClickOutside(target, () => close(), { ignore: [ignoreEl] })
         >
       </nav>
       <div class="hidden md:flex items-center gap-2">
+        <a
+          :href="portalUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-4 py-1.5 bg-primary dark:bg-hero text-white text-sm font-bold rounded-lg hover:scale-105 hover:shadow-md hover:shadow-primary/20 dark:hover:shadow-hero/20 transition-all duration-300 ease-in-out rtl:font-arabic"
+          aria-label="Masar Portal"
+        >
+          {{ $t("portal.headerCta") }}
+        </a>
         <ThemeToggle />
         <LangSwitcher />
       </div>
@@ -122,6 +136,16 @@ onClickOutside(target, () => close(), { ignore: [ignoreEl] })
           <LangSwitcher @close="isOpen = false" />
           <ThemeToggle />
         </div>
+        <a
+          :href="portalUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block w-full text-center px-4 py-2.5 bg-primary dark:bg-hero text-white text-sm font-bold rounded-lg hover:shadow-md transition-all duration-300 ease-in-out rtl:font-arabic"
+          aria-label="Masar Portal"
+          @click="isOpen = false"
+        >
+          {{ $t("portal.headerCta") }}
+        </a>
       </nav>
     </transition>
   </header>

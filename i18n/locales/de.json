@@ -287,5 +287,17 @@
     "studiendCount": "ausländische Studenten in Deutschland",
     "workPermits": "Inhaber neuer Arbeitsgenehmigungen",
     "forigensInUni": "ausländer haben sich an Unis eingeschrieben"
+  },
+  "portal": {
+    "badge": "Neue Plattform",
+    "title": "Masar Portal",
+    "description": "Ihr persönliches Dokumentenmanagement- und Onboarding-Portal. Registrieren Sie sich, wählen Sie Ihre Visa-Kategorie, erhalten Sie eine maßgeschneiderte Checkliste, laden Sie Ihre Dokumente hoch — und unser Team prüft alles für Sie.",
+    "features": {
+      "categories": "Vier Visa-Wege: Studium, Arbeitssuche, Medizin und Ausbildung",
+      "checklist": "Personalisierte Dokumenten-Checkliste für Ihren Fall",
+      "upload": "Hochladen, verfolgen und Echtzeit-Feedback von unseren Experten erhalten"
+    },
+    "cta": "Masar Portal öffnen",
+    "headerCta": "Jetzt bewerben"
   }
 }
