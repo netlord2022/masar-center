@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project overview
 
-**Masar Center** (`masarvisa`) — a **Nuxt 4 SSR/SSG** marketing site for a German visa & study consultancy (**Masar UG**). The live domain is **masar-center.de**. Content is a mix of hard-coded static pages and CMS-driven blog posts via Storyblok. The site is **trilingual** (en/de/ar) and deployed to **Netlify**.
+**Masar Center** (`masarvisa`) — a **Nuxt 4 SSR/SSG** marketing site for a German visa & study consultancy (**Masar UG**). The live domain is **masar-center.de**. Content is a mix of hard-coded static pages and CMS-driven blog posts via Storyblok. The site is **trilingual** (en/de/ar) and deployed to **Netlify**. A separate external client portal is linked from the homepage at `portal.masar-center.de` (see `app/components/section/Portal.vue`) — it is not part of this repo.
 
 ## Commands
 
@@ -154,7 +154,8 @@ masarvisa/
 │   │   │   ├── Faqs.vue
 │   │   │   ├── Services.vue
 │   │   │   ├── Statics.vue
-│   │   │   └── Testimonials.vue
+│   │   │   ├── Testimonials.vue
+│   │   │   └── Portal.vue               # Links out to the external client portal (portal.masar-center.de)
 │   │   ├── icons/                       # Standalone SVG illustration components
 │   │   │   ├── Doctor.vue, Error.vue, JobSearch.vue
 │   │   │   ├── Mohammad.vue, Salma.vue, Study.vue, Yara.vue

@@ -2,10 +2,11 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary: #0041b6;
+  --color-primary: #0054d7;
   --color-secondary: #ff551c;
-  --color-dark: #010617;
+  --color-dark: #0f172a;
   --color-hero: #349ad4;
+  --color-surface: #f4f6fa;
   --font-latin: "montserrat", "Montserrat", sans-serif, Helvetica, Arial;
   --font-arabic: "vazirmatn", "Vazirmatn", sans-serif, Helvetica, Arial;
 }

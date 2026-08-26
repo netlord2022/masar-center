@@ -143,7 +143,7 @@ const bottom = computed(
       </transition>
     </ClientOnly>
     <div
-      class="w-full bg-black dark:bg-white relative z-1 rounded-b-lg ronded-t-none mb-24 mx-auto"
+      class="w-full bg-dark dark:bg-white relative z-1 rounded-b-lg ronded-t-none mb-24 mx-auto"
     >
       <div
         class="footer-section footer-section-bottom md:px-10 w-full max-w-[1386px] overflow-hidden relative z-2 mx-auto my-0 dark:md:text-white text-white md:text-black dark:text-black"

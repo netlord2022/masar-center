@@ -110,7 +110,7 @@ const features = computed(() => [
             >
               <!-- mock header bar -->
               <div
-                class="flex items-center gap-2 px-5 py-3 bg-gray-50 dark:bg-gray-700/50 border-b border-gray-100 dark:border-gray-600"
+                class="flex items-center gap-2 px-5 py-3 bg-surface dark:bg-gray-700/50 border-b border-gray-100 dark:border-gray-600"
               >
                 <div class="w-3 h-3 rounded-full bg-red-400" />
                 <div class="w-3 h-3 rounded-full bg-yellow-400" />

@@ -20,7 +20,7 @@ const persons = computed(() => {
 })
 </script>
 <template>
-  <section id="testimonials" class="w-full bg-gray-50 dark:bg-gray-900 py-6">
+  <section id="testimonials" class="w-full bg-surface dark:bg-gray-900 py-6">
     <div class="max-w-7xl mx-auto mt-20 mb-40 space-y-6 px-6">
       <h2
         class="text-3xl font-bold text-center mb-12 text-primary dark:text-white rtl:font-arabic"
@@ -32,7 +32,7 @@ const persons = computed(() => {
         <div
           v-for="(person, index) in persons"
           :key="index"
-          class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col items-center text-center"
+          class="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col items-center text-center"
         >
           <div
             class="rounded-full mb-4 object-cover border-2 border-primary-500"
@@ -44,7 +44,7 @@ const persons = computed(() => {
             />
           </div>
 
-          <div class="flex mb-4 text-yellow-400">
+          <div class="flex mb-4 text-secondary">
             <span v-for="star in 5" :key="star" class="text-xl">★</span>
           </div>
 

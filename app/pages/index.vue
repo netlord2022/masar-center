@@ -45,7 +45,7 @@ useHead({
           <NuxtImg
             src="/hero.webp"
             alt="Home Hero Image"
-            class="w-full h-auto aspect-square max-w-full md:max-w-1/2"
+            class="w-full h-auto aspect-square max-w-full md:max-w-1/2 rounded-3xl"
             loading="eager"
             fetchpriority="high"
             width="1200"
