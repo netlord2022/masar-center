@@ -309,5 +309,16 @@
     },
     "cta": "Masar Portal öffnen",
     "headerCta": "Jetzt bewerben"
+  },
+  "germanCourses": {
+    "badge": "Anmeldung läuft",
+    "title": "Deutschkurse",
+    "description": "Lernen Sie Deutsch zu 100 % online, in Ihrem eigenen Tempo – Kurse für jedes Niveau, vom kompletten Anfänger bis zum Fortgeschrittenen. Möchten Sie sich anmelden oder haben Sie Fragen? Schreiben Sie uns einfach.",
+    "features": {
+      "online": "100 % online – nehmen Sie von überall teil",
+      "levels": "Alle Niveaus verfügbar, von A1 bis B2",
+      "register": "Anmeldung direkt über WhatsApp oder soziale Medien"
+    },
+    "cta": "Schreiben Sie uns auf WhatsApp"
   }
 }

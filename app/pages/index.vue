@@ -71,6 +71,7 @@ useHead({
       <LazySectionServices hydrate-on-visible />
       <LazySectionStatics hydrate-on-visible />
       <LazySectionPortal hydrate-on-visible />
+      <LazySectionGermanCourses hydrate-on-visible />
       <LazySectionTestimonials hydrate-on-visible />
       <LazySectionFaqs hydrate-on-visible />
     </div>

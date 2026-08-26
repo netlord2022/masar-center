@@ -76,7 +76,7 @@ const teamMembers: TeamMember[] = [
   {
     slug: "batoul-mohammad",
     name: "Batoul Mohammad",
-    role: "Marketing",
+    role: "Branch Manager",
     bio: localedBio("Batoul", "بتول", true),
     photo: "/team/batoul-mohammad.webp",
     facebook: "https://www.facebook.com/share/18pzVCHujJ/",
@@ -91,15 +91,6 @@ const teamMembers: TeamMember[] = [
     mail: "blqeesaf@gmail.com",
   },
   {
-    slug: "rama-ismaeel",
-    name: "Rama Ismaeel",
-    role: "Branch Manager",
-    bio: localedBio("Rama", "راما", true),
-    photo: "/team/rama-ismaeel.webp",
-    instagram: "https://www.instagram.com/ramresla?igsh=Y3Nib213MHZyYTRl",
-    mail: "ramasar.ug@gmail.com",
-  },
-  {
     slug: "afraa-ebraheem",
     name: "Afraa Ebraheem",
     role: "Community Manager",
@@ -108,34 +99,6 @@ const teamMembers: TeamMember[] = [
     instagram:
       "https://www.instagram.com/masar.ug.de?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     facebook: "https://www.facebook.com/profile.php?id=61585719966946",
-  },
-  {
-    slug: "suriana-barshin",
-    name: "Suriana Barshin",
-    role: "Marketing",
-    bio: localedBio("Suriana", "سوريانا", true),
-    photo: "/team/suriana-barshin.webp",
-    instagram: "https://www.instagram.com/sirina.masar?igsh=OXlsMjlzZHRhM2Nq",
-    facebook:
-      "https://www.facebook.com/profile.php?id=61588880985324&mibextid=rS40aB7S9Ucbxw6v",
-  },
-  {
-    slug: "tala-alsairafi",
-    name: "Tala Alsairafi",
-    role: "Marketing",
-    bio: localedBio("Tala", "تالا", true),
-    photo: "/team/tala-alsairafi.webp",
-    facebook: "https://www.facebook.com/share/19wSt7ZAk7/",
-  },
-  {
-    slug: "ronaq-ismail",
-    name: "Ronaq Ismail",
-    role: "Marketing",
-    bio: localedBio("Ronaq", "رونق", true),
-    photo: "/team/ronaq-ismail.webp",
-    instagram:
-      "https://www.instagram.com/ronaq.masar?igsh=MTZ3Yjlvbzg1N3JmYg==",
-    facebook: "https://www.facebook.com/share/17k1k5zZHy/",
   },
   {
     slug: "leen-mustafa",
