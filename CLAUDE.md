@@ -17,7 +17,7 @@ npm run lint         # eslint .
 npm run lint:fix     # eslint . --fix
 ```
 
-There is **no test suite/runner** configured in this repo. CI (`.github/workflows/build.yml`) only runs a SonarQube scan on push/PR to `main`.
+There is **no test suite/runner** and **no GitHub Actions CI** configured in this repo. Code quality scanning is handled entirely by SonarQube Cloud's **Automatic Analysis** (configured in the SonarQube Cloud project settings, not by any workflow file) on push/PR to `main`. Do not add a CI-based Sonar scan workflow — it conflicts with and fails alongside Automatic Analysis for the same project.
 
 Node version is pinned via `.nvmrc` (**22.21.1**).
 
