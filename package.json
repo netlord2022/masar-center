@@ -12,15 +12,15 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@lottiefiles/dotlottie-vue": "^0.11.23",
+    "@lottiefiles/dotlottie-vue": "^0.11.26",
     "@nuxt/a11y": "^1.0.0-alpha.1",
     "@nuxt/fonts": "^0.14.0",
     "@nuxt/image": "^2.1.0",
     "@marvr/storyblok-rich-text-vue-renderer": "^2.0.1",
     "@nuxtjs/color-mode": "^4.0.1",
-    "@storyblok/nuxt": "^10.1.7",
-    "@storyblok/richtext": "^4.3.2",
-    "@storyblok/vue": "^10.1.7",
+    "@storyblok/nuxt": "^10.1.10",
+    "@storyblok/richtext": "^4.3.5",
+    "@storyblok/vue": "^10.1.10",
     "@nuxtjs/i18n": "^10.6.0",
     "@nuxtjs/sitemap": "^8.3.2",
     "@tailwindcss/vite": "^4.3.3",
@@ -28,9 +28,9 @@
     "@vueuse/nuxt": "^14.4.0",
     "nuxt": "^4.5.1",
     "nuxt-gtag": "^4.1.0",
-    "nuxt-og-image": "^6.7.5",
+    "nuxt-og-image": "^6.7.8",
     "tailwindcss": "^4.3.3",
-    "vue": "^3.5.40",
+    "vue": "^3.5.41",
     "vue-router": "^5.2.0"
   },
   "devDependencies": {
@@ -38,6 +38,6 @@
     "@nuxt/hints": "^1.1.4",
     "@types/node": "^26.1.2",
     "eslint": "^9.39.5",
-    "vite-plugin-mkcert": "^2.0.0"
+    "vite-plugin-mkcert": "^2.1.0"
   }
 }
