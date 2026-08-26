@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full flex flex-col border rounded-tl-xl rounded-br-xl border-primary/20 dark:border-gray-200 p-4 md:p-6 z-10"
+    class="w-full flex flex-col border rounded-2xl border-primary/15 dark:border-white/10 p-4 md:p-6 z-10"
   >
     <button
       class="flex justify-between cursor-pointer items-center"

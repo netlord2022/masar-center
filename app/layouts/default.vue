@@ -35,7 +35,7 @@ const keywords = computed(() => t("keyWords"))
           viewBox="0 0 1440 181"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="pointer-events-none w-full top-18 text-primary dark:text-secondary shrink-0 absolute"
+          class="pointer-events-none w-full top-17 text-primary dark:text-secondary shrink-0 absolute"
           alt="decorative wave"
         >
           <mask id="path-1-inside-1_414_5526" fill="white">

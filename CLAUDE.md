@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project overview
 
-**Masar Center** (`masarvisa`) — a **Nuxt 4 SSR/SSG** marketing site for a German visa & study consultancy (**Masar UG**). The live domain is **masar-center.de**. Content is a mix of hard-coded static pages and CMS-driven blog posts via Storyblok. The site is **trilingual** (en/de/ar) and deployed to **Netlify**.
+**Masar Center** (`masarvisa`) — a **Nuxt 4 SSR/SSG** marketing site for a German visa & study consultancy (**Masar UG**). The live domain is **masar-center.de**. Content is a mix of hard-coded static pages and CMS-driven blog posts via Storyblok. The site is **trilingual** (en/de/ar) and deployed to **Netlify**. A separate external client portal is linked from the homepage at `portal.masar-center.de` (see `app/components/section/Portal.vue`) — it is not part of this repo.
 
 ## Commands
 
@@ -17,7 +17,7 @@ npm run lint         # eslint .
 npm run lint:fix     # eslint . --fix
 ```
 
-There is **no test suite/runner** configured in this repo. CI (`.github/workflows/build.yml`) only runs a SonarQube scan on push/PR to `main`.
+There is **no test suite/runner** and **no GitHub Actions CI** configured in this repo. Code quality scanning is handled entirely by SonarQube Cloud's **Automatic Analysis** (configured in the SonarQube Cloud project settings, not by any workflow file) on push/PR to `main`. Do not add a CI-based Sonar scan workflow — it conflicts with and fails alongside Automatic Analysis for the same project.
 
 Node version is pinned via `.nvmrc` (**22.21.1**).
 
@@ -154,7 +154,8 @@ masarvisa/
 │   │   │   ├── Faqs.vue
 │   │   │   ├── Services.vue
 │   │   │   ├── Statics.vue
-│   │   │   └── Testimonials.vue
+│   │   │   ├── Testimonials.vue
+│   │   │   └── Portal.vue               # Links out to the external client portal (portal.masar-center.de)
 │   │   ├── icons/                       # Standalone SVG illustration components
 │   │   │   ├── Doctor.vue, Error.vue, JobSearch.vue
 │   │   │   ├── Mohammad.vue, Salma.vue, Study.vue, Yara.vue

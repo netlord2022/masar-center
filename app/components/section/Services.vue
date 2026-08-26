@@ -32,6 +32,11 @@ const VISA_CONFIG = [
     icon: resolveComponent("IconsStudy"),
     img: "/study.webp",
   },
+  {
+    key: "ausbildungVisa",
+    icon: resolveComponent("IconsAusbildung"),
+    img: "/ausbildung.webp",
+  },
 ]
 
 const visas = computed(() =>
@@ -43,7 +48,7 @@ const visas = computed(() =>
 </script>
 <template>
   <section id="services" class="pt-24">
-    <div class="text-primary dark:text-white bg-hero/15 dark:bg-hero/5">
+    <div class="text-primary dark:text-white bg-surface dark:bg-hero/5">
       <div class="max-w-10xl mx-auto py-12 px-6">
         <h2
           class="text-3xl md:text-4xl font-bold mb-4 text-primary dark:text-white text-center rtl:font-arabic"
@@ -59,8 +64,8 @@ const visas = computed(() =>
           <FlipCard
             v-for="(visa, i) in visas"
             :key="i"
-            class="h-120 sm:h-112 sm:max-h-112 max-w-106 rounded-2xl snap-center shrink-0 w-full md:w-1/2 lg:w-1/3"
-            classes="rounded-2xl"
+            class="h-120 sm:h-112 sm:max-h-112 max-w-106 rounded-3xl snap-center shrink-0 w-full md:w-1/2 lg:w-1/3"
+            classes="rounded-3xl"
           >
             ">
             <template #front>

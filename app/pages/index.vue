@@ -45,12 +45,11 @@ useHead({
           <NuxtImg
             src="/hero.webp"
             alt="Home Hero Image"
-            class="w-full h-auto aspect-square max-w-full md:max-w-1/2"
+            class="w-full h-auto aspect-square max-w-full md:max-w-1/2 rounded-3xl"
             loading="eager"
             fetchpriority="high"
             width="1200"
             height="1200"
-            placeholder
             preload
             sizes="sm:100vw md:50vw lg:1200px"
           />

@@ -71,20 +71,22 @@ onClickOutside(target, () => close(), { ignore: [ignoreEl] })
         aria-label="Masar Center"
       >
         <span class="sr-only">Masar Center</span>
-        <div
-          class="logo-reveal -mr-3 rtl:mr-0 rtl:-ml-3 md:-ml-3 rtl:md:ml-0 rtl:md:-mr-3"
-        >
+        <div class="logo-reveal flex items-center gap-2">
           <NuxtImg
-            src="/masar-logo.png"
+            src="/favicon-180x180.png"
             alt="Masar logo"
-            width="120"
-            height="40"
-            class="h-10 w-auto"
+            width="72"
+            height="72"
+            class="h-9 w-9 rounded-full shrink-0"
             loading="eager"
             decoding="async"
             densities="1x 2x"
             :quality="100"
           />
+          <span
+            class="font-extrabold text-lg tracking-tight text-primary dark:text-white"
+            >Masar</span
+          >
         </div>
       </NuxtLinkLocale>
       <!-- Desktop Nav -->

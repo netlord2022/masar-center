@@ -1,5 +1,11 @@
 <script setup lang="ts">
-defineProps<{ length?: number }>()
+const props = defineProps<{ length?: number }>()
+const { t } = useI18n()
+const stats: { num: number; label: string; unit?: string }[] = [
+  { num: props.length ?? 0, label: t("blog.posts") },
+  { num: 3, label: t("blog.reader"), unit: "k" },
+  { num: 7, label: t("blog.categories") },
+]
 </script>
 <template>
   <section class="w-full max-w-7xl mx-auto px-6 mb-12 flex flex-col gap-4">
@@ -7,11 +13,7 @@ defineProps<{ length?: number }>()
       class="grid grid-cols-3 gap-4 max-w-md mx-auto animate-fade-up animation-delay-400"
     >
       <div
-        v-for="stat in [
-          { num: length ?? 0, label: $t('blog.posts') },
-          { num: 3, label: $t('blog.reader'), unit: 'k' },
-          { num: 7, label: $t('blog.categories') },
-        ]"
+        v-for="stat in stats"
         :key="stat.label"
         class="bg-gray-50 dark:bg-white/5 rounded-xl p-4 text-center border border-gray-100 dark:border-white/20"
       >
