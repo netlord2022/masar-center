@@ -32,6 +32,11 @@ const VISA_CONFIG = [
     icon: resolveComponent("IconsStudy"),
     img: "/study.webp",
   },
+  {
+    key: "ausbildungVisa",
+    icon: resolveComponent("IconsAusbildung"),
+    img: "/ausbildung.webp",
+  },
 ]
 
 const visas = computed(() =>
