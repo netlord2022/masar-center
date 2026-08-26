@@ -41,6 +41,10 @@ const svgContent = computed(() => {
       return '<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M256 48v48M256 416v48M403.08 108.92l-33.94 33.94M142.86 369.14l-33.94 33.94M464 256h-48M96 256H48M403.08 403.08l-33.94-33.94M142.86 142.86l-33.94-33.94"/><circle cx="256" cy="256" r="80" fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32"/>'
     case "arrow-right":
       return '<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M268 112l144 144-144 144M392 256H100"/>'
+    case "globe":
+      return '<circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="1.5"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" fill="none" stroke="currentColor" stroke-width="1.5"/>'
+    case "chat":
+      return '<path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>'
     case "telephone":
       return '<path d="M10.5542 6.24003L7.17123 2.33503C6.78123 1.88503 6.06623 1.88703 5.61323 2.34103L2.83123 5.12803C2.00323 5.95703 1.76623 7.18803 2.24523 8.17503C5.10685 14.1 9.88528 18.8851 15.8062 21.755C16.7922 22.234 18.0222 21.997 18.8502 21.168L21.6582 18.355C22.1132 17.9 22.1142 17.181 21.6602 16.791L17.7402 13.426C17.3302 13.074 16.6932 13.12 16.2822 13.532L14.9182 14.898C14.8484 14.9712 14.7565 15.0195 14.6566 15.0354C14.5567 15.0513 14.4543 15.0339 14.3652 14.986C12.1357 13.7021 10.2862 11.8503 9.00523 9.61903C8.95726 9.52978 8.93989 9.42726 8.95578 9.32719C8.97168 9.22711 9.01996 9.13502 9.09323 9.06503L10.4532 7.70403C10.8652 7.29003 10.9102 6.65003 10.5542 6.23903V6.24003Z" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round"/>'
     case "whatsapp":
@@ -70,6 +74,8 @@ const viewBox = computed(() => {
     case "email":
     case "whatsapp":
     case "x":
+    case "globe":
+    case "chat":
       return "0 0 24 24"
     case "de-flag":
     case "gb-flag":

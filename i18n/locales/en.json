@@ -309,5 +309,16 @@
     },
     "cta": "Open Masar Portal",
     "headerCta": "Apply Now"
+  },
+  "germanCourses": {
+    "badge": "Now Enrolling",
+    "title": "German Language Courses",
+    "description": "Learn German 100% online, at your own pace — courses for every level, from complete beginner to advanced. Want to register or have questions? Just message us.",
+    "features": {
+      "online": "100% online — join from anywhere",
+      "levels": "All levels available, from A1 to B2",
+      "register": "Register directly via WhatsApp or social media"
+    },
+    "cta": "Message us on WhatsApp"
   }
 }
