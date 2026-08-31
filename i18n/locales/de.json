@@ -320,5 +320,53 @@
       "register": "Anmeldung direkt über WhatsApp oder soziale Medien"
     },
     "cta": "Schreiben Sie uns auf WhatsApp"
+  },
+  "ausbildung": {
+    "title": "Ausbildung",
+    "navTitle": "Ausbildung",
+    "headline": "{word}-Angebote in Deutschland",
+    "headlineWord": "Ausbildung",
+    "intro": "Eine Auswahl aktueller Ausbildungsangebote, bei denen wir Sie unterstützen können. Details wie der genaue Betrieb und Ort werden persönlich besprochen — kontaktieren Sie uns, um zu erfahren, ob ein Angebot zu Ihnen passt und wie Sie sich bewerben können.",
+    "badge": "Offene Stellen",
+    "empty": "Derzeit gibt es keine offenen Ausbildungsangebote. Kontaktieren Sie uns, und wir sagen Ihnen, was ansteht.",
+    "backToList": "Zurück zu den Ausbildungsangeboten",
+    "howItWorksTitle": "So funktioniert es",
+    "step1": "Sehen Sie sich die offenen Angebote unten an.",
+    "step2": "Schreiben Sie uns zu dem Angebot, das zu Ihnen passt.",
+    "step3": "Wir teilen alle Details und begleiten Ihre Bewerbung.",
+    "fields": {
+      "reference": "Referenz",
+      "sector": "Bereich",
+      "region": "Region",
+      "start": "Beginn",
+      "duration": "Dauer",
+      "language": "Deutschniveau",
+      "positions": "Freie Plätze",
+      "requirements": "Wer sich bewerben kann",
+      "benefits": "Was Sie erhalten"
+    },
+    "sectors": {
+      "pflege": "Pflege & Gesundheit",
+      "it": "IT & Technik",
+      "handwerk": "Handwerk",
+      "gastronomie": "Gastronomie & Hotellerie",
+      "kaufmaennisch": "Kaufmännisch & Verwaltung",
+      "industrie": "Industrie & Produktion",
+      "logistik": "Logistik",
+      "sonstige": "Sonstige"
+    },
+    "cta": "Zu diesem Angebot auf WhatsApp fragen",
+    "ctaShort": "Kontaktieren Sie uns zu diesem Angebot",
+    "waMessage": "Hallo Masar, ich interessiere mich für dieses Ausbildungsangebot",
+    "closed": {
+      "badge": "Geschlossen",
+      "notice": "Dieses Ausbildungsangebot ist nicht mehr offen. Sehen Sie sich aktuelle Angebote an oder kontaktieren Sie uns zu ähnlichen Stellen."
+    },
+    "gone": {
+      "title": "Dieses Angebot wurde archiviert",
+      "text": "Das gesuchte Ausbildungsangebot ist nicht mehr verfügbar.",
+      "cta": "Aktuelle Ausbildungsangebote ansehen"
+    },
+    "seoDescription": "Aktuelle Ausbildungsangebote in Deutschland mit Masar. Kontaktieren Sie uns, um zu erfahren, wo sie sind und wer sich bewerben kann."
   }
 }

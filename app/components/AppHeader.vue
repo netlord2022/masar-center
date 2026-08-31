@@ -25,6 +25,10 @@ const links = computed(() => [
     path: { path: "/blog" },
   },
   {
+    name: t("ausbildung.navTitle"),
+    path: { path: "/ausbildung" },
+  },
+  {
     name: t("team"),
     path: { path: "/team" },
   },

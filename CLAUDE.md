@@ -57,6 +57,7 @@ Node version is pinned via `.nvmrc` (**22.21.1**).
 
 - **`@storyblok/nuxt`** is configured with `accessToken` from env, region `eu`.
 - Blog routes use **ISR** (1 hour TTL): `/blog`, `/de/blog`, `/ar/blog` and their children.
+- Ausbildung routes use **ISR** (1 hour TTL) too: `/ausbildung`, `/de/ausbildung`, `/ar/ausbildung` and their children (see **Ausbildung offers** below).
 - Storyblok components live in `app/components/storyblok/`:
   - `Featured.vue` — featured blog post display
   - `PostCard.vue` — blog post card
@@ -73,6 +74,59 @@ Node version is pinned via `.nvmrc` (**22.21.1**).
 - Bios are **generated per-locale** via a `setBio(name, locale, feminine)` template function (handles Arabic grammatical gender) rather than stored per-member.
 - `app/pages/teams/[person].vue` looks members up by slug and 404s (`createError({ statusCode: 404 })`) when not found.
 - Team photos stored in `public/team/` as `.webp` files.
+
+### Ausbildung offers
+
+Lead-generation listing of vocational-training (Ausbildung) openings in Germany. Deliberately **teaser-only** — no employer name, no exact address, no direct contact on the offer. Readers contact Masar (WhatsApp `https://wa.me/491771873142`) to learn where the offer is and how to apply.
+
+- **Source: Storyblok**, content type `ausbildung_offer`, stories under the `ausbildung/` folder — mirrors the blog setup.
+- **Reference number** (`content.reference`): shown on the card and detail page, and injected into the WhatsApp deep-link (`?text=... [MC-A-2026-014]: <title> (<region>)`) so an inbound client message self-identifies which offer. Masar keeps the full sensitive details (employer, address, contact, contract terms, who-can-apply specifics) in a **private master record keyed by this reference** — a spreadsheet (one row per reference) or docs folder, outside this repo. The public site never holds those details.
+- **Storyblok languages:** the space has only `en` + `ar` (free plan). `de` visitors get `en` content, exactly like the blog — `useStoryblokLocale()` maps `ar → ar`, everything else `→ en`.
+- Routes use **ISR** (1 hour TTL): `/ausbildung`, `/de/ausbildung`, `/ar/ausbildung` and their children (`nitro.routeRules`). ISR (not prerender) is required so the time-based archive/expiry logic re-evaluates without a rebuild.
+- Pages:
+  - `app/pages/ausbildung/index.vue` — lists offers where `content.status !== "archived"`, newest first. No pagination (low volume).
+  - `app/pages/ausbildung/[slug].vue` — offer detail + archive lifecycle (below).
+- `app/components/ausbildung/OfferCard.vue` — listing card. Detail fields are rendered directly in the page (no blok component); `requirements`/`benefits` are Storyblok richtext rendered with `<StoryblokRichText>`.
+- `app/composables/useAusbildungSectors.ts` — canonical `sector` slug list + `label()` (slug → i18n) + `options` (for a future filter). Single source of truth; the Storyblok `sector` field's option values must match these slugs.
+- i18n keys live under the `ausbildung.*` namespace in all three locale files.
+- Nav link added in `app/components/AppHeader.vue` (`links` array).
+
+**Archive lifecycle** (staff never delete/unpublish — that kills the URL with no grace window):
+
+1. **Open** (`status = "open"`) — shown in the list, indexable, HTTP 200.
+2. **Archived, < 12 months since `archived_at`** — removed from the list, still reachable at its URL with a "closed" banner, `robots: noindex, follow`, HTTP **410 Gone** (`setResponseStatus`).
+3. **Archived, ≥ 12 months** (or `archived_at` missing) — `createError({ statusCode: 404, data: { section: "ausbildung", reason: "archived" }, fatal: true })`.
+
+`app/error.vue` branches on `error.data?.section === "ausbildung"` to show tailored copy (`ausbildung.gone.*`) linking back to `/ausbildung`, instead of the generic error screen.
+
+**Sector filter (future):** `useAusbildungSectors().options` already yields `{ value, label }` per locale. To add a filter, read a `?sector=` query param on `/ausbildung/index.vue` and either filter the fetched list client-side on `offer.content.sector` or pass `filter_query[sector][in]` to the Storyblok call. The slugs are URL-safe by design.
+
+**Storyblok dashboard setup** (one-time, do this before offers can be published):
+
+1. **Block library → New block → `ausbildung_offer`**, type *Content type* (nestable is fine too). Fields:
+   | Field (technical name) | Type | Notes |
+   |---|---|---|
+   | `reference` | Text | **required, unique, staff-assigned** — e.g. `MC-A-2026-014`. Non-translatable. The client's private lookup key (see below). |
+   | `title` | Text | e.g. "Fachkraft für Lagerlogistik" |
+   | `profession` | Text | job title / role |
+   | `sector` | Single-Option | **option values must be the slugs** in `app/composables/useAusbildungSectors.ts` (`pflege`, `it`, `handwerk`, `gastronomie`, `kaufmaennisch`, `industrie`, `logistik`, `sonstige`) — option *names* can be German for editors. Never localize/rename a value once offers use it. Display labels come from i18n `ausbildung.sectors.<slug>`, not from Storyblok. |
+   | `region` | Text | **Bundesland only** — "Nordrhein-Westfalen", never a city |
+   | `start` | Text | descriptive — "August 2026", "ab sofort" |
+   | `duration` | Text | "3 Jahre" |
+   | `language_level` | Single-Option | A2, B1, B2 |
+   | `positions` | Number | optional |
+   | `summary` | Textarea | plain text; card teaser + meta description |
+   | `requirements` | Richtext | general, non-identifying ("Mittlerer Schulabschluss, Motivation …") |
+   | `benefits` | Richtext | optional |
+   | `status` | Single-Option | values `open`, `archived`; **default `open`** |
+   | `archived_at` | Date | set **only** when archiving |
+   | `seo_title` | Text | optional |
+   | `seo_description` | Text | optional |
+2. Mark `title`, `profession`, `sector`, `region`, `start`, `duration`, `language_level`, `summary`, `requirements`, `benefits` as **translatable** (Space → Settings → check the field's "Translatable" box). `status`, `archived_at`, `positions` stay non-translatable.
+3. **Content → New folder → `ausbildung`.** Set the folder's default content type to `ausbildung_offer` so new stories inside it use the block automatically.
+4. Create offers as stories inside `ausbildung/` (slug e.g. `ausbildung/lagerlogistik-nrw-2026`). Fill the `en` fields, then switch the language dropdown to `ar` and fill the Arabic values.
+5. **To retire an offer:** set `status = archived` and `archived_at = today`. Do **not** unpublish or delete. Once a year, delete stories archived more than ~12 months ago.
+6. Optional: add a Storyblok webhook (Settings → Webhooks, "Story published/unpublished") pointing at a Netlify build hook so changes also trigger a deploy; otherwise they still go live within the 1h ISR window.
 
 ### OG images
 
@@ -137,6 +191,9 @@ masarvisa/
 │   │   ├── blog/
 │   │   │   ├── index.vue                # Blog listing (Storyblok)
 │   │   │   └── [slug].vue              # Blog post detail (Storyblok)
+│   │   ├── ausbildung/
+│   │   │   ├── index.vue                # Ausbildung offers listing (Storyblok)
+│   │   │   └── [slug].vue              # Ausbildung offer detail + archive lifecycle
 │   │   └── teams/
 │   │       └── [person].vue             # Individual team member page
 │   ├── components/
@@ -165,6 +222,8 @@ masarvisa/
 │   │   ├── storyblok/                   # Storyblok content components
 │   │   │   ├── Featured.vue, PostCard.vue, SearchPost.vue
 │   │   │   ├── State.vue, post.vue
+│   │   ├── ausbildung/
+│   │   │   └── OfferCard.vue            # Ausbildung offer listing card
 │   │   └── OgImage/
 │   │       └── TeamMember.takumi.vue    # Dynamic OG image for team members
 │   ├── composables/

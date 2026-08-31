@@ -320,5 +320,53 @@
       "register": "Register directly via WhatsApp or social media"
     },
     "cta": "Message us on WhatsApp"
+  },
+  "ausbildung": {
+    "title": "Ausbildung",
+    "navTitle": "Ausbildung",
+    "headline": "{word} opportunities in Germany",
+    "headlineWord": "Ausbildung",
+    "intro": "A selection of current Ausbildung openings we can support you with. Details like the exact employer and location are shared personally — contact us to find out whether an offer fits you and how to apply.",
+    "badge": "Open positions",
+    "empty": "There are no open Ausbildung offers right now. Contact us and we'll tell you what's coming up.",
+    "backToList": "Back to Ausbildung offers",
+    "howItWorksTitle": "How it works",
+    "step1": "Browse the open offers below.",
+    "step2": "Message us about the one that fits you.",
+    "step3": "We share the full details and guide your application.",
+    "fields": {
+      "reference": "Reference",
+      "sector": "Field",
+      "region": "Region",
+      "start": "Start",
+      "duration": "Duration",
+      "language": "German level",
+      "positions": "Open positions",
+      "requirements": "Who can apply",
+      "benefits": "What you get"
+    },
+    "sectors": {
+      "pflege": "Nursing & Healthcare",
+      "it": "IT & Tech",
+      "handwerk": "Skilled Trades",
+      "gastronomie": "Hospitality & Catering",
+      "kaufmaennisch": "Business & Administration",
+      "industrie": "Industry & Production",
+      "logistik": "Logistics",
+      "sonstige": "Other"
+    },
+    "cta": "Ask about this offer on WhatsApp",
+    "ctaShort": "Contact us about this offer",
+    "waMessage": "Hello Masar, I'm interested in this Ausbildung offer",
+    "closed": {
+      "badge": "Closed",
+      "notice": "This Ausbildung offer is no longer open. Browse current offers or contact us about similar openings."
+    },
+    "gone": {
+      "title": "This offer has been archived",
+      "text": "The Ausbildung offer you're looking for is no longer available.",
+      "cta": "See current Ausbildung offers"
+    },
+    "seoDescription": "Current Ausbildung (vocational training) opportunities in Germany with Masar. Contact us to learn where they are and who can apply."
   }
 }

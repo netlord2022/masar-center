@@ -32,6 +32,14 @@ export default defineNuxtConfig({
       "/blog/**": { isr: 3600 },
       "/de/blog/**": { isr: 3600 },
       "/ar/blog/**": { isr: 3600 },
+      // Ausbildung offers: ISR (not prerender) so the time-based archive/expiry
+      // logic re-evaluates without a rebuild
+      "/ausbildung": { isr: 3600 },
+      "/de/ausbildung": { isr: 3600 },
+      "/ar/ausbildung": { isr: 3600 },
+      "/ausbildung/**": { isr: 3600 },
+      "/de/ausbildung/**": { isr: 3600 },
+      "/ar/ausbildung/**": { isr: 3600 },
     },
     prerender:
       process.env.NODE_ENV === "production"
