@@ -12,7 +12,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@lottiefiles/dotlottie-vue": "^0.11.26",
+    "@lottiefiles/dotlottie-vue": "^0.11.27",
     "@nuxt/a11y": "^1.0.0-alpha.1",
     "@nuxt/fonts": "^0.14.0",
     "@nuxt/image": "^2.1.0",
@@ -30,7 +30,7 @@
     "nuxt-gtag": "^4.1.0",
     "nuxt-og-image": "^6.7.8",
     "tailwindcss": "^4.3.3",
-    "vue": "^3.5.41",
+    "vue": "^3.5.42",
     "vue-router": "^5.2.0"
   },
   "devDependencies": {
