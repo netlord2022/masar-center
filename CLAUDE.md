@@ -89,6 +89,7 @@ Lead-generation listing of vocational-training (Ausbildung) openings in Germany.
 - `app/components/ausbildung/OfferCard.vue` — listing card. Detail fields are rendered directly in the page (no blok component); `requirements`/`benefits` are Storyblok richtext rendered with `<StoryblokRichText>`.
 - `app/composables/useAusbildungSectors.ts` — canonical `sector` slug list + `label()` (slug → i18n) + `options` (for a future filter). Single source of truth; the Storyblok `sector` field's option values must match these slugs.
 - i18n keys live under the `ausbildung.*` namespace in all three locale files.
+- **Both Storyblok calls pass `cv: Date.now()`** on purpose. Storyblok's `cdn/stories` *list* endpoint is served from a space-level cache-version snapshot; without a fresh `cv`, newly published offers don't appear in the list at build time (the single-story endpoint updates immediately, which is why a direct offer URL works while the list lags). Don't remove it.
 - Nav link added in `app/components/AppHeader.vue` (`links` array).
 
 **Archive lifecycle** (staff never delete/unpublish — that kills the URL with no grace window):

@@ -11,19 +11,28 @@ definePageMeta({ title: "ausbildung.title" })
 const { data, status } = await useAsyncData(
   `ausbildung-offers-${sbLocale.value}`,
   async () => {
-    const res = await storyblok
-      .get("cdn/stories", {
+    try {
+      const res = await storyblok.get("cdn/stories", {
         starts_with: "ausbildung/",
         language: sbLocale.value,
         is_startpage: "0",
         sort_by: "first_published_at:desc",
         per_page: 100,
         version: config.public.storyblokBridge ? "draft" : "published",
+        // Bypass the space-level cache-version snapshot so freshly published
+        // offers show up on the next build / ISR revalidation instead of
+        // waiting for Storyblok's list cache to roll over.
+        cv: Date.now(),
       })
-      .catch(() => ({ data: { stories: [] } }))
 
-    return {
-      offers: (res.data.stories ?? []) as AusbildungOffer[],
+      return {
+        offers: (res.data.stories ?? []) as AusbildungOffer[],
+      }
+    } catch (error) {
+      // Surface it in the build/server log instead of silently shipping an
+      // empty list; still fall back so a transient blip doesn't 500 the page.
+      console.error("[ausbildung] failed to load offers list:", error)
+      return { offers: [] as AusbildungOffer[] }
     }
   },
   {

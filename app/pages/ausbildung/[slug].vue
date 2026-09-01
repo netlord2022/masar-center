@@ -20,6 +20,9 @@ const { data: pageData } = await useAsyncData(
       .get(`cdn/stories/ausbildung/${slug}`, {
         version: config.public.storyblokBridge ? "draft" : "published",
         language: sbLocale.value,
+        // Match the list query: always resolve against the live snapshot so
+        // edits (status, archived_at, copy) take effect on the next ISR pass.
+        cv: Date.now(),
       })
       .catch(() => null)
 
