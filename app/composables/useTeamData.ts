@@ -100,24 +100,6 @@ const teamMembers: TeamMember[] = [
       "https://www.instagram.com/masar.ug.de?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     facebook: "https://www.facebook.com/profile.php?id=61585719966946",
   },
-  {
-    slug: "leen-mustafa",
-    name: "Leen Mustafa",
-    role: "Marketing",
-    bio: localedBio("Leen", "لين", true),
-    photo: "/team/leen-mustafa.webp",
-    instagram: "",
-    facebook: "",
-  },
-  {
-    slug: "dalaa-saloum",
-    name: "Dalaa Saloum",
-    role: "Marketing",
-    bio: localedBio("Dalaa", "دلع", true),
-    photo: "/team/dalaa-saloum.webp",
-    instagram: "",
-    facebook: "",
-  },
 ]
 
 export function useTeamData() {
