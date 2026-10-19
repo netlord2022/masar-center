@@ -22,7 +22,7 @@
     "@storyblok/richtext": "^4.3.5",
     "@storyblok/vue": "^10.1.10",
     "@nuxtjs/i18n": "^10.6.0",
-    "@nuxtjs/sitemap": "^8.6.1",
+    "@nuxtjs/sitemap": "^8.6.2",
     "@tailwindcss/vite": "^4.3.3",
     "@takumi-rs/core": "^1.8.7",
     "@vueuse/nuxt": "^14.4.0",
@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.17.0",
-    "@nuxt/hints": "^1.1.4",
+    "@nuxt/hints": "^1.1.5",
     "@types/node": "^26.3.0",
     "eslint": "^9.39.5",
     "vite-plugin-mkcert": "^2.1.0"
