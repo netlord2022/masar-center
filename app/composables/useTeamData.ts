@@ -10,7 +10,7 @@ export interface TeamMember {
   mail?: string
 }
 
-const setBio = (name: string, locale: string, feminine: boolean) => {
+const setBio = (name: string, locale: string, feminine: boolean = true) => {
   switch (locale) {
     case "en":
       return `${name} is a key member of the Masar team. ${name} is dedicated to guiding you through your academic and professional journey, ensuring your application meets all German official requirements.`
@@ -30,7 +30,7 @@ const setBio = (name: string, locale: string, feminine: boolean) => {
 const localedBio = (
   name: string,
   arabicName: string,
-  feminine: boolean
+  feminine: boolean = true
 ): { en: string; de: string; ar: string } => {
   return {
     en: setBio(name, "en", feminine),
@@ -54,30 +54,20 @@ const teamMembers: TeamMember[] = [
     bio: localedBio("Rami", "رامي", false),
     photo: "/team/rami-ismaeel.webp",
   },
+
   {
-    slug: "zeinab-marhij",
-    name: "Zeinab Marhij",
-    role: "Marketing",
-    bio: localedBio("Zeinab", "زينب ", true),
-    photo: "/team/zeinab-marhij.webp",
-    facebook: "https://www.facebook.com/share/1D24QWoUAA",
-    instagram: "https://www.instagram.com/zeinabmasar.co?igsh=ZnVlNzJmN3Bud3Rm",
-  },
-  {
-    slug: "sandy-nbeaa",
-    name: "Sandy Nbeaa",
-    role: "Marketing",
-    bio: localedBio("Sandy", "ساندي", true),
-    photo: "/team/sandy-nbeaa.webp",
-    facebook: "https://www.facebook.com/share/1BV3ivYMrJ/",
-    instagram:
-      "https://www.instagram.com/sandy.masar990?igsh=MXF5eHdjY2d5MzNjaw==",
+    slug: "walaa-aqoul",
+    name: "Walaa Aqoul",
+    role: "Graphic Design",
+    bio: localedBio("Walaa", "ولاء"),
+    photo: "/team/walaa-aqoul.webp",
+    instagram: "https://www.instagram.com/walaa.akl.353/",
   },
   {
     slug: "batoul-mohammad",
     name: "Batoul Mohammad",
     role: "Branch Manager",
-    bio: localedBio("Batoul", "بتول", true),
+    bio: localedBio("Batoul", "بتول"),
     photo: "/team/batoul-mohammad.webp",
     facebook: "https://www.facebook.com/share/18pzVCHujJ/",
     instagram: "https://www.instagram.com/batoulmasarco?igsh=dWN0OWc3NWhuMDhv",
@@ -86,7 +76,7 @@ const teamMembers: TeamMember[] = [
     slug: "balqees-abo-fakher",
     name: "Balqees Abo Fakher",
     role: "Content Writer",
-    bio: localedBio("Balqees", "بلقيس", true),
+    bio: localedBio("Balqees", "بلقيس"),
     photo: "/team/balqees-abo-fakher.webp",
     mail: "blqeesaf@gmail.com",
   },
@@ -94,11 +84,20 @@ const teamMembers: TeamMember[] = [
     slug: "afraa-ebraheem",
     name: "Afraa Ebraheem",
     role: "Community Manager",
-    bio: localedBio("Afraa", "عفراء", true),
+    bio: localedBio("Afraa", "عفراء"),
     photo: "/team/afraa-ebraheem.webp",
     instagram:
       "https://www.instagram.com/masar.ug.de?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
     facebook: "https://www.facebook.com/profile.php?id=61585719966946",
+  },
+  {
+    slug: "zeinab-marhij",
+    name: "Zeinab Marhij",
+    role: "Marketing",
+    bio: localedBio("Zeinab", "زينب "),
+    photo: "/team/zeinab-marhij.webp",
+    facebook: "https://www.facebook.com/share/1D24QWoUAA",
+    instagram: "https://www.instagram.com/zeinabmasar.co?igsh=ZnVlNzJmN3Bud3Rm",
   },
 ]
 
